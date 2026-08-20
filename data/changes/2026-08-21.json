@@ -1,0 +1,65 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-divepro",
+  "name": "南青潛水 DivePro",
+  "date": "",
+  "src": "南青潛水 DivePro",
+  "detail": "HTTP 429",
+  "url": "https://www.divepro.tw/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-taiwandive",
+  "name": "台灣潛水 Taiwan Dive Center",
+  "date": "",
+  "src": "台灣潛水 Taiwan Dive Center",
+  "detail": "HTTP 429",
+  "url": "http://www.taiwan-dive.com/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "isp-A000026504",
+  "name": "2026年滾水超級盃全國羽球錦標賽",
+  "date": "20260919",
+  "src": "i運動（體育署）",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/guenshuei.A"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12939",
+  "name": "2026宜蘭縣冬山河水岸馬拉松",
+  "date": "20261004",
+  "src": "運動筆記",
+  "detail": "報名狀態：08-20截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12939"
+ }
+]
