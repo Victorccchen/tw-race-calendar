@@ -56,7 +56,8 @@ export default function handler(req, res) {
     kids: url.searchParams.get('kids') === '1',
     minq: parseInt(url.searchParams.get('minq') || '0', 10) || 0,
   };
-  const hit = events.filter(e => matches(e, q));
+  // 常態服務沒有日期，不適合放進行事曆訂閱
+  const hit = events.filter(e => !e.sv && e.d && matches(e, q));
 
   const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
              'PRODID:-//island-races//TW Race Calendar//ZH-TW',

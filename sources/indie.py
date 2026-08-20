@@ -41,6 +41,20 @@ def fetch(watch=True):
     for op in conf['operators']:
         if op.get('adapter') == 'wp':
             _from_wordpress(op, {e['i'] for e in out})
+    for op in conf['operators']:
+        for sv in op.get('services', []):
+            if not sv.get('verified'):
+                RV.flag(op['name'], sv.get('name','(未命名服務)'),
+                        '服務尚未人工驗證，未進前台', op.get('url','')); continue
+            out.append(N.service(
+                id=sv['id'], name=sv['name'], shop=op['name'],
+                city=op.get('city',''), area=op.get('area',''),
+                location=sv.get('location') or op.get('area',''),
+                sport=sv.get('sport') or op.get('sport','other'),
+                kid=sv.get('kid',0), desc=sv.get('desc',''),
+                price=sv.get('price',''), hours=sv.get('hours',''),
+                book=sv.get('book','contact'), note=sv.get('note',''),
+                url=(op.get('contact',{}) or {}).get('booking') or op.get('url','')))
     if watch: _watch(conf)
     return out
 

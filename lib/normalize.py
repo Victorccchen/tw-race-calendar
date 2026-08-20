@@ -59,6 +59,23 @@ def roc_to_ad(d):
     m = re.match(r'(\d{3})[/-]?(\d{2})[/-]?(\d{2})', d or '')
     return f"{int(m.group(1))+1911}{m.group(2)}{m.group(3)}" if m else ''
 
+def service(id, name, shop, city='', location='', sport='other', kid=0, desc='',
+            price='', hours='', book='contact', note='', url='', area=''):
+    """店家的常態服務（通行證、租借、嚮導、課程）—— 無固定日期，全年提供。
+
+    與賽事的差別：沒有賽期、沒有報名開窗，取得方式是直接跟店家預約或洽詢。
+    因此不套用「尚未開賣／已截止」那套狀態邏輯。
+    """
+    return {
+        'i': id, 'n': (name or '').strip(), 'd': '', 'c': city,
+        'l': (location or area or '')[:60], 'g': [], 'k': 1 if kid else 0,
+        's': sport, 't': 'service', 'sv': 1,
+        'ro': '', 'rc': '', 'st': '', 'u': url, 'src': shop,
+        'a': '', 'f': price, 'desc': desc[:300], 'hours': hours,
+        'book': book, 'note': note[:160], 'shop': shop,
+    }
+
+
 def event(id, name, date, city='', location='', groups=None, sport=None, kind=None,
           kid=None, reg_open='', reg_close='', status='', url='', source='', age='', fee=''):
     groups = groups or []

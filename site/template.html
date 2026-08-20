@@ -389,6 +389,13 @@ footer{padding:2.4rem 0 0;font-size:12.5px;color:var(--ink-4);line-height:1.7}
 @media(max-width:1000px){.cardgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.rbody{grid-template-columns:1fr;gap:0}.mrail{display:none}}
 @media(max-width:640px){.cardgrid{grid-template-columns:1fr}}
+
+/* 店家常態服務 */
+.viz .when.sv .mo{font-size:16px;letter-spacing:.02em}
+.viz .when.sv .wd{color:var(--exp);font-weight:600}
+.meta.sv-desc{color:var(--ink-2);display:block;line-height:1.5}
+.meta.note{color:var(--ink-3);font-size:11.5px;display:block}
+.st.always{color:var(--exp)}.st.always i{background:var(--exp)}
 </style>
 </head>
 <body>
@@ -553,10 +560,12 @@ const CAT = [
 ];
 const LBL = Object.fromEntries(CAT); LBL.tabletennis='桌球'; LBL.other='其他運動';
 LBL.basketball='籃球'; LBL.soccer='足球'; LBL.baseball='棒 / 壘球';
-const ST = {open:['報名中','open'],soon:['尚未開賣','soon'],shut:['已截止','shut']};
-const TY = {race:'正式賽事',exp:'體驗活動',camp:'營隊課程'};
+const ST = {open:['報名中','open'],soon:['尚未開賣','soon'],shut:['已截止','shut'],always:['全年提供','always']};
+const TY = {race:'正式賽事',exp:'體驗活動',camp:'營隊課程',service:'店家服務'};
+const BOOK = {contact:'需洽詢預約',online:'線上預約',walkin:'現場報名'};
 
 function statusOf(e){
+  if(e.sv) return 'always';        // 常態服務：全年提供，向店家預約
   if(e.st && e.st.indexOf('已截止')>-1) return 'shut';
   if(!e.rc && !e.ro) return 'soon';
   if(e.rc && e.rc.replace(/-/g,'') < TODAY) return 'shut';
@@ -789,8 +798,8 @@ function picks(){
   host.innerHTML = '';
   const items = [
     ['kids','kids','親子友善', `${nk} 場設有兒童或親子組`, F.kids, ()=>{ F.kids = !F.kids; }],
-    ['sprout','experience','體驗與入門', `${nx} 場非競賽，適合初次參加`, F.type.size>0, ()=>{
-      const on = F.type.size; F.type.clear(); if(!on){ F.type.add('exp'); F.type.add('camp'); }
+    ['sprout','experience','店家與體驗', `${nx} 項體驗、營隊與店家常態服務`, F.type.size>0, ()=>{
+      const on = F.type.size; F.type.clear(); if(!on){ F.type.add('exp'); F.type.add('camp'); F.type.add('service'); }
     }],
     ['bell','run','正在開放報名', `${no} 場現在就能報名`, F.status.has('open'), ()=>{
       F.status.has('open') ? F.status.delete('open') : F.status.add('open');
@@ -862,14 +871,19 @@ function card(e){
   return `<article class="card" role="button" tabindex="0" data-id="${e.i}" style="--sp:var(--s-${e.s})">
    <div class="viz ph ph-${e.s}" style="background-position:${38+(seed(e.i)%26)}% center">${scene(e)}<span class="veil"></span>
      <span class="tags"><span class="tag">${LBL[e.s]}</span>${e.t!=='race'?`<span class="ttag">${TY[e.t]}</span>`:''}</span>
-     <span class="when"><span class="dl"><b class="mo">${+e.d.slice(4,6)}月</b><span class="dd">${e.d.slice(6,8)}</span></span><span class="wd">週${WD[dt.getDay()]}</span></span>
+     ${e.sv
+        ? `<span class="when sv"><span class="dl"><b class="mo">全年</b></span><span class="wd">${BOOK[e.book]||'需洽詢'}</span></span>`
+        : `<span class="when"><span class="dl"><b class="mo">${+e.d.slice(4,6)}月</b><span class="dd">${e.d.slice(6,8)}</span></span><span class="wd">週${WD[dt.getDay()]}</span></span>`}
      ${e.k?'<span class="kid">親子</span>':''}${saveBtn(e.i)}</div>
    <div class="body">
      <p class="name">${e.n}</p>
      <p class="where"><b>${e.c||'—'}</b><span>${trimCity(e)}</span></p>
-     <div class="gs">${gs||'<span class="g">組別待公布</span>'}</div>
+     ${e.sv ? '' : `<div class="gs">${gs||'<span class="g">組別待公布</span>'}</div>`}
+     ${e.desc?`<p class="meta sv-desc">${e.desc}</p>`:''}
+     ${e.hours?`<p class="meta"><i>時間</i>${e.hours}</p>`:''}
      ${e.a?`<p class="meta"><i>年齡</i>${e.a}</p>`:''}
-     ${e.f?`<p class="meta"><i>費用</i>${e.f}</p>`:''}
+     ${e.f?`<p class="meta"><i>${e.sv?'價目':'費用'}</i>${e.f}</p>`:''}
+     ${e.note?`<p class="meta note">${e.note}</p>`:''}
      <div class="foot"><span class="st ${st[1]}"><i></i>${st[0]}${dl}</span></div>
    </div></article>`;
 }
@@ -924,10 +938,18 @@ function icsQuery(){
 }
 
 /* MONTHRAIL-JS */
-function buildRail(keys, by){
+function buildRail(keys, by, svCount){
   const rail = document.getElementById('mrail');
   if(!rail) return;
   rail.innerHTML = ''; let year = '';
+  if(document.getElementById('g-__sv')){
+    const b=document.createElement('button');
+    b.type='button'; b.dataset.m='__sv'; b.setAttribute('aria-current','false');
+    b.innerHTML = `<span class="my">全年</span><span class="mn">店家</span>`;
+    b.onclick = ()=>{ const t=document.getElementById('g-__sv');
+      if(t) window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-96,behavior:'smooth'}); };
+    rail.appendChild(b);
+  }
   keys.forEach(m=>{
     if(m.slice(0,4) !== year){
       year = m.slice(0,4);
@@ -972,13 +994,20 @@ function render(){
   document.getElementById('tally').textContent = list.length;
   document.getElementById('empty').hidden = list.length>0;
   const grid = document.getElementById('grid');
-  const gby = {}; list.forEach(e=>{ (gby[e.d.slice(0,6)] ||= []).push(e); });
+  const svList = list.filter(e=>e.sv), dated = list.filter(e=>!e.sv);
+  const gby = {}; dated.forEach(e=>{ (gby[e.d.slice(0,6)] ||= []).push(e); });
   const gkeys = Object.keys(gby).sort();
-  grid.innerHTML = gkeys.map(m =>
+  if(svList.length) gby.__sv = svList;
+  const svBlock = svList.length
+    ? `<section class="mgroup" id="g-__sv" data-m="__sv">`
+      + `<h3 class="mhead"><b>全年</b><span>店家常態服務</span><em>${svList.length} 項</em></h3>`
+      + `<div class="cardgrid">${svList.map(card).join('')}</div></section>`
+    : '';
+  grid.innerHTML = svBlock + gkeys.map(m =>
     `<section class="mgroup" id="g-${m}" data-m="${m}">`
     + `<h3 class="mhead"><b>${+m.slice(4,6)}月</b><span>${m.slice(0,4)}</span><em>${gby[m].length} 場</em></h3>`
     + `<div class="cardgrid">${gby[m].map(card).join('')}</div></section>`).join('');
-  buildRail(gkeys, gby);
+  buildRail(gkeys, gby, svList.length);
   grid.querySelectorAll('.card').forEach(el=>{
     el.addEventListener('click', ()=> openEvent(el.dataset.id));
     el.addEventListener('keydown', ev=>{ if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); openEvent(el.dataset.id); }});

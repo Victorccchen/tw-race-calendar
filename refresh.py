@@ -46,6 +46,8 @@ def collect():
     today = datetime.date.today().strftime('%Y%m%d')
     kept, dropped, small, pending = [], 0, 0, 0
     for e in best.values():
+        if e.get('sv'):                       # 店家常態服務：無日期、全年提供
+            kept.append(e); continue
         if e['d'] < today: continue
         if not N.in_scope(e['s']):            # 收錄範圍外（非拍類球運動等）
             dropped += 1; continue
@@ -105,7 +107,8 @@ def main():
     today = datetime.date.today().isoformat()
     print(f"═══ 每日刷新 {today} ═══\n抓取來源：")
     events, report = collect()
-    print(f"\n合併後 {len(events)} 場（未來賽事）")
+    sv = sum(1 for e in events if e.get("sv"))
+    print(f"\n合併後 {len(events)-sv} 場賽事 + {sv} 項店家服務")
 
     dead = [] if a.no_links else check_links(events)
     if dead: print(f"連結檢查：{len(dead)} 個異常")

@@ -1,5 +1,5 @@
 {
-  "_說明": "主辦方名冊。原則：聚合平台（伊貝特、活動咖、EventGo）只用來『發現主辦方』，賽事資料一律回主辦方官網取得。伊貝特有人機驗證無法自動抓取，不列為資料來源。\nadapter 決定抓法：wp = WordPress REST API；none = 純人工維護（SPA／社群頁）。\n自動抓到的場次仍需人工確認後才會標上 verified 並進入前台。",
+  "_說明": "店家與主辦方名冊。收錄兩種東西：\n  events   —— 有明確日期的賽事／營隊，需 verified 才進前台\n  services —— 店家全年提供的常態服務（通行證、租借、嚮導、課程），無固定日期\n原則：聚合平台（伊貝特、活動咖、EventGo）只用來發現主辦方，資料一律回官網取得。\n伊貝特有人機驗證，不抓取，僅作為報名連結。",
   "operators": [
     {
       "id": "yetopia",
@@ -7,47 +7,64 @@
       "url": "https://yetopia.tw/",
       "city": "宜蘭",
       "sport": "bike",
-      "note": "台灣唯一登山車公園。SPA 站，所有路徑回同一頁，無法自動解析活動。",
+      "note": "官網為 SPA，服務內容人工維護；價目以官網公告為準。",
       "watch": true,
-      "events": [
+      "events": [],
+      "adapter": "none",
+      "kind": "shop",
+      "area": "宜蘭縣頭城鎮",
+      "intro": "台灣唯一的登山車公園，由越野跑者 Serena Hsu 與南非下坡車手 Luke Borg 打造。園內有重力路線、25 公里越野路線、Pump Track 與新手路線。",
+      "contact": {
+        "site": "https://yetopia.tw/",
+        "booking": "https://yetopia.tw/mountain-biking.html"
+      },
+      "services": [
         {
-          "id": "yeto-mtb-intro",
-          "name": "野托邦登山車體驗課 完全新手 / 基礎班",
-          "date": "20260906",
-          "recurring": true,
-          "location": "宜蘭縣頭城鎮 野托邦登山車公園",
-          "groups": [
-            "完全新手",
-            "基礎班",
-            "進階班",
-            "青少年"
-          ],
-          "age": "常態開課，分級招生，設青少年班",
-          "fee": "全套裝備提供（登山車、護具、安全帽）+ 教練帶領",
-          "url": "https://yetopiamtb.my.canva.site/",
-          "kind": "exp",
+          "id": "yeto-park-pass",
+          "name": "Bike Park Pass 園區通行證",
+          "sport": "bike",
           "kid": 1,
-          "verified": "2026-08-19"
+          "desc": "重力路線、25K 越野路線、Pump Track 與新手路線皆可使用。",
+          "price": "全日 NT$300｜二日 NT$500｜夏季票 NT$1,500（7/1–11/30）｜年票 NT$2,400｜家庭全日票 NT$1,000（2 名青少年＋2 名成人）",
+          "book": "contact",
+          "note": "二日票須連續兩天使用。",
+          "verified": "2026-08-20"
         },
         {
-          "id": "yeto-xc-exp",
-          "name": "野托邦 × XTERRA 輕度 MTB XC 山野騎行體驗",
-          "date": "20261025",
-          "recurring": true,
-          "location": "宜蘭縣頭城鎮濱海路三段 野托邦 Yetopia",
-          "groups": [
-            "新手體驗",
-            "青少年班"
-          ],
-          "age": "青少年班／親子同行（依身高配車）",
-          "fee": "含登山車、護具、安全帽與教練帶領",
-          "url": "https://yetopia.tw/",
-          "kind": "exp",
+          "id": "yeto-shuttle",
+          "name": "MTB Shuttle 接駁上山",
+          "sport": "bike",
+          "kid": 0,
+          "desc": "不想爬坡就搭接駁，專心享受下坡路線。上坡約 2.5 公里、爬升 350 公尺，部分路段坡度約 15%。",
+          "price": "半日 NT$500／人｜全日 NT$800／人（每人 4 小時、不限次數）｜包車 NT$6,000（上限 10 人＋車、不限次數）",
+          "hours": "08:00–12:00、13:00–17:00",
+          "book": "contact",
+          "note": "務必事先預約。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "yeto-guide",
+          "name": "Ride Guide 嚮導帶騎",
+          "sport": "bike",
           "kid": 1,
-          "verified": "2026-08-19"
+          "desc": "初次造訪、不熟路線者建議預約嚮導，帶你跑下坡或越野路線。",
+          "price": "NT$2,000／嚮導／半日，每團上限 4 人",
+          "book": "contact",
+          "note": "務必事先預約。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "yeto-rental",
+          "name": "Rent a bike 登山車租借",
+          "sport": "bike",
+          "kid": 1,
+          "desc": "提供全避震、硬尾登山車與多種兒童車款，含全日通行證。",
+          "price": "全日 NT$1,500（已含全日通行證）",
+          "book": "contact",
+          "note": "車輛數量有限，強烈建議提前預約；騎乘中人為損壞須照價賠償。",
+          "verified": "2026-08-20"
         }
-      ],
-      "adapter": "none"
+      ]
     },
     {
       "id": "xcamp",
@@ -55,13 +72,13 @@
       "url": "https://x-camp.xterrataiwan.com/",
       "city": "臺中",
       "sport": "bike",
-      "note": "XTERRA 的體驗活動品牌。靜態頁可解析，但年度場次不定期公布。",
+      "note": "XTERRA 旗下的體驗活動品牌，兩天一夜，分 MTB X Ride／越野跑 X Run／親子玩野 X Kids Fun 三軌。官網目前仍是 2025.1.11–12 那屆的議程，下一屆日期尚未公布，因此不收錄任何場次。",
       "watch": true,
       "events": [
         {
           "id": "xcamp-guguan",
           "name": "X-Camp 越野探索兩日營 台中谷關",
-          "date": "20270109",
+          "date": "",
           "location": "臺中市和平區裡冷巷 馬告的傳奇露營區",
           "groups": [
             "MTB X Ride",
@@ -73,10 +90,11 @@
           "url": "https://x-camp.xterrataiwan.com/",
           "kind": "camp",
           "kid": 1,
-          "verified": "2026-08-19"
+          "note": "官網仍為 2025 年那屆議程，下一屆日期未公布"
         }
       ],
-      "adapter": "none"
+      "adapter": "none",
+      "kind": "organizer"
     },
     {
       "id": "fun3sport",
