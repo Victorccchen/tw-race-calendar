@@ -1171,6 +1171,155 @@
           "verified": "2026-08-20"
         }
       ]
+    },
+    {
+      "id": "saicelen",
+      "name": "山娛職人戶外探索",
+      "kind": "shop",
+      "url": "https://saicelen.com/index.php",
+      "city": "花蓮",
+      "area": "花蓮縣新城鄉（服務範圍含台北、宜蘭、新竹、苗栗）",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "北部與東部的溯溪、溪降專業團隊，由原住民教練帶隊。路線遍及新北烏來南勢溪與加九寮溪、三峽中坑溪、瑞芳半屏溪、石門老梅溪、新竹梅花溪、苗栗泰安汶水溪。",
+      "contact": {
+        "site": "https://saicelen.com/index.php"
+      },
+      "note": "以稀有活動類型收錄（溪降在台灣經營者極少）。電話 0925-772-807，報名走官方 LINE。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "sc-nanshi",
+          "name": "烏來南勢溪・秘境漂流",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。天然 SPA、跳水、深潭漂浮、漂流、滑降。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sc-jiajiuliao",
+          "name": "烏來加九寮溪・溯溪體驗",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。天然 SPA、跳水、深潭漂浮、瀑布攀登、天然滑水道。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sc-zhongkeng",
+          "name": "三峽中坑溪・超狂滑水道",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。天然 SPA、跳水、瘋狂滑水道、姊妹瀑布、心靈峽谷。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sc-wenshui",
+          "name": "泰安汶水溪・水雲瀑布",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。天然 SPA、跳水、滑瀑、漂流、水雲瀑布。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sc-banping",
+          "name": "瑞芳半屏溪・大鬼瀑布",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。沖瀑、跳水、深潭泳渡、大鬼瀑布。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sc-meihua",
+          "name": "尖石梅花溪・梅花瀑布",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "難易度 ★★。漂流與瀑布地形。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://saicelen.com/index.php",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "fishbar",
+      "name": "洄遊吧 FishBar",
+      "kind": "shop",
+      "url": "https://www.fishbar.com.tw/",
+      "city": "花蓮",
+      "area": "花蓮縣新城鄉七星街 食魚體驗館",
+      "sport": "tribe",
+      "adapter": "none",
+      "intro": "七星潭的食魚教育與海洋永續團隊，5.0 星、968 則評價。以定置漁網與一支釣等友善漁法為主題，帶民眾摸魚、搭船看漁業與賞鯨，把餐桌與海洋連起來。",
+      "contact": {
+        "site": "https://www.fishbar.com.tw/",
+        "booking": "https://www.fishbar.com.tw/activity/content"
+      },
+      "note": "官網為靜態頁，活動項目可自動核對；各活動價目需進報名頁確認。電話 03-822-5898。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "fb-touch",
+          "name": "七星潭摸魚趣",
+          "sport": "tribe",
+          "kid": 1,
+          "desc": "1 人即可成行。認識七星潭漁獲，並動手做專屬的「漁人飯捲」。",
+          "price": "價目見報名頁",
+          "book": "online",
+          "url": "https://www.fishbar.com.tw/activity/content",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "fb-maze",
+          "name": "勇闖海上大迷宮（漁業＋賞鯨）",
+          "sport": "tribe",
+          "kid": 1,
+          "desc": "搭船出海認識七星潭海灣的定置漁網浮球，兼具漁業體驗與賞鯨。",
+          "price": "價目見報名頁",
+          "book": "online",
+          "url": "https://www.fishbar.com.tw/activity/content",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "fb-kids",
+          "name": "幼兒食魚教育體驗",
+          "sport": "tribe",
+          "kid": 1,
+          "desc": "為幼兒設計的食魚教育活動。",
+          "price": "價目見報名頁",
+          "book": "online",
+          "url": "https://www.fishbar.com.tw/activity/content",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "fb-custom",
+          "name": "團體客製（2／3 小時、一日、三天兩夜）",
+          "sport": "tribe",
+          "kid": 1,
+          "desc": "20 人以上團體預約。含七星潭漁業漁法介紹、季節魚種認識與觀察、鮮魚點心品嚐、海岸環境與漁業作業流程解說，有機會看到漁獲上岸。",
+          "price": "依方案報價",
+          "book": "contact",
+          "url": "https://www.fishbar.com.tw/activity/content",
+          "verified": "2026-08-20"
+        }
+      ]
     }
   ]
 }
