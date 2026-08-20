@@ -23,13 +23,26 @@ RADIUS = 3000
 #（極酷衝浪、野孩子衝浪社皆是），純用類型排除會誤刪。因此改用
 # 「名稱有活動訊號」為主，types 只用來剔除明確的餐飲業。
 ACTIVITY = re.compile(
-    r'衝浪|surf|SUP|立槳|潛水|dive|freediv|獨木舟|kayak|溯溪|浮潛|滑水|風箏|'
-    r'教練|俱樂部|學校|基地|探索|運動|戶外|club|school|academy|outdoor', re.I)
+    r'衝浪|surf|SUP|立槳|paddle|潛水|dive|freediv|獨木舟|kayak|canoe|溯溪|浮潛|snorkel|'
+    r'泛舟|rafting|滑水|風箏|kite|帆船|sail|攀岩|climb|抱石|boulder|'
+    r'單車|自行車|腳踏車|bike|cycl|登山|健行|嚮導|guide|hiking|trek|飛行傘|paraglid|'
+    r'教練|俱樂部|學校|基地|探索|運動|戶外|工作室|club|school|academy|outdoor|adventure', re.I)
 FOOD_LODGING = re.compile(
     r'咖啡|cafe|餐廳|食堂|小吃|麵包|甜點|肉桂|燒烤|居酒屋|酒吧|'
     r'民宿|旅店|旅館|飯店|背包|hostel|hotel|inn|共居|co-?living|營地|露營區', re.I)
 FOOD_TYPES = {'restaurant', 'cafe', 'bakery', 'bar', 'food', 'meal_takeaway',
               'meal_delivery', 'night_club', 'convenience_store', 'supermarket'}
+
+# 只收「帶團體驗」業者，排除純租賃與零售。
+# 觀光區的電動自行車出租、登山裝備行雖然評分高、評論多，但賣的是器material
+# 不是體驗 —— 對想找活動的人沒有意義。
+RENTAL_RETAIL = re.compile(
+    r'出租|租賃|租借|租車|車行|電動自行車|電動車|腳踏車行|'
+    r'裝備|用品|專賣|工廠|商行|百貨|直營|批發|五金', re.I)
+EXPERIENCE = re.compile(
+    r'體驗|教學|課程|導覽|嚮導|帶團|訓練|營隊|學校|俱樂部|探索|工作室|中心|'
+    r'潛水|dive|泛舟|raft|溯溪|溪降|攀岩|climb|抱石|boulder|衝浪|surf|'
+    r'立槳|SUP|paddle|獨木舟|kayak|帆船|sail|飛行傘|paraglid|school|academy|club', re.I)
 
 def _rare_conf(root):
     f = os.path.join(root, 'data', 'rare_activities.json')
@@ -58,18 +71,20 @@ def fetch():
     known = _known_shop_names(root)
     rare_conf = _rare_conf(root)
     seen, found = set(), 0
-    for sp in spots:
+    queries = [(sp, kw) for sp in spots for kw in sp.get('keywords', ['戶外'])]
+    print(f'  （Places：{len(spots)} 個熱點 × 關鍵字，共 {len(queries)} 次查詢）')
+    for sp, kw in queries:
         params = urllib.parse.urlencode({
-            'location': f"{sp['lat']},{sp['lng']}", 'radius': RADIUS,
-            'keyword': '衝浪', 'language': 'zh-TW', 'key': key})
+            'location': f"{sp['lat']},{sp['lng']}", 'radius': sp.get('radius', RADIUS),
+            'keyword': kw, 'language': 'zh-TW', 'key': key})
         raw = get(f'{ENDPOINT}/nearbysearch/json?{params}')
         if not raw:
-            RV.flag(NAME, sp['name'], 'Places 查詢失敗'); continue
+            RV.flag(NAME, f"{sp['name']}／{kw}", 'Places 查詢失敗'); continue
         try: res = json.loads(raw)
         except Exception as e:
-            RV.flag(NAME, sp['name'], f'Places 回應非 JSON：{e}'); continue
+            RV.flag(NAME, f"{sp['name']}／{kw}", f'Places 回應非 JSON：{e}'); continue
         if res.get('status') not in ('OK', 'ZERO_RESULTS'):
-            RV.flag(NAME, sp['name'],
+            RV.flag(NAME, f"{sp['name']}／{kw}",
                     f"Places 回應 {res.get('status')}：{res.get('error_message','')}")
             continue
         for r in res.get('results', []):
@@ -85,6 +100,8 @@ def fetch():
                 continue                                           # 純餐飲或住宿
             if not ACTIVITY.search(name) and 'store' not in types:
                 continue                                           # 看不出是活動業者
+            if RENTAL_RETAIL.search(name) and not EXPERIENCE.search(name):
+                continue                                           # 純租賃或零售，不提供體驗
             rating, votes = r.get('rating'), r.get('user_ratings_total', 0)
             if not rating: continue
             rare = _rare_match(name, rare_conf)
@@ -95,7 +112,7 @@ def fetch():
             found += 1
             tag = f'【稀有・{rare}】' if rare else ''
             RV.flag(NAME, name,
-                    f"{tag}{sp['city']}・{sp['name']} 附近，評分 {rating}（{votes} 則）。"
+                    f"{tag}{sp['city']}・{sp['name']}（搜尋「{kw}」）評分 {rating}（{votes} 則）。"
                     f"確認後請補上服務內容再寫入名冊",
                     f"https://www.google.com/maps/place/?q=place_id:{pid}",
                     r.get('vicinity', ''))

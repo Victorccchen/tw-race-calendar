@@ -1,29 +1,38 @@
 [
  {
   "kind": "新增",
-  "id": "shop-fulongsail",
-  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "id": "shop-smlsup",
+  "name": "日月潭浪人槳堂 SUP",
   "date": "",
-  "src": "福隆帆船俱樂部 Fulong Sailing Club",
-  "detail": "新北 · surf",
-  "url": "https://www.facebook.com/FulongSailingClub/"
+  "src": "日月潭浪人槳堂 SUP",
+  "detail": "南投 · surf",
+  "url": "https://smlsup.rezio.shop/"
  },
  {
   "kind": "新增",
-  "id": "shop-blueocean",
-  "name": "藍洋衝浪 Blue Ocean Surf Shop",
+  "id": "shop-stayliuqiu",
+  "name": "居琉潛水 Stay Liuqiu Diving",
   "date": "",
-  "src": "藍洋衝浪 Blue Ocean Surf Shop",
-  "detail": "宜蘭 · surf",
-  "url": "http://www.bosc.com.tw/"
+  "src": "居琉潛水 Stay Liuqiu Diving",
+  "detail": "屏東 · dive",
+  "url": "https://stayliuqiu.com/"
  },
  {
   "kind": "新增",
-  "id": "shop-surffella",
-  "name": "蕃薯衝浪 Surffella",
+  "id": "shop-hsiangsun",
+  "name": "向上泛舟",
   "date": "",
-  "src": "蕃薯衝浪 Surffella",
-  "detail": "宜蘭 · surf",
-  "url": "https://www.surfschool.com.tw/"
+  "src": "向上泛舟",
+  "detail": "花蓮 · surf",
+  "url": "http://www.hsiangsun.com.tw/"
+ },
+ {
+  "kind": "新增",
+  "id": "shop-taiwandive",
+  "name": "台灣潛水 Taiwan Dive Center",
+  "date": "",
+  "src": "台灣潛水 Taiwan Dive Center",
+  "detail": "屏東 · dive",
+  "url": "http://www.taiwan-dive.com/"
  }
 ]

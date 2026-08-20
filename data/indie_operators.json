@@ -873,6 +873,304 @@
           "verified": "2026-08-20"
         }
       ]
+    },
+    {
+      "id": "ironhill",
+      "name": "鐵山腳單車運動村 Iron Hill",
+      "kind": "shop",
+      "url": "https://www.facebook.com/ironhillbike/",
+      "city": "臺中",
+      "area": "臺中市外埔區長生路866號",
+      "sport": "bike",
+      "adapter": "none",
+      "intro": "台中外埔的單車運動園區，從初學練習場、登山車越野體驗、土坡競速賽道，到國際 A 級土坡競速賽道與特技騰躍跳台皆有。另設室內兒童土坡練習場與兒童滑草場，滑步車 PushBike 也能玩，是少見的親子友善單車場域。",
+      "contact": {
+        "facebook": "https://www.facebook.com/ironhillbike/"
+      },
+      "note": "僅有 FB 粉專、無官網，資料由公開報導整理。電話 04-2683-1331，GPS 24.347222, 120.647500，海拔約 110 公尺。營業時間週二～週日 10:00–18:00；平日採預約制，假日視有無舉辦活動調整。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "ih-entry",
+          "name": "入場（全園區使用）",
+          "sport": "bike",
+          "kid": 1,
+          "desc": "含初學者練習場、登山車越野體驗、土坡競速賽道、國際 A 級競速賽道、特技騰躍跳台，以及室內兒童土坡練習場與兒童滑草場。",
+          "price": "清潔費 NT$100／人，2 歲以下免費（不論是否下場皆以人頭計）",
+          "hours": "週二～週日 10:00–18:00",
+          "book": "walkin",
+          "note": "入場清潔費每滿現金 200 元贈 50 元抵用券，可當次折抵裝備租借或下次折抵清潔費。騎乘者須簽免責切結書並配戴安全帽。假日可直接入場；平日 10 人以上須預約。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "ih-rental",
+          "name": "腳踏車・滑步車・護具租借",
+          "sport": "bike",
+          "kid": 1,
+          "desc": "沒有自備車輛也能玩，現場可租腳踏車、滑步車、安全帽與護具。",
+          "price": "價目需現場或洽詢確認",
+          "book": "walkin",
+          "url": "https://www.facebook.com/ironhillbike/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "ih-camp",
+          "name": "單車營隊教學體驗",
+          "sport": "bike",
+          "kid": 1,
+          "desc": "園區開設的單車營隊與教學體驗課程。",
+          "price": "梯次與價目需洽詢",
+          "book": "contact",
+          "url": "https://www.facebook.com/ironhillbike/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "ih-camping",
+          "name": "露營（含入場）",
+          "sport": "bike",
+          "kid": 1,
+          "desc": "園區設有營位，露營期間可搭配賽道使用。",
+          "price": "每帳 假日 NT$1,000／平日 NT$800（已含入場清潔費）",
+          "book": "contact",
+          "url": "https://www.facebook.com/ironhillbike/",
+          "note": "目前僅接受五帳以上訂位。露友租借裝備無 3 小時限制，可隔日中午退場前歸還。",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "hsiangsun",
+      "name": "向上泛舟",
+      "kind": "shop",
+      "url": "http://www.hsiangsun.com.tw/",
+      "city": "花蓮",
+      "area": "花蓮縣瑞穗鄉 秀姑巒溪",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "秀姑巒溪泛舟業者，Google 4.9 星、7,287 則評價（全台戶外業者評論數最高）。自有多種舟艇，含頂級向上之星、急流之星與自動排水舟，並配置守護艇。",
+      "contact": {
+        "site": "http://www.hsiangsun.com.tw/"
+      },
+      "note": "官網為 WordPress 靜態頁。電話 03-878-1166，營業時間每日 08:00–21:00。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "hs-raft-basic",
+          "name": "秀姑巒溪泛舟（一般舟）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "秀姑巒溪泛舟全程體驗，含裝備與安全簡報。終點提供盥洗與遮陽休息區。",
+          "price": "預約優惠 NT$900／人；含終點接回起點 NT$1,150；含花蓮市來回接送 NT$1,300 起",
+          "hours": "每日 08:00–21:00",
+          "book": "online",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hs-raft-mid",
+          "name": "秀姑巒溪泛舟（進階舟型）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "升級舟型，穩定性與舒適度更佳。",
+          "price": "NT$1,000／人；含接回起點 NT$1,250；含花蓮市接送 NT$1,400 起",
+          "book": "online",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hs-raft-premium",
+          "name": "秀姑巒溪泛舟（頂級舟型）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "向上之星／急流之星等頂級舟艇。",
+          "price": "NT$1,100／人；含接回起點 NT$1,350；含花蓮市接送 NT$1,500 起",
+          "book": "online",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hs-raft-top",
+          "name": "秀姑巒溪泛舟（自動排水舟）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "自動排水舟，需電話預約。",
+          "price": "NT$1,500／人；含接回起點 NT$1,750；含花蓮市接送 NT$1,900 起",
+          "book": "contact",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hs-student",
+          "name": "學生專案",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "任何船型皆可享學生優惠，需出示學生證。",
+          "price": "依船型另有優惠，詳洽官網",
+          "book": "online",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hs-combo",
+          "name": "套裝行程（泛舟＋溯溪／賞鯨／沙灘車）",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "溪流兩日套裝（泛舟＋溯溪）、親子推薦（泛舟＋賞鯨）、泛舟＋沙灘車等組合。",
+          "price": "依組合報價",
+          "book": "contact",
+          "url": "http://www.hsiangsun.com.tw/",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "taiwandive",
+      "name": "台灣潛水 Taiwan Dive Center",
+      "kind": "shop",
+      "url": "http://www.taiwan-dive.com/",
+      "city": "屏東",
+      "area": "屏東縣恆春鎮（墾丁店）",
+      "sport": "dive",
+      "adapter": "none",
+      "intro": "PADI 五星潛水中心，4.9 星、3,778 則評價。從無證照的體驗潛水到 PADI 教練班（IDC）完整開設，另有台潛民宿、環台潛旅與企業專案。",
+      "contact": {
+        "site": "http://www.taiwan-dive.com/",
+        "booking": "http://www.taiwan-dive.com/price"
+      },
+      "note": "官網為 Wix，價目表頁 /price 可自動核對。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "td-try",
+          "name": "體驗潛水（無證照）",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "沒有證照也能下水，由教練全程帶領。",
+          "price": "NT$2,500",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "td-ocean11",
+          "name": "海洋陪玩（一對一／一對二）",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "教練一對一或一對二陪同下水。",
+          "price": "一對一 NT$1,600／一對二 NT$1,100",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "td-kids",
+          "name": "PADI 泡泡小勇士",
+          "sport": "dive",
+          "kid": 1,
+          "desc": "PADI 為兒童設計的潛水入門體驗。",
+          "price": "NT$3,500",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "td-snorkel",
+          "name": "浮潛（一對六）",
+          "sport": "dive",
+          "kid": 1,
+          "desc": "教練帶隊浮潛。",
+          "price": "NT$700",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "td-fun",
+          "name": "旅遊潛水（有證照）",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "持證潛水員的岸潛、船潛與夜潛行程。",
+          "price": "岸潛一支 NT$1,050／兩支 NT$1,600；船潛一趟兩支 NT$2,600；夜潛一支 NT$1,550（2 人以上 NT$1,050）",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "td-course",
+          "name": "PADI 證照課程",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "Open Water 初級（船潛班／岸潛班）、Advanced 進階、自由潛水、救援潛水、潛水長、教練班 IDC。",
+          "price": "NT$5,000–16,000 不等，依課程級別",
+          "book": "online",
+          "url": "http://www.taiwan-dive.com/price",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "smlsup",
+      "name": "日月潭浪人槳堂 SUP",
+      "kind": "shop",
+      "url": "https://smlsup.rezio.shop/",
+      "city": "南投",
+      "area": "南投縣魚池鄉 日月潭",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "2017 年起在日月潭帶 SUP 的在地團隊，5.0 星、3,207 則評價。主打日出與雲霞時段，配置合法救生教練並提供空拍與專業攝影。",
+      "contact": {
+        "site": "https://smlsup.rezio.shop/",
+        "booking": "https://smlsup.rezio.shop/"
+      },
+      "note": "使用 rezio 線上預訂平台。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "sml-sup",
+          "name": "日月潭 SUP 立槳體驗",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "在地玩家帶領，遠離人群欣賞日月潭旭日、雲霞與青山碧水。含空拍與專業攝影。",
+          "price": "NT$1,900 起",
+          "book": "online",
+          "url": "https://smlsup.rezio.shop/",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "stayliuqiu",
+      "name": "居琉潛水 Stay Liuqiu Diving",
+      "kind": "shop",
+      "url": "https://stayliuqiu.com/",
+      "city": "屏東",
+      "area": "屏東縣琉球鄉 小琉球",
+      "sport": "dive",
+      "adapter": "none",
+      "intro": "小琉球潛水業者，Google 5.0 星、6,706 則評價，是全台評論數最高的潛水店之一。",
+      "contact": {
+        "site": "https://stayliuqiu.com/"
+      },
+      "note": "官網回傳壓縮內容無法直接解析，課程與價目需人工確認後補上。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "sl-dive",
+          "name": "小琉球潛水體驗與課程",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "小琉球海域潛水（細節待確認）。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://stayliuqiu.com/",
+          "verified": "2026-08-20"
+        }
+      ]
     }
   ]
 }
