@@ -59,6 +59,24 @@ def roc_to_ad(d):
     m = re.match(r'(\d{3})[/-]?(\d{2})[/-]?(\d{2})', d or '')
     return f"{int(m.group(1))+1911}{m.group(2)}{m.group(3)}" if m else ''
 
+def shop(id, name, city='', area='', sport='other', intro='', url='',
+         services=None, contact=None):
+    """店家實體 —— 卡片以店家為單位，服務項目內嵌在 srv 陣列裡。
+
+    使用者的心智模型是「先選店，再看這家提供什麼」，不是把十幾項服務攤平
+    在同一個列表裡比較。因此列表層只呈現店家，服務留到詳情頁展開。
+    """
+    services = services or []
+    return {
+        'i': id, 'n': (name or '').strip(), 'd': '', 'c': city,
+        'l': area[:60], 'g': [], 's': sport, 't': 'shop', 'sv': 1,
+        'k': 1 if any(s.get('kid') for s in services) else 0,
+        'ro': '', 'rc': '', 'st': '', 'u': url, 'src': name,
+        'a': '', 'f': '', 'desc': intro[:300],
+        'srv': services, 'contact': contact or {},
+    }
+
+
 def service(id, name, shop, city='', location='', sport='other', kid=0, desc='',
             price='', hours='', book='contact', note='', url='', area=''):
     """店家的常態服務（通行證、租借、嚮導、課程）—— 無固定日期，全年提供。

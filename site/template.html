@@ -403,6 +403,35 @@ footer{padding:2.4rem 0 0;font-size:12.5px;color:var(--ink-4);line-height:1.7}
   height:2px;border-radius:2px;background:var(--moss)}
 body[data-mode="shop"] .rbody{grid-template-columns:1fr}
 .mrail[hidden]{display:none}
+
+/* 店家卡片與詳情 */
+.shop-card .srv-peek{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:3px}
+.shop-card .srv-peek li{font-size:12.5px;color:var(--ink-2);display:flex;gap:8px;align-items:baseline}
+.shop-card .srv-peek li::before{content:"—";color:var(--ink-4);flex:none}
+.shop-card .srv-peek li em{margin-left:auto;font-style:normal;font-family:"Fraunces",serif;
+  font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.shop-card .srv-peek .more{color:var(--ink-4);font-size:11.5px}
+.shop-card .viz .when.sv .mo{font-size:22px;font-weight:700}
+.shop-body{grid-template-columns:1fr 260px}
+.shop-intro{margin:0 0 4px;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.srv-title{margin:22px 0 12px;font-size:15px;font-weight:700;display:flex;align-items:baseline;gap:8px}
+.srv-title em{font-style:normal;font-family:"Fraunces",serif;font-size:13px;color:var(--ink-3)}
+.srv-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.srv{border:1px solid var(--line);border-left:3px solid var(--sp);border-radius:10px;padding:14px 16px;background:var(--paper)}
+.srv-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.srv-h b{font-size:14.5px}
+.srv-book{margin-left:auto;font-size:11.5px;color:var(--exp);border:1px solid var(--exp);
+  border-radius:99px;padding:1px 9px;white-space:nowrap}
+.srv-d{margin:7px 0 0;font-size:13px;color:var(--ink-2);line-height:1.55}
+.srv-f{margin:6px 0 0;font-size:13px;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.srv-f i{font-style:normal;flex:none;font-size:10.5px;font-weight:700;color:var(--exp);
+  border:1px solid var(--exp);border-radius:3px;padding:0 5px;line-height:1.6;margin-top:2px}
+.srv-n{margin:6px 0 0;font-size:12px;color:var(--ink-3);line-height:1.5}
+.srv-go{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--moss);
+  border-bottom:1px solid color-mix(in oklab,var(--moss) 45%,transparent);padding-bottom:1px}
+.srv-go:hover{border-bottom-color:var(--moss)}
+.side .go.ghost{margin-top:8px;background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+@media(max-width:700px){.shop-body{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -563,11 +592,11 @@ const CAT = [
 const LBL = Object.fromEntries(CAT); LBL.tabletennis='桌球'; LBL.other='其他運動';
 LBL.basketball='籃球'; LBL.soccer='足球'; LBL.baseball='棒 / 壘球';
 const ST = {open:['報名中','open'],soon:['尚未開賣','soon'],shut:['已截止','shut'],always:['全年提供','always']};
-const TY = {race:'正式賽事',exp:'體驗活動',camp:'營隊課程',service:'店家服務'};
+const TY = {race:'正式賽事',exp:'體驗活動',camp:'營隊課程',service:'店家服務',shop:'店家'};
 const BOOK = {contact:'需洽詢預約',online:'線上預約',walkin:'現場報名'};
 
 function statusOf(e){
-  if(e.sv) return 'always';        // 常態服務：全年提供，向店家預約
+  if(e.sv) return 'always';        // 店家：全年營業，向店家預約
   if(e.st && e.st.indexOf('已截止')>-1) return 'shut';
   if(!e.rc && !e.ro) return 'soon';
   if(e.rc && e.rc.replace(/-/g,'') < TODAY) return 'shut';
@@ -752,7 +781,7 @@ function inWindow(e){
 function passes(e, skip){
   // 分頁：找賽事不混入店家常態服務；找店家只看服務／體驗／營隊
   if(MODE === 'shop' && e.t === 'race') return false;
-  if(MODE === 'race' && e.t === 'service') return false;
+  if(MODE === 'race' && (e.t === 'service' || e.t === 'shop')) return false;
   if(skip!=='sport'  && F.sport.size && !F.sport.has(e.s)) return false;
   if(skip!=='city'   && F.city.size  && !F.city.has(e.c))  return false;
   if(skip!=='kids'   && F.kids && !e.k) return false;
@@ -869,6 +898,25 @@ function trimCity(e){
   return (l===e.c || l===e.c+'市' || l===e.c+'縣') ? '' : l;
 }
 function isKidGroup(g){ return /^(0|1|1\.5|2|2\.1|3|3\.3|3\.5)K$/i.test(g) || /親子|青少年|兒童/.test(g); }
+
+function shopCard(e){
+  const sports = [...new Set(e.srv.map(s=>s.sport))];
+  const kidCount = e.srv.filter(s=>s.kid).length;
+  return `<article class="card shop-card" role="button" tabindex="0" data-id="${e.i}" style="--sp:var(--s-${e.s})">
+   <div class="viz ph ph-${e.s}">${scene(e)}<span class="veil"></span>
+     <span class="tags">${sports.map(s=>`<span class="tag" style="background:var(--s-${s})">${LBL[s]||s}</span>`).join('')}</span>
+     <span class="when sv"><span class="dl"><b class="mo">${e.srv.length}</b></span><span class="wd">項服務</span></span>
+     ${kidCount?`<span class="kid">${kidCount} 項親子</span>`:''}${saveBtn(e.i)}</div>
+   <div class="body">
+     <p class="name">${e.n}</p>
+     <p class="where"><b>${e.c||'—'}</b><span>${e.l||''}</span></p>
+     ${e.desc?`<p class="meta sv-desc">${e.desc}</p>`:''}
+     <ul class="srv-peek">${e.srv.slice(0,4).map(s=>
+        `<li>${s.n}${s.price&&!/洽詢/.test(s.price)?`<em>${s.price.split('｜')[0]}</em>`:''}</li>`).join('')}
+       ${e.srv.length>4?`<li class="more">…另有 ${e.srv.length-4} 項</li>`:''}</ul>
+     <div class="foot"><span class="st always"><i></i>點卡片看完整服務與預約</span></div>
+   </div></article>`;
+}
 
 function card(e){
   const dt = new Date(+e.d.slice(0,4), +e.d.slice(4,6)-1, +e.d.slice(6,8)), st = ST[e._s];
@@ -1010,13 +1058,13 @@ function render(){
   if(svList.length) gby.__sv = svList;
   const svBlock = svList.length
     ? `<section class="mgroup" id="g-__sv" data-m="__sv">`
-      + `<h3 class="mhead"><b>全年</b><span>店家常態服務</span><em>${svList.length} 項</em></h3>`
-      + `<div class="cardgrid">${svList.map(card).join('')}</div></section>`
+      + `<h3 class="mhead"><b>全年</b><span>戶外店家</span><em>${svList.length} 家</em></h3>`
+      + `<div class="cardgrid">${svList.map(e=>e.t==='shop'?shopCard(e):card(e)).join('')}</div></section>`
     : '';
   grid.innerHTML = svBlock + gkeys.map(m =>
     `<section class="mgroup" id="g-${m}" data-m="${m}">`
     + `<h3 class="mhead"><b>${+m.slice(4,6)}月</b><span>${m.slice(0,4)}</span><em>${gby[m].length} 場</em></h3>`
-    + `<div class="cardgrid">${gby[m].map(card).join('')}</div></section>`).join('');
+    + `<div class="cardgrid">${gby[m].map(e=>e.t==='shop'?shopCard(e):card(e)).join('')}</div></section>`).join('');
   buildRail(gkeys, gby, svList.length);
   grid.querySelectorAll('.card').forEach(el=>{
     el.addEventListener('click', ()=> openEvent(el.dataset.id));
@@ -1059,8 +1107,64 @@ document.getElementById('dl-ics').onclick = function(){
 };
 
 /* ── event detail modal ── */
+
+function wireSheet(modal){
+  modal.querySelectorAll('[data-close]').forEach(b=> b.onclick = closeModal);
+}
+
+function openShop(e){
+  const modal = document.getElementById('modal');
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  const sports = [...new Set(e.srv.map(s=>s.sport))];
+  const site = (e.contact&&e.contact.site) || e.u || '';
+  const rows = e.srv.map(s=>{
+    const link = (s.url||'').indexOf('http')===0 ? s.url : '';
+    return `<li class="srv" style="--sp:var(--s-${s.sport})">
+      <div class="srv-h">
+        <b>${s.n}</b>
+        ${s.kid?'<span class="g k">親子</span>':''}
+        <span class="srv-book">${BOOK[s.book]||'需洽詢'}</span>
+      </div>
+      ${s.desc?`<p class="srv-d">${s.desc}</p>`:''}
+      ${s.price?`<p class="srv-f"><i>價目</i>${s.price}</p>`:''}
+      ${s.hours?`<p class="srv-f"><i>時間</i>${s.hours}</p>`:''}
+      ${s.note?`<p class="srv-n">${s.note}</p>`:''}
+      ${link?`<a class="srv-go" href="${link}" target="_blank" rel="noopener">前往預約 ↗</a>`:''}
+    </li>`;
+  }).join('');
+  modal.querySelector('.sheet').innerHTML = `
+    <div class="sheet-viz ph ph-${e.s}" style="--sp:var(--s-${e.s})">${scene(e)}<span class="veil"></span>
+      <button class="sheet-x" type="button" aria-label="關閉" data-close>×</button>
+      <div class="ttl">
+        <span class="tags" style="position:static;display:flex;gap:6px;flex-wrap:wrap">
+          ${sports.map(s=>`<span class="tag" style="background:var(--s-${s})">${LBL[s]||s}</span>`).join('')}
+          <span class="ttag">店家</span>
+        </span>
+        <h2 id="sheet-title">${e.n}</h2>
+      </div>
+    </div>
+    <div class="sheet-body shop-body">
+      <div>
+        ${e.desc?`<p class="shop-intro">${e.desc}</p>`:''}
+        <div class="fact"><div class="k">地點</div><div class="v">${[e.c,e.l].filter(Boolean).join(' · ')||'—'}</div></div>
+        <h3 class="srv-title">服務項目 <em>${e.srv.length} 項</em></h3>
+        <ul class="srv-list">${rows}</ul>
+      </div>
+      <div class="side">
+        <p>各項服務的預約方式不同，請點該項目的「前往預約」。</p>
+        ${site?`<a class="go" href="${site}" target="_blank" rel="noopener">店家官網 ↗</a>`:''}
+        ${e.contact&&e.contact.facebook?`<a class="go ghost" href="${e.contact.facebook}" target="_blank" rel="noopener">Facebook ↗</a>`:''}
+        ${e.contact&&e.contact.instagram?`<a class="go ghost" href="${e.contact.instagram}" target="_blank" rel="noopener">Instagram ↗</a>`:''}
+        <div class="save-row">${saveBtn(e.i)}<span>收藏這家店</span></div>
+      </div>
+    </div>`;
+  wireSheet(modal);
+}
+
 function openEvent(id){
   const e = EV.find(x=>x.i===id); if(!e) return;
+  if(e.t === 'shop') return openShop(e);
   const dt = new Date(+e.d.slice(0,4), +e.d.slice(4,6)-1, +e.d.slice(6,8));
   const raw = (e.u||'').replace(/^簡章：/,'');
   const link = raw.indexOf('http')===0 ? raw : '';
@@ -1102,7 +1206,7 @@ function openEvent(id){
         <div class="save-row">${saveBtn(e.i)}<span>${isSaved(e.i)?'已收藏':'收藏這場賽事'}</span></div>
       </aside>
     </div>`;
-  modal.querySelectorAll('[data-close]').forEach(b=> b.onclick = closeModal);
+  wireSheet(modal);
 }
 function closeModal(){
   document.getElementById('modal').hidden = true;

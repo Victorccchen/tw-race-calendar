@@ -1,1 +1,92 @@
-[]
+[
+ {
+  "kind": "新增",
+  "id": "shop-gcoolsurf",
+  "name": "極酷衝浪 G-Cool Surf",
+  "date": "",
+  "src": "極酷衝浪 G-Cool Surf",
+  "detail": "宜蘭 · surf",
+  "url": "https://www.surfing.com.tw/"
+ },
+ {
+  "kind": "新增",
+  "id": "shop-yetopia",
+  "name": "野托邦 Yetopia",
+  "date": "",
+  "src": "野托邦 Yetopia",
+  "detail": "宜蘭 · bike",
+  "url": "https://yetopia.tw/"
+ },
+ {
+  "kind": "新增",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "宜蘭 · surf",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-13080",
+  "name": "2026 LAVAKIDS 花蓮太平洋小鐵人賽",
+  "date": "20261003",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13080"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-13081",
+  "name": "2026 LAVA花蓮太平洋鐵人賽",
+  "date": "20261004",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13081"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-12811",
+  "name": "2026 巴歌浪鐵人三項賽",
+  "date": "20261017",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12811"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-12837",
+  "name": "2026 IRONMAN 70.3 Kenting 墾丁國際鐵人三項賽",
+  "date": "20261101",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12837"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-12846",
+  "name": "2026 LAVA大鵬灣鐵人賽",
+  "date": "20261206",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12846"
+ },
+ {
+  "kind": "消失",
+  "id": "biji-13054",
+  "name": "2027 LAVA 玩賽樂園",
+  "date": "20270312",
+  "src": "運動筆記",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13054"
+ },
+ {
+  "kind": "組別",
+  "id": "biji-13061",
+  "name": "2026 HOT DOG Trail 台中系列活動-熱血接力賽",
+  "date": "20260830",
+  "src": "運動筆記",
+  "detail": "組別：36K/21K/9K → 36K/21K/9K/21K/10K/4K",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13061"
+ }
+]
