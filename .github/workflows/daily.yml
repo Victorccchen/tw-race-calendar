@@ -54,17 +54,14 @@ jobs:
           echo "index.html $((SIZE/1024)) KB · events.json $(($(wc -c < web/data/events.json)/1024)) KB"
 
       - name: 部署到 Vercel
-        # 用官方 prebuilt 流程：先在 CI 建置成 .vercel/output 再上傳。
-        # 直接 deploy 會套用 .gitignore 規則，把 refresh.py 剛產生的
-        # web/public/index.html 排除掉，導致部署出空站台（alias 回 404）。
+        # Vercel CLI 上傳時會套用 .gitignore。那兩個產出物在版控中被忽略
+        # （避免 2MB 檔案每天進 git 歷史），但在 CI 是 refresh.py 現場產生的，
+        # 若不解除忽略就會被排除，部署出空站台。CI 工作區是拋棄式的，直接移除該規則。
         run: |
           set -e
-          cd web
-          npx --yes vercel@latest pull --yes --environment=production --token "$VERCEL_TOKEN"
-          npx --yes vercel@latest build --prod --token "$VERCEL_TOKEN"
-          [ -s .vercel/output/static/index.html ] \
-            || { echo "::error::建置產物不含 index.html"; exit 1; }
-          npx --yes vercel@latest deploy --prebuilt --prod --yes --token "$VERCEL_TOKEN"
+          sed -i '\|^web/public/index.html$|d; \|^web/data/events.json$|d' .gitignore
+          npx --yes vercel@latest deploy --prod --yes \
+            --token "$VERCEL_TOKEN" --cwd web
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -89,6 +86,7 @@ jobs:
         run: |
           git config user.name  "race-calendar-bot"
           git config user.email "actions@users.noreply.github.com"
+          git checkout -- .gitignore || true   # 還原部署前的暫時修改
           git add data/events.json data/changes data/review data/snapshots
           if git diff --staged --quiet; then
             echo "無資料變動，略過 commit"
