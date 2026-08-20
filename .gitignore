@@ -1,0 +1,20 @@
+# 每日重新產生的產出物，不進版控（2MB+ 會讓歷史暴增）
+site/index.html
+web/public/index.html
+web/data/events.json
+
+# 執行期產物
+logs/
+data/indie_fingerprints.json
+
+# 憑證與本機設定
+.env
+.env.local
+.env.*.local
+web/.vercel/
+.vercel/
+
+# 系統
+.DS_Store
+__pycache__/
+*.pyc

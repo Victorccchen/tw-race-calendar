@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>tw.racecal.daily</string>
+  <key>ProgramArguments</key>
+  <array><string>/Users/victorccc/Downloads/tw-race-calendar/scheduler/daily.sh</string></array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>10</integer></dict>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>/Users/victorccc/Downloads/tw-race-calendar/logs/launchd.out</string>
+  <key>StandardErrorPath</key><string>/Users/victorccc/Downloads/tw-race-calendar/logs/launchd.err</string>
+</dict>
+</plist>

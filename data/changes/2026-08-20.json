@@ -1,0 +1,20 @@
+[
+ {
+  "kind": "新增",
+  "id": "fk-tainan-2026",
+  "name": "ForceKids 小鐵人挑戰賽－台南站",
+  "date": "20261107",
+  "src": "Fun3sport ForceKids 小鐵人",
+  "detail": "臺南 · tri",
+  "url": "https://eventgo.tw/search?q=ForceKids"
+ },
+ {
+  "kind": "新增",
+  "id": "fk-taipei-2027",
+  "name": "ForceKids 小鐵人挑戰賽－大台北站",
+  "date": "20270307",
+  "src": "Fun3sport ForceKids 小鐵人",
+  "detail": "新北 · tri",
+  "url": "https://eventgo.tw/event/a579626a-7b8b-4265-9138-2f44921dc2a0"
+ }
+]

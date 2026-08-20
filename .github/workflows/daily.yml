@@ -1,0 +1,65 @@
+name: 每日刷新與部署
+
+on:
+  schedule:
+    # GitHub Actions 使用 UTC。台北 07:10 = 前一日 UTC 23:10
+    - cron: '10 23 * * *'
+  workflow_dispatch:        # 允許手動觸發
+
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # 需要把異動清單與快照 commit 回 repo
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # 全部使用標準函式庫，無需 pip install
+
+      - name: 抓取、比對、產出
+        run: python3 refresh.py
+        env:
+          TZ: Asia/Taipei
+
+      - name: 摘要
+        run: |
+          D=$(date +%F)
+          echo "### 賽事異動 · $D" >> $GITHUB_STEP_SUMMARY
+          if [ -f "data/changes/$D.md" ]; then
+            tail -n +2 "data/changes/$D.md" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "<details><summary>待驗證佇列</summary>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          [ -f "data/review/$D.md" ] && tail -n +2 "data/review/$D.md" >> $GITHUB_STEP_SUMMARY
+          echo "</details>" >> $GITHUB_STEP_SUMMARY
+
+      - name: 部署到 Vercel
+        run: |
+          npx --yes vercel@latest deploy --prod --yes \
+            --token "$VERCEL_TOKEN" --cwd web
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 回寫資料狀態
+        run: |
+          git config user.name  "race-calendar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/events.json data/changes data/review data/snapshots
+          if git diff --staged --quiet; then
+            echo "無資料變動，略過 commit"
+          else
+            git commit -m "資料刷新 $(date +%F)"
+            git push
+          fi

@@ -1,0 +1,150 @@
+{
+  "_說明": "個人商戶／小型專業主辦。這類主辦的活動有獨特性（常態開課、小班、含裝備教學），但網站多為 SPA 或社群頁，無法穩定自動解析。流程：自動偵測頁面變動 → 進待驗證佇列 → 人工確認後寫入 events 陣列 → 前台才顯示。",
+  "operators": [
+    {
+      "id": "yetopia",
+      "name": "野托邦 Yetopia",
+      "url": "https://yetopia.tw/",
+      "city": "宜蘭",
+      "sport": "bike",
+      "note": "台灣唯一登山車公園。SPA 站，所有路徑回同一頁，無法自動解析活動。",
+      "watch": true,
+      "events": [
+        {
+          "id": "yeto-mtb-intro",
+          "name": "野托邦登山車體驗課 完全新手 / 基礎班",
+          "date": "20260906",
+          "recurring": true,
+          "location": "宜蘭縣頭城鎮 野托邦登山車公園",
+          "groups": [
+            "完全新手",
+            "基礎班",
+            "進階班",
+            "青少年"
+          ],
+          "age": "常態開課，分級招生，設青少年班",
+          "fee": "全套裝備提供（登山車、護具、安全帽）+ 教練帶領",
+          "url": "https://yetopiamtb.my.canva.site/",
+          "kind": "exp",
+          "kid": 1,
+          "verified": "2026-08-19"
+        },
+        {
+          "id": "yeto-xc-exp",
+          "name": "野托邦 × XTERRA 輕度 MTB XC 山野騎行體驗",
+          "date": "20261025",
+          "recurring": true,
+          "location": "宜蘭縣頭城鎮濱海路三段 野托邦 Yetopia",
+          "groups": [
+            "新手體驗",
+            "青少年班"
+          ],
+          "age": "青少年班／親子同行（依身高配車）",
+          "fee": "含登山車、護具、安全帽與教練帶領",
+          "url": "https://yetopia.tw/",
+          "kind": "exp",
+          "kid": 1,
+          "verified": "2026-08-19"
+        }
+      ]
+    },
+    {
+      "id": "xcamp",
+      "name": "XTERRA X-Camp",
+      "url": "https://x-camp.xterrataiwan.com/",
+      "city": "臺中",
+      "sport": "bike",
+      "note": "XTERRA 的體驗活動品牌。靜態頁可解析，但年度場次不定期公布。",
+      "watch": true,
+      "events": [
+        {
+          "id": "xcamp-guguan",
+          "name": "X-Camp 越野探索兩日營 台中谷關",
+          "date": "20270109",
+          "location": "臺中市和平區裡冷巷 馬告的傳奇露營區",
+          "groups": [
+            "MTB X Ride",
+            "越野跑 X Run",
+            "親子玩野 X Kids Fun"
+          ],
+          "age": "親子組 3–10 歲（3–6 歲須成人陪同）· MTB 滿 12 歲 · 越野跑滿 10 歲",
+          "fee": "親子組 NT$2,200 起 / MTB NT$3,800 起 / 越野跑 NT$3,500 起",
+          "url": "https://x-camp.xterrataiwan.com/",
+          "kind": "camp",
+          "kid": 1,
+          "verified": "2026-08-19"
+        }
+      ]
+    },
+    {
+      "id": "fun3sport",
+      "name": "Fun3sport ForceKids 小鐵人",
+      "url": "https://eventgo.tw/search?q=ForceKids",
+      "city": "",
+      "sport": "tri",
+      "note": "瘋三鐵股份有限公司主辦的兒童鐵人三項系列賽，站點含大台北（臺北大學三峽校區）、台南、台中、宜蘭、體育大學、六福村。報名走伊貝特，但該站有人機驗證（CAPTCHA）無法自動抓取；日期改由 EventGo 的結構化資料取得。",
+      "watch": true,
+      "events": [
+        {
+          "id": "fk-tainan-2026",
+          "name": "ForceKids 小鐵人挑戰賽－台南站",
+          "date": "20261107",
+          "city": "臺南",
+          "location": "國立臺南高級海事水產職業學校",
+          "groups": [
+            "小鐵人"
+          ],
+          "kind": "race",
+          "kid": 1,
+          "age": "幼兒園～高中分齡組",
+          "fee": "報名走伊貝特報名網",
+          "url": "https://eventgo.tw/search?q=ForceKids",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "fk-taipei-2027",
+          "name": "ForceKids 小鐵人挑戰賽－大台北站",
+          "date": "20270307",
+          "city": "新北",
+          "location": "臺北大學三峽校區（新北市三峽區大學路151號）",
+          "groups": [
+            "小鐵人"
+          ],
+          "kind": "race",
+          "kid": 1,
+          "age": "幼兒園／國小／國中／高中分齡",
+          "fee": "報名走伊貝特報名網",
+          "url": "https://eventgo.tw/event/a579626a-7b8b-4265-9138-2f44921dc2a0",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "fk-taichung",
+          "name": "ForceKids 小鐵人挑戰賽－台中站",
+          "date": "",
+          "city": "臺中",
+          "kind": "race",
+          "kid": 1,
+          "url": "https://bao-ming.com/eb/content/6809"
+        },
+        {
+          "id": "fk-yilan",
+          "name": "ForceKids 小鐵人挑戰賽－宜蘭場",
+          "date": "",
+          "city": "宜蘭",
+          "kind": "race",
+          "kid": 1,
+          "url": "https://eventgo.tw/search?q=ForceKids"
+        },
+        {
+          "id": "fk-leofoo",
+          "name": "ForceKids × 六福村小鐵人挑戰賽",
+          "date": "",
+          "city": "新竹",
+          "kind": "race",
+          "kid": 1,
+          "url": "https://eventgo.tw/search?q=ForceKids"
+        }
+      ]
+    }
+  ]
+}
