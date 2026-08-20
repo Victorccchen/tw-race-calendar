@@ -780,8 +780,9 @@ function inWindow(e){
 }
 function passes(e, skip){
   // 分頁：找賽事不混入店家常態服務；找店家只看服務／體驗／營隊
-  if(MODE === 'shop' && e.t === 'race') return false;
-  if(MODE === 'race' && (e.t === 'service' || e.t === 'shop')) return false;
+  // 找店家只放店家；有日期的賽事（含體驗、營隊）一律歸找賽事
+  if(MODE === 'shop') return e.t === 'shop';
+  if(e.t === 'shop' || e.t === 'service') return false;
   if(skip!=='sport'  && F.sport.size && !F.sport.has(e.s)) return false;
   if(skip!=='city'   && F.city.size  && !F.city.has(e.c))  return false;
   if(skip!=='kids'   && F.kids && !e.k) return false;
@@ -1049,7 +1050,7 @@ function render(){
   const list = EV.filter(e=>passes(e)).sort((a,b)=>a.d.localeCompare(b.d));
   document.getElementById('tally').textContent = list.length;
   const unit = document.getElementById('tally-unit');
-  if(unit) unit.textContent = MODE === 'shop' ? '項店家服務與體驗' : '場賽事';
+  if(unit) unit.textContent = MODE === 'shop' ? '家戶外店家' : '場賽事';
   document.getElementById('empty').hidden = list.length>0;
   const grid = document.getElementById('grid');
   const svList = list.filter(e=>e.sv), dated = list.filter(e=>!e.sv);
