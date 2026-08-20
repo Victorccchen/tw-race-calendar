@@ -1,5 +1,5 @@
 {
-  "_說明": "個人商戶／小型專業主辦。這類主辦的活動有獨特性（常態開課、小班、含裝備教學），但網站多為 SPA 或社群頁，無法穩定自動解析。流程：自動偵測頁面變動 → 進待驗證佇列 → 人工確認後寫入 events 陣列 → 前台才顯示。",
+  "_說明": "主辦方名冊。原則：聚合平台（伊貝特、活動咖、EventGo）只用來『發現主辦方』，賽事資料一律回主辦方官網取得。伊貝特有人機驗證無法自動抓取，不列為資料來源。\nadapter 決定抓法：wp = WordPress REST API；none = 純人工維護（SPA／社群頁）。\n自動抓到的場次仍需人工確認後才會標上 verified 並進入前台。",
   "operators": [
     {
       "id": "yetopia",
@@ -46,7 +46,8 @@
           "kid": 1,
           "verified": "2026-08-19"
         }
-      ]
+      ],
+      "adapter": "none"
     },
     {
       "id": "xcamp",
@@ -74,15 +75,16 @@
           "kid": 1,
           "verified": "2026-08-19"
         }
-      ]
+      ],
+      "adapter": "none"
     },
     {
       "id": "fun3sport",
       "name": "Fun3sport ForceKids 小鐵人",
-      "url": "https://eventgo.tw/search?q=ForceKids",
+      "url": "https://fun3sport.com/",
       "city": "",
       "sport": "tri",
-      "note": "瘋三鐵股份有限公司主辦的兒童鐵人三項系列賽，站點含大台北（臺北大學三峽校區）、台南、台中、宜蘭、體育大學、六福村。報名走伊貝特，但該站有人機驗證（CAPTCHA）無法自動抓取；日期改由 EventGo 的結構化資料取得。",
+      "note": "瘋三鐵股份有限公司。官網為 WordPress，可用 REST API 取公告。報名走伊貝特（該站有人機驗證，不抓取，僅作為報名連結提供給使用者）。",
       "watch": true,
       "events": [
         {
@@ -144,7 +146,16 @@
           "kid": 1,
           "url": "https://eventgo.tw/search?q=ForceKids"
         }
-      ]
+      ],
+      "adapter": "wp",
+      "wp": {
+        "base": "https://fun3sport.com/wp-json/wp/v2",
+        "categories": [
+          42,
+          44
+        ],
+        "match": "ForceKids|Forcekids|小鐵人|鐵人賽"
+      }
     }
   ]
 }

@@ -27,7 +27,24 @@ refresh.py
 | `kktix.py` | KKTIX 組織 API | 官方 JSON（Spartan 等商業主辦） | 高 |
 | `ctta.py` | 中華民國網球協會 9 個分類頁 | HTML | 中（日期需從標題／摘要解析） |
 | `sunmoonlake.py` | 日月潭國家風景區管理處 | 靜態 HTML，穩定 | 高 |
-| `curated.py` | 人工維護（X-Camp、野托邦） | 手動 | — |
+| `indie.py` | 主辦方名冊（野托邦、X-Camp、Fun3sport ForceKids） | WordPress REST API + 人工驗證 | 高 |
+
+### 主辦方優先原則
+
+聚合平台（伊貝特、活動咖、EventGo）**只用來發現主辦方，不作為資料來源**。
+找到主辦方後，一律回其官網取得賽期與報名連結——聚合站的資料常落後或不完整。
+
+伊貝特（bao-ming.com）有人機驗證（CAPTCHA），不抓取，僅作為報名連結提供給使用者。
+
+主辦方名冊在 `data/indie_operators.json`，每個主辦標記 `adapter`：
+
+| adapter | 抓法 |
+|---|---|
+| `wp` | WordPress REST API（`/wp-json/wp/v2/posts`），依分類與關鍵字過濾公告 |
+| `none` | 純人工維護（SPA 或社群頁，無法穩定解析） |
+
+自動撈到的場次**一律先進待驗證佇列**，人工確認後寫進名冊並標上 `verified`，
+才會出現在前台。這是「寧缺勿濫」的落實方式。
 
 **為什麼不爬 Facebook**：Meta 已封鎖未登入訪客讀取粉專內容，官方 Graph API 讀取
 Page Feed 需通過 App Review 的 `Page Public Content Access`，且版本汰換頻繁。

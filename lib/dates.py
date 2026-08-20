@@ -97,3 +97,18 @@ def cross_checked(text):
         if (mm, dd) in ranges:
             return f'{y}{mm:02d}{dd:02d}'
     return None
+
+# 敘述句語序：「2026 年 5 月 17 日舉辦的 ForceKids…」日期在關鍵詞之前
+BEFORE_KW = re.compile(
+    r'(?:民國\s*)?(\d{3,4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日'
+    r'\s*(?:即將|正式)?\s*(?:舉辦|舉行|登場|開跑|開賽|起跑)')
+
+def narrative(text):
+    """從公告敘述句取賽期。主辦方官網多為部落格式文章，日期寫在「舉辦」之前。"""
+    for m in BEFORE_KW.finditer(text or ''):
+        y = _norm_year(m.group(1))
+        if not y: continue
+        mm, dd = int(m.group(2)), int(m.group(3))
+        if 1 <= mm <= 12 and 1 <= dd <= 31:
+            return f'{y}{mm:02d}{dd:02d}'
+    return None

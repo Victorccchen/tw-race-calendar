@@ -12,6 +12,7 @@ import json, os, re, hashlib, html
 from _http import get
 import normalize as N
 import review as RV
+import dates as DT
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONF = os.path.join(ROOT, 'data', 'indie_operators.json')
@@ -37,8 +38,51 @@ def fetch(watch=True):
             e['o'] = 'indie'                       # 個人商戶標記
             if it.get('recurring'): e['r'] = 1     # 常態開課
             out.append(e)
+    for op in conf['operators']:
+        if op.get('adapter') == 'wp':
+            _from_wordpress(op, {e['i'] for e in out})
     if watch: _watch(conf)
     return out
+
+
+def _from_wordpress(op, known_ids):
+    """從主辦方自己的 WordPress 撈公告，解析賽事日期。
+
+    只做「發現」——抓到的場次一律進待驗證佇列，人工確認後才寫進名冊、
+    標上 verified，才會出現在前台。寧缺勿濫。
+    """
+    cfg = op.get('wp', {})
+    base = cfg.get('base')
+    if not base: return
+    pat = re.compile(cfg.get('match', '.'), re.I)
+    import datetime
+    today = datetime.date.today().strftime('%Y%m%d')
+    for cat in cfg.get('categories', []):
+        raw = get(f'{base}/posts?categories={cat}&per_page=30'
+                  '&_fields=id,date,link,title,content')
+        if not raw:
+            RV.flag(op['name'], op['name'], f'WordPress 分類 {cat} 取得失敗', op['url'])
+            continue
+        try: posts = json.loads(raw)
+        except Exception as e:
+            RV.flag(op['name'], op['name'], f'WordPress 回應非 JSON：{e}', op['url']); continue
+        for po in posts:
+            title = _plain(po.get('title', {}).get('rendered', ''))
+            if not pat.search(title): continue
+            body = _plain(po.get('content', {}).get('rendered', ''))
+            txt = title + ' ' + body
+            d = (DT.narrative(txt)                       # 「…日舉辦」敘述句
+                 or DT.first_after(txt, ['比賽日期', '賽事日期', '活動日期', '比賽時間'])
+                 or '')
+            if not d or d < today:
+                continue                      # 沒日期或已過期的公告不需人工處理
+            RV.flag(op['name'], title,
+                    f'官網公告解析出賽期 {d[:4]}-{d[4:6]}-{d[6:]}，請確認後寫入名冊',
+                    po.get('link', op['url']), body[:110])
+
+
+def _plain(s):
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s or ''))).strip()
 
 def _watch(conf):
     """偵測主辦頁面變動 —— 有變動代表可能有新梯次，需人工看一眼。"""
