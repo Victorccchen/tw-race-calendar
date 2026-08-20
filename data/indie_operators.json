@@ -329,6 +329,392 @@
           "verified": "2026-08-20"
         }
       ]
+    },
+    {
+      "id": "zongguxian",
+      "name": "縱谷線工作室",
+      "kind": "shop",
+      "url": "https://linktr.ee/zgx0220106",
+      "city": "花蓮",
+      "area": "花蓮縱谷",
+      "sport": "tribe",
+      "adapter": "none",
+      "intro": "以「縱谷線帶您探索部落玩什麼」為主軸的花蓮部落深度體驗團隊。招牌是在溪流上開席的「河上餐桌」流水席，另辦部落遊程、企業包團與學校冬夏令營。曾獲台灣真善美、趨勢造夢者與 ShoppingDesign 報導。",
+      "contact": {
+        "site": "https://linktr.ee/zgx0220106",
+        "facebook": "https://www.facebook.com/ZGX220106",
+        "instagram": "https://www.instagram.com/zongguxianstudio/"
+      },
+      "note": "僅有 Linktree 與社群頁，無獨立官網；報名走 Google 表單（JS 渲染，價目抓不到）。梯次與價目需人工向工作室確認。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "zgx-river-am",
+          "name": "部落食事・河上餐桌（早上場）",
+          "sport": "tribe",
+          "kid": 0,
+          "desc": "在溪流上開席的部落流水席，一日行程。7–8 月與 9–10 月各有梯次。",
+          "price": "價目需向工作室確認",
+          "book": "online",
+          "url": "https://forms.gle/LMLRUU3BfZsb1pMa7",
+          "note": "報名走 Google 表單，梯次依月份分開。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "zgx-river-pm",
+          "name": "部落食事・河上餐桌（晚上場）",
+          "sport": "tribe",
+          "kid": 0,
+          "desc": "河上餐桌的夜間場次，一日行程。",
+          "price": "價目需向工作室確認",
+          "book": "online",
+          "url": "https://forms.gle/5rydCCyCuXWm48Ez9",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "zgx-tour",
+          "name": "部落遊程・企業包團・客製化",
+          "sport": "tribe",
+          "kid": 0,
+          "desc": "專辦部落遊程、企業團體與包團客製化行程。",
+          "price": "依需求報價",
+          "book": "contact",
+          "url": "https://www.facebook.com/ZGX220106",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "zgx-camp",
+          "name": "學校冬夏令營",
+          "sport": "tribe",
+          "kid": 1,
+          "desc": "為學校團體規劃的部落主題冬令營與夏令營。",
+          "price": "依需求報價",
+          "book": "contact",
+          "url": "https://www.facebook.com/ZGX220106",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "divepro",
+      "name": "南青潛水 DivePro",
+      "kind": "shop",
+      "url": "https://www.divepro.tw/",
+      "city": "屏東",
+      "area": "屏東縣恆春鎮 墾丁",
+      "sport": "dive",
+      "adapter": "none",
+      "intro": "1980 年創立，墾丁第一家潛水店，見證墾丁海域從世界級潛場歷經破壞到復育的過程。全店資深教練，一人即可開課、每天都有課與潛水行程，提供水肺與自由潛水課程。",
+      "contact": {
+        "site": "https://www.divepro.tw/",
+        "booking": "https://www.divepro.tw/booking"
+      },
+      "note": "官網為 Wix 靜態頁，各課程頁價目可自動核對。附設民宿，住宿每晚 NT$500–2,700。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "dp-shore",
+          "name": "岸潛",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "墾丁海域岸潛，含氣瓶、導潛與潛點接送。",
+          "price": "每支 NT$900；租用全套裝備每日 NT$1,100",
+          "book": "online",
+          "url": "https://www.divepro.tw/booking",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-boat",
+          "name": "船潛",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "含小點心、船資、氣瓶、導潛與潛點接送。",
+          "price": "二支 NT$2,500（進階證照）／OWD 二支 NT$3,500；租用裝備每日 NT$1,600",
+          "book": "online",
+          "url": "https://www.divepro.tw/booking",
+          "note": "船潛登船後恕不退費。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-owd",
+          "name": "開放水域潛水員 OWD",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "進入海洋世界的必修課，取得證照後可在全世界潛水。適合完全不會潛水的初學者。",
+          "price": "固定日期班 NT$9,800（含裝備 12,000）／自選日期班 NT$12,800（含裝備 15,000）／VIP 班 NT$14,800（含裝備 17,000）",
+          "book": "online",
+          "url": "https://www.divepro.tw/owd",
+          "note": "固定日期班每週二班：週四 08:00～週五 15:00、週六 08:00 起。怕水或不會游泳建議選 VIP 班。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-aowd",
+          "name": "進階開放水域潛水員 AOWD",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "取得 OWD 後，一次體驗五種不同專長潛水。",
+          "price": "固定日期班 NT$12,000／自選日期班 NT$13,800／專屬 VIP 班 NT$15,800",
+          "book": "online",
+          "url": "https://www.divepro.tw/aowd",
+          "note": "含教學費、國際簽證與教材，不含裝備與食宿；租裝備每日 NT$1,600（含進階電腦錶）。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-free1",
+          "name": "初級自由潛水員",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "不會游泳但不怕水者適用。練習靜態閉氣、身體線性、鴨式下潛等技巧。",
+          "price": "固定日期班 NT$6,300（含一天裝備 6,800）／自選日期班 NT$10,300（含裝備 10,800）／VIP 班 NT$12,300（含裝備 12,800）",
+          "book": "online",
+          "url": "https://www.divepro.tw/freediving",
+          "note": "固定日期班每週三班：週三、週六 08:00～17:00。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-free2",
+          "name": "自由潛水員（會游泳）",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "不帶重裝、吸一口氣下潛悠游，是自由潛水之路的必修課。",
+          "price": "固定日期班 NT$10,800（含二天裝備 11,800）／自選日期班 NT$14,800（含裝備 15,800）／VIP 班 NT$16,800（含裝備 17,800）",
+          "book": "online",
+          "url": "https://www.divepro.tw/freediving-level-1",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "dp-freescuba",
+          "name": "水肺 & 自由潛水一起學",
+          "sport": "dive",
+          "kid": 0,
+          "desc": "水肺與自由潛水合併課程。",
+          "price": "價目見官網課程頁",
+          "book": "online",
+          "url": "https://www.divepro.tw/freescuba",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "eyetaiwan",
+      "name": "愛呆玩戶外探索",
+      "kind": "shop",
+      "url": "https://eyetaiwan.com/zh-TW/",
+      "city": "花蓮",
+      "area": "花蓮・太魯閣・縱谷",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "花蓮在地水上活動團隊，Google 5.0 星、1,652 則好評。小團制、自家教練、全程免費拍照，教練與學員比 1:6。行程涵蓋清水斷崖 SUP／獨木舟、鯉魚潭 SUP、白鮑溪溯溪。",
+      "contact": {
+        "site": "https://eyetaiwan.com/zh-TW/",
+        "facebook": "https://facebook.com/EyeTaiwan.Outdoor",
+        "instagram": "https://instagram.com/eyetaiwan.tw"
+      },
+      "note": "官網為靜態頁，各行程頁價目與年齡限制可自動核對。含富邦水域活動公共意外責任險。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "eye-cliff-sup",
+          "name": "清水斷崖 SUP 立式划槳",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "在台灣最高海崖下迎接太平洋日出。日出前約 85 分鐘集合，留時間做安全講解與裝備穿著。",
+          "price": "NT$1,450",
+          "book": "online",
+          "url": "https://eyetaiwan.com/zh-TW/tours/water/qingshui-cliff-sup/",
+          "note": "年齡 7–60 歲、身高至少 120 公分；一人一板 ≤130 公斤，雙人一板合計 ≤180 公斤。不會游泳可參加。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "eye-cliff-kayak",
+          "name": "清水斷崖獨木舟",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "日出時分划獨木舟仰望全台最高海上斷崖。",
+          "price": "NT$1,250",
+          "book": "online",
+          "url": "https://eyetaiwan.com/zh-TW/tours/water/qingshui-cliff-kayak/",
+          "note": "年齡 7–60 歲、身高至少 120 公分；每人 ≤130 公斤，雙人合計 ≤180 公斤。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "eye-liyu-sup",
+          "name": "鯉魚潭 SUP",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "風平浪靜、全年可玩，中央山脈下的天空之鏡。約 1.5 小時、距離約 2 公里。",
+          "price": "NT$1,050",
+          "book": "online",
+          "url": "https://eyetaiwan.com/zh-TW/tours/water/liyulake-sup/",
+          "note": "年齡 4–70 歲（60 歲以上需規律運動）；小朋友建議 110 公分以上。初學者、親子、長者與毛孩皆適合。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "eye-river",
+          "name": "白鮑溪溯溪尋玉",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "初學者最適合的半日溯溪：跳水、攀岩、深潭體驗，白鮑溪是台灣玉產地可邊玩邊尋寶。",
+          "price": "NT$1,050",
+          "book": "online",
+          "url": "https://eyetaiwan.com/zh-TW/tours/water/hualien-river-tracing/",
+          "note": "年齡 7–55 歲；兒童建議 120 公分、20 公斤以上，能自行行走即可。含全套溯溪裝備與防寒衣。",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "npt",
+      "name": "NPT 涅普頓戶外探索",
+      "kind": "shop",
+      "url": "https://nptoutdoor.rezio.shop/zh-TW",
+      "city": "宜蘭",
+      "area": "宜蘭東澳・南方澳",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "宜蘭東澳的水上活動團隊，主打東澳灣、粉鳥林、烏岩角海蝕洞與南方澳豆腐岬的 SUP 與獨木舟行程。",
+      "contact": {
+        "site": "https://nptoutdoor.rezio.shop/zh-TW",
+        "booking": "https://nptoutdoor.rezio.shop/zh-TW"
+      },
+      "note": "使用 rezio 線上預訂平台，行程與價目可自動核對。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "npt-sup-dongao",
+          "name": "東澳 SUP 立槳體驗｜東澳灣巡航、粉鳥林探險",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "東澳灣巡航並探索粉鳥林。",
+          "price": "NT$1,700 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/LOMAU2",
+          "note": "2 人成團。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-kayak-wuyan",
+          "name": "東澳獨木舟探險之旅｜烏岩角海蝕洞秘境沙灘",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "划向烏岩角海蝕洞與秘境沙灘，回程搭動力船。",
+          "price": "NT$2,000 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/TXCSZW",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-kayak-dongao",
+          "name": "東澳獨木舟體驗｜東澳灣巡航、探索粉鳥林",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "入門款獨木舟行程。",
+          "price": "NT$1,200 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/LBVBWT",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-combo",
+          "name": "海陸雙享｜SUP＋全地形越野車＋高空滑索",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "SUP 立槳搭配全地形越野車，加贈高空滑索。",
+          "price": "NT$2,488（保證成團）",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/F0ISXS",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-sup-half",
+          "name": "東澳 SUP 半日遊＋動力船返航｜烏岩角海蝕洞",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "挑戰護國神山烏岩角海蝕洞秘境沙灘，動力船返航。",
+          "price": "NT$2,500 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/JBZBYL",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-kayak-nanfangao",
+          "name": "南方澳獨木舟體驗｜豆腐岬、賊仔澳",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "徜徉豆腐岬、勇闖賊仔澳。",
+          "price": "NT$1,200 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/DXPIXK",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "npt-sup-nanfangao",
+          "name": "南方澳 SUP 立槳體驗｜豆腐岬、賊仔澳",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "南方澳海域的立槳行程。",
+          "price": "NT$1,700 起",
+          "book": "online",
+          "url": "https://nptoutdoor.rezio.shop/zh-TW/product/JJJU22",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "haidao",
+      "name": "海島舟記 海島戶外探索",
+      "kind": "shop",
+      "url": "https://haidaokayak.com/",
+      "city": "宜蘭",
+      "area": "宜蘭東澳・粉鳥林",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "以獨木舟為主的宜蘭海域戶外團隊，行程標示難易度，每年 4–9 月為活動季。",
+      "contact": {
+        "site": "https://haidaokayak.com/"
+      },
+      "note": "官網 TLS 版本過舊，Python 預設連線會被拒（TLSV1_ALERT_PROTOCOL_VERSION），需放寬加密套件才抓得到；價目以官網公告為準。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "hd-wuyanjiao",
+          "name": "宜蘭獨木舟登陸烏岩角",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "划獨木舟登陸烏岩角，難易度 ★★。活動季 4–9 月。",
+          "price": "價目以官網公告為準",
+          "book": "contact",
+          "url": "https://haidaokayak.com/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hd-sup",
+          "name": "東澳灣粉鳥林 SUP 體驗",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "粉鳥林海域立槳體驗，難易度 ★。活動季 4–9 月。",
+          "price": "價目以官網公告為準",
+          "book": "contact",
+          "url": "https://haidaokayak.com/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "hd-kayak",
+          "name": "東澳粉鳥林獨木舟體驗",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "入門獨木舟行程，難易度 ★。活動季 4–9 月。",
+          "price": "價目以官網公告為準",
+          "book": "contact",
+          "url": "https://haidaokayak.com/",
+          "verified": "2026-08-20"
+        }
+      ]
     }
   ]
 }

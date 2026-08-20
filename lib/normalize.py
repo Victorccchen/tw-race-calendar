@@ -12,6 +12,7 @@ BALL = [('pickleball',r'匹克球|pickleball'),
         ('basketball',r'籃球'),('soccer',r'足球'),('baseball',r'棒球|壘球'),
         ('ballother',r'排球|氣排球|撞球|槌球|木球|保齡球|躲避球|巧固球|地板球|高爾夫')]
 NAME = [('obstacle',r'斯巴達|spartan|障礙'),
+        ('tribe',r'部落|原民|原住民|族語|獵人|八卦網|野放|縱谷線'),
         ('dive',r'潛水|自由潛水|freedive|scuba'),
         ('surf',r'衝浪|surf|SUP|立槳'),
         ('hike',r'登山|健行|百岳|縱走|郊山'),
@@ -113,7 +114,7 @@ def event(id, name, date, city='', location='', groups=None, sport=None, kind=No
 ALLOWED = {'run','trail','tri','bike','swim','obstacle',      # 耐力／障礙
            'tennis','badminton','tabletennis','pickleball',   # 拍類
            'ballother',                                       # 其他球類（排球、撞球、槌球…）
-           'hike','surf','dive'}                              # 戶外／個人商戶
+           'hike','surf','dive','tribe'}                      # 戶外／個人商戶／部落體驗
 # 明確排除：籃球、足球、棒壘球 —— 這些項目的資訊管道已經很普遍
 
 def in_scope(sport):

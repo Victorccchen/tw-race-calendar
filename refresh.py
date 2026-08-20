@@ -9,6 +9,18 @@ import sys, os, json, argparse, datetime, concurrent.futures as cf
 import urllib.request, urllib.error
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+
+def _load_env():
+    """讀取本機 .env（已 gitignore）。金鑰只存在這台機器上，不進版控。"""
+    f = os.path.join(ROOT, '.env')
+    if not os.path.exists(f): return
+    for line in open(f, encoding='utf-8'):
+        line = line.strip()
+        if not line or line.startswith('#') or '=' not in line: continue
+        k, v = line.split('=', 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('\'"'))
+
+_load_env()
 sys.path[:0] = [os.path.join(ROOT, 'lib'), os.path.join(ROOT, 'sources')]
 import diff as D
 import review as RV

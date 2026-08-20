@@ -57,6 +57,7 @@
   --s-tabletennis:#a4562c; --s-basketball:#a85a1c; --s-soccer:#2d6b3f;
   --s-baseball:#7a4520; --s-ballother:#4a6b72; --s-other:#5b6862;
   --s-pickleball:#1f7a6b; --s-hike:#5c6f2a; --s-surf:#146f8c; --s-dive:#1b4f80;
+  --s-tribe:#9c5a1f;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0e1614; --surface:#16211d; --surface-2:#1e2b26; --sunken:#121c19;
@@ -74,6 +75,7 @@
   --s-tabletennis:#dd8a5e; --s-basketball:#e0924c; --s-soccer:#63b57c;
   --s-baseball:#c08a5c; --s-ballother:#7fb0b8; --s-other:#93a19a;
   --s-pickleball:#5cc9b4; --s-hike:#a8c25e; --s-surf:#57b9d8; --s-dive:#6ba3dd;
+  --s-tribe:#d99a56;
 }}
 :root[data-theme="dark"]{
   --paper:#0e1614; --surface:#16211d; --surface-2:#1e2b26; --sunken:#121c19;
@@ -91,6 +93,7 @@
   --s-tabletennis:#dd8a5e; --s-basketball:#e0924c; --s-soccer:#63b57c;
   --s-baseball:#c08a5c; --s-ballother:#7fb0b8; --s-other:#93a19a;
   --s-pickleball:#5cc9b4; --s-hike:#a8c25e; --s-surf:#57b9d8; --s-dive:#6ba3dd;
+  --s-tribe:#d99a56;
 }
 
 *{box-sizing:border-box}
@@ -579,6 +582,7 @@ const I = {
  ballother:'<circle cx="20" cy="20" r="13.5"/><path d="M6.7 17.4c8.2 1.6 19.4 1.6 26.4 0"/><path d="M13.6 8c3 7 3 17 0 24M26.4 8c-3 7-3 17 0 24"/>',
  hike:'<path d="M4 33h32"/><path d="M7 33 18 12l6 11 4-6 8 16"/><path d="M22 8h9l-3 3 3 3h-9z"/><path d="M22 6v9"/>',
  surf:'<path d="M6 30c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M6 35c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M14 26c3-13 10-20 18-20 0 11-6 20-15 23z"/>',
+ tribe:'<path d="M6 33h28"/><path d="M20 7 8 33h24z"/><path d="M20 7v26"/><path d="M13 21h14"/><circle cx="20" cy="5" r="2"/>',
  dive:'<circle cx="15" cy="11" r="3.4"/><path d="M18 15c4 1 7 4 8 8"/><path d="M26 23c4-1 7 1 8 4"/><path d="M4 30c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M9 20l5-3"/>',
  bell:'<path d="M20 6a9 9 0 0 0-9 9v7l-3 5h24l-3-5v-7a9 9 0 0 0-9-9z"/><path d="M16.5 31a3.5 3.5 0 0 0 7 0"/>',
  clock:'<circle cx="20" cy="20" r="13.5"/><path d="M20 11.5V20l6 3.5"/>'
@@ -587,7 +591,7 @@ const CAT = [
  ['run','路跑 / 馬拉松'],['trail','越野跑'],['tri','鐵人三項'],['bike','自行車'],
  ['swim','游泳 / 泳渡'],['obstacle','障礙賽'],['hike','登山健行'],['surf','衝浪'],
  ['tennis','網球'],['badminton','羽球'],['tabletennis','桌球'],['pickleball','匹克球'],
- ['ballother','其他球類'],['dive','潛水'],
+ ['ballother','其他球類'],['dive','潛水'],['tribe','部落體驗'],
 ];
 const LBL = Object.fromEntries(CAT); LBL.tabletennis='桌球'; LBL.other='其他運動';
 LBL.basketball='籃球'; LBL.soccer='足球'; LBL.baseball='棒 / 壘球';
@@ -740,6 +744,7 @@ SCENE.pickleball = SCENE.tabletennis;   // 場地＋球拍構圖相近
 SCENE.hike       = SCENE.trail;         // 山稜線
 SCENE.surf       = SCENE.swim;          // 海浪
 SCENE.dive       = SCENE.swim;
+SCENE.tribe      = SCENE.trail;         // 山谷部落
 function scene(e){
   const h = seed(e.i), s = h%1000;
   const fn = SCENE[e.s] || SCENE.other;

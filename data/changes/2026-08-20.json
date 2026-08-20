@@ -1,1 +1,29 @@
-[]
+[
+ {
+  "kind": "新增",
+  "id": "shop-npt",
+  "name": "NPT 涅普頓戶外探索",
+  "date": "",
+  "src": "NPT 涅普頓戶外探索",
+  "detail": "宜蘭 · surf",
+  "url": "https://nptoutdoor.rezio.shop/zh-TW"
+ },
+ {
+  "kind": "新增",
+  "id": "shop-haidao",
+  "name": "海島舟記 海島戶外探索",
+  "date": "",
+  "src": "海島舟記 海島戶外探索",
+  "detail": "宜蘭 · surf",
+  "url": "https://haidaokayak.com/"
+ },
+ {
+  "kind": "新增",
+  "id": "shop-eyetaiwan",
+  "name": "愛呆玩戶外探索",
+  "date": "",
+  "src": "愛呆玩戶外探索",
+  "detail": "花蓮 · surf",
+  "url": "https://eyetaiwan.com/zh-TW/"
+ }
+]
