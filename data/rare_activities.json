@@ -1,0 +1,19 @@
+{
+  "_說明": "稀有活動清單（人工維護）。全台同質店家極少的活動類型，即使評分或評論數未達大眾門檻也收錄——稀有本身就是特色，用大眾門檻會把它們全濾掉。",
+  "_為什麼不自動判斷": "試過用 Places Text Search 計算全台同業家數，但該 API 每頁上限 20 筆，回傳 20 實際代表『20 以上，已截斷』，分不出 20 家與 200 家；且關鍵字比對很鬆，會撈到不相干的觀光景點。因此改為人工維護，新增前請自行確認確實稀少。",
+  "min_rating": 4.0,
+  "activities": [
+    {"keyword": "登山車公園|bike ?park|MTB ?park|pump ?track", "label": "登山車公園",
+     "note": "含纜車或接駁的重力路線園區，野托邦自稱台灣唯一"},
+    {"keyword": "風箏衝浪|kitesurf|kite ?surf|kiteboard", "label": "風箏衝浪",
+     "note": "需特定風場，集中在澎湖與新竹"},
+    {"keyword": "溪降|canyoning|峽谷垂降", "label": "溪降",
+     "note": "與溯溪不同，需繩索垂降技術"},
+    {"keyword": "洞穴探險|caving|探洞|垂直洞穴", "label": "洞穴探險"},
+    {"keyword": "立槳瑜珈|SUP ?yoga|水上瑜珈", "label": "立槳瑜珈"},
+    {"keyword": "海洋獨木舟|sea ?kayak|獨木舟環島|長程獨木舟", "label": "海洋獨木舟長程",
+     "note": "多日遠征型，非一般體驗行程"},
+    {"keyword": "冬季攀登|雪攀|冰攀|ice ?climb", "label": "雪地攀登"},
+    {"keyword": "帆船|sailing|重型帆船", "label": "帆船"}
+  ]
+}

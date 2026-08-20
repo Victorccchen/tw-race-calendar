@@ -1,29 +1,29 @@
 [
  {
   "kind": "新增",
-  "id": "shop-npt",
-  "name": "NPT 涅普頓戶外探索",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
   "date": "",
-  "src": "NPT 涅普頓戶外探索",
-  "detail": "宜蘭 · surf",
-  "url": "https://nptoutdoor.rezio.shop/zh-TW"
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "新北 · surf",
+  "url": "https://www.facebook.com/FulongSailingClub/"
  },
  {
   "kind": "新增",
-  "id": "shop-haidao",
-  "name": "海島舟記 海島戶外探索",
+  "id": "shop-blueocean",
+  "name": "藍洋衝浪 Blue Ocean Surf Shop",
   "date": "",
-  "src": "海島舟記 海島戶外探索",
+  "src": "藍洋衝浪 Blue Ocean Surf Shop",
   "detail": "宜蘭 · surf",
-  "url": "https://haidaokayak.com/"
+  "url": "http://www.bosc.com.tw/"
  },
  {
   "kind": "新增",
-  "id": "shop-eyetaiwan",
-  "name": "愛呆玩戶外探索",
+  "id": "shop-surffella",
+  "name": "蕃薯衝浪 Surffella",
   "date": "",
-  "src": "愛呆玩戶外探索",
-  "detail": "花蓮 · surf",
-  "url": "https://eyetaiwan.com/zh-TW/"
+  "src": "蕃薯衝浪 Surffella",
+  "detail": "宜蘭 · surf",
+  "url": "https://www.surfschool.com.tw/"
  }
 ]

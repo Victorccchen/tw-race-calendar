@@ -8,15 +8,44 @@ Places API。因此本模組需要環境變數 GOOGLE_MAPS_API_KEY；未設定�
 API 只提供店家層級資訊（名稱、地址、評分、電話、官網），不含課程與價目，
 因此撈到的店家一律進待驗證佇列，由人工補上服務內容後才進前台。
 """
-import os, json, urllib.parse
+import os, re, json, urllib.parse
 from _http import get
 import review as RV
 
 NAME = 'Google Places'
 ENDPOINT = 'https://maps.googleapis.com/maps/api/place'
 MIN_RATING = float(os.environ.get('PLACES_MIN_RATING', '4.8'))
-MIN_REVIEWS = int(os.environ.get('PLACES_MIN_REVIEWS', '20'))
+MIN_REVIEWS = int(os.environ.get('PLACES_MIN_REVIEWS', '800'))
 RADIUS = 3000
+
+# 只收運動旅遊／戶外活動業者，排除餐飲與旅宿。
+# 注意：types 不能單獨判斷 —— 不少衝浪店附設住宿會被標成 lodging
+#（極酷衝浪、野孩子衝浪社皆是），純用類型排除會誤刪。因此改用
+# 「名稱有活動訊號」為主，types 只用來剔除明確的餐飲業。
+ACTIVITY = re.compile(
+    r'衝浪|surf|SUP|立槳|潛水|dive|freediv|獨木舟|kayak|溯溪|浮潛|滑水|風箏|'
+    r'教練|俱樂部|學校|基地|探索|運動|戶外|club|school|academy|outdoor', re.I)
+FOOD_LODGING = re.compile(
+    r'咖啡|cafe|餐廳|食堂|小吃|麵包|甜點|肉桂|燒烤|居酒屋|酒吧|'
+    r'民宿|旅店|旅館|飯店|背包|hostel|hotel|inn|共居|co-?living|營地|露營區', re.I)
+FOOD_TYPES = {'restaurant', 'cafe', 'bakery', 'bar', 'food', 'meal_takeaway',
+              'meal_delivery', 'night_club', 'convenience_store', 'supermarket'}
+
+def _rare_conf(root):
+    f = os.path.join(root, 'data', 'rare_activities.json')
+    if not os.path.exists(f): return None
+    return json.load(open(f, encoding='utf-8'))
+
+
+def check_rarity(keyword, key, region='台灣'):
+    """實際查證某活動全台有幾家同業。用來維護稀有清單，不在每日流程跑。"""
+    q = urllib.parse.urlencode({'query': f'{region} {keyword}', 'language': 'zh-TW', 'key': key})
+    raw = get(f'{ENDPOINT}/textsearch/json?{q}')
+    if not raw: return None
+    try: res = json.loads(raw)
+    except Exception: return None
+    return len(res.get('results', []))
+
 
 def fetch():
     key = os.environ.get('GOOGLE_MAPS_API_KEY')
@@ -27,6 +56,7 @@ def fetch():
     spots = json.load(open(os.path.join(root, 'data', 'surf_spots.json'),
                            encoding='utf-8'))['spots']
     known = _known_shop_names(root)
+    rare_conf = _rare_conf(root)
     seen, found = set(), 0
     for sp in spots:
         params = urllib.parse.urlencode({
@@ -46,12 +76,26 @@ def fetch():
             pid = r.get('place_id')
             if not pid or pid in seen: continue
             seen.add(pid)
+            name = r.get('name', '')
+            n = _norm(name)
+            if any(k and (k in n or n in k) for k in known): continue   # 已收錄（含名稱變體）
+            types = set(r.get('types', []))
+            if types & FOOD_TYPES: continue                        # 明確的餐飲業
+            if FOOD_LODGING.search(name) and not ACTIVITY.search(name):
+                continue                                           # 純餐飲或住宿
+            if not ACTIVITY.search(name) and 'store' not in types:
+                continue                                           # 看不出是活動業者
             rating, votes = r.get('rating'), r.get('user_ratings_total', 0)
-            if not rating or rating < MIN_RATING or votes < MIN_REVIEWS: continue
-            if _norm(r.get('name', '')) in known: continue        # 已收錄
+            if not rating: continue
+            rare = _rare_match(name, rare_conf)
+            if rare:
+                if rating < (rare_conf or {}).get('min_rating', 4.0): continue
+            elif rating < MIN_RATING or votes < MIN_REVIEWS:
+                continue
             found += 1
-            RV.flag(NAME, r.get('name', ''),
-                    f"{sp['city']}・{sp['name']} 附近，評分 {rating}（{votes} 則）。"
+            tag = f'【稀有・{rare}】' if rare else ''
+            RV.flag(NAME, name,
+                    f"{tag}{sp['city']}・{sp['name']} 附近，評分 {rating}（{votes} 則）。"
                     f"確認後請補上服務內容再寫入名冊",
                     f"https://www.google.com/maps/place/?q=place_id:{pid}",
                     r.get('vicinity', ''))
@@ -64,9 +108,18 @@ def _known_shop_names(root):
     out = set()
     for op in conf['operators']:
         out.add(_norm(op['name']))
-        for part in op['name'].replace('（', ' ').replace('）', ' ').split():
-            if len(part) >= 3: out.add(_norm(part))
+        # 取中文主體（去掉英文與空白），用來比對 Google 上的名稱變體
+        zh = re.sub(r'[a-zA-Z0-9\s\-_.·．（）()]+', '', op['name'])
+        if len(zh) >= 4: out.add(_norm(zh))
     return out
 
 def _norm(s):
     return ''.join((s or '').split()).lower()
+
+
+def _rare_match(name, conf):
+    """名稱是否命中稀有活動；回傳活動標籤或 None。"""
+    if not conf: return None
+    for a in conf.get('activities', []):
+        if re.search(a['keyword'], name or '', re.I): return a['label']
+    return None

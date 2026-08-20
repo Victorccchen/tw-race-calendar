@@ -715,6 +715,164 @@
           "verified": "2026-08-20"
         }
       ]
+    },
+    {
+      "id": "surffella",
+      "name": "蕃薯衝浪 Surffella",
+      "kind": "shop",
+      "url": "https://www.surfschool.com.tw/",
+      "city": "宜蘭",
+      "area": "宜蘭縣頭城鎮港口路92-9號（烏石港）",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "烏石港衝浪街的老牌衝浪店，Google 4.9 星、1,519 則評價。小班制、專業攝影，店面距沙灘步行 3 分鐘，備 6 間淋浴間與 2 間廁所。",
+      "contact": {
+        "site": "https://www.surfschool.com.tw/",
+        "booking": "https://www.surfschool.com.tw/course.php"
+      },
+      "note": "官網為靜態 PHP 頁，價目可自動核對。電話 0955-311-719。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "sf-half",
+          "name": "半日衝浪初體驗",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "小班制，陸地與水中課程指導，含專業攝影。",
+          "price": "一人 NT$1,500；三人同行 NT$1,300／人",
+          "book": "online",
+          "url": "https://www.surfschool.com.tw/course.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sf-day",
+          "name": "一日衝浪教學營",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "針對初學者設計的一日課程。",
+          "price": "一人 NT$2,600；兩人同行 NT$2,400／人",
+          "book": "online",
+          "url": "https://www.surfschool.com.tw/course.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sf-2d1n",
+          "name": "兩天一夜衝浪輕旅行",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "含住宿的衝浪輕旅行，時間拉長進步更快。",
+          "price": "一人 NT$3,880；兩人同行 NT$3,580／人",
+          "book": "online",
+          "url": "https://www.surfschool.com.tw/travel.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sf-private",
+          "name": "私人衝浪課程",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "一對一教學、兒童衝浪，或不想併團與希望提升技巧者適用。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://www.surfschool.com.tw/course.php",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sf-rent",
+          "name": "衝浪板・趴板租借",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "各尺寸浪板含初學者專用板型，線上預約贈 30 分鐘基礎教學。",
+          "price": "衝浪板 NT$600／趴板 NT$300",
+          "book": "online",
+          "url": "https://www.surfschool.com.tw/rent.php",
+          "note": "含免費沙灘陽傘座椅、夏季防磨衣或冬季防寒衣，當日可無限次使用器材自由練習。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "sf-camp",
+          "name": "海洋運動夏令營",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "以海洋為主題的夏令營，透過衝浪親近海洋。",
+          "price": "梯次與價目需洽詢",
+          "book": "contact",
+          "url": "https://www.surfschool.com.tw/travel.php",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "blueocean",
+      "name": "藍洋衝浪 Blue Ocean Surf Shop",
+      "kind": "shop",
+      "url": "http://www.bosc.com.tw/",
+      "city": "宜蘭",
+      "area": "宜蘭縣頭城鎮濱海路一段385-1號（總店）／烏石港路（二店）",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "烏石港規模最大的衝浪店，總店、二店與沙灘營業區三處據點，Google 合計逾 4,300 則評價（二店 4.9／2,991、總店 4.9／1,264）。提供衝浪教學與衝浪板租借。",
+      "contact": {
+        "site": "http://www.bosc.com.tw/"
+      },
+      "note": "官網為 React SPA（伺服器端只回 JavaScript 載入殼），課程與價目無法自動抓取，需人工向店家確認後補上。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "bo-lesson",
+          "name": "衝浪教學",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "烏石港專業衝浪教學（官網標示，細節待確認）。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "http://www.bosc.com.tw/",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "bo-rent",
+          "name": "衝浪板租借",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "衝浪板租借服務（官網標示，細節待確認）。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "http://www.bosc.com.tw/",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "fulongsail",
+      "name": "福隆帆船俱樂部 Fulong Sailing Club",
+      "kind": "shop",
+      "url": "https://www.facebook.com/FulongSailingClub/",
+      "city": "新北",
+      "area": "新北市貢寮區福隆街32-1號",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "福隆的帆船俱樂部。帆船在台灣的經營者極少，屬稀有戶外活動類型。",
+      "contact": {
+        "facebook": "https://www.facebook.com/FulongSailingClub/"
+      },
+      "note": "以稀有活動類型收錄（全台帆船經營者極少），評分 4.2／63 則未達一般門檻。僅有 FB 粉專、無官網，課程與價目需人工確認。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "fs-sail",
+          "name": "帆船體驗",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "福隆海域帆船活動（細節待向俱樂部確認）。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://www.facebook.com/FulongSailingClub/",
+          "verified": "2026-08-20"
+        }
+      ]
     }
   ]
 }
