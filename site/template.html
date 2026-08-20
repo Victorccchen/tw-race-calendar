@@ -56,6 +56,7 @@
   --s-swim:#0d7b88; --s-obstacle:#8c2f2a; --s-tennis:#8e6a12; --s-badminton:#2f6ba3;
   --s-tabletennis:#a4562c; --s-basketball:#a85a1c; --s-soccer:#2d6b3f;
   --s-baseball:#7a4520; --s-ballother:#4a6b72; --s-other:#5b6862;
+  --s-pickleball:#1f7a6b; --s-hike:#5c6f2a; --s-surf:#146f8c; --s-dive:#1b4f80;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0e1614; --surface:#16211d; --surface-2:#1e2b26; --sunken:#121c19;
@@ -72,6 +73,7 @@
   --s-swim:#43b2be; --s-obstacle:#d0665f; --s-tennis:#cba445; --s-badminton:#6ba6dd;
   --s-tabletennis:#dd8a5e; --s-basketball:#e0924c; --s-soccer:#63b57c;
   --s-baseball:#c08a5c; --s-ballother:#7fb0b8; --s-other:#93a19a;
+  --s-pickleball:#5cc9b4; --s-hike:#a8c25e; --s-surf:#57b9d8; --s-dive:#6ba3dd;
 }}
 :root[data-theme="dark"]{
   --paper:#0e1614; --surface:#16211d; --surface-2:#1e2b26; --sunken:#121c19;
@@ -88,6 +90,7 @@
   --s-swim:#43b2be; --s-obstacle:#d0665f; --s-tennis:#cba445; --s-badminton:#6ba6dd;
   --s-tabletennis:#dd8a5e; --s-basketball:#e0924c; --s-soccer:#63b57c;
   --s-baseball:#c08a5c; --s-ballother:#7fb0b8; --s-other:#93a19a;
+  --s-pickleball:#5cc9b4; --s-hike:#a8c25e; --s-surf:#57b9d8; --s-dive:#6ba3dd;
 }
 
 *{box-sizing:border-box}
@@ -534,15 +537,22 @@ const I = {
  other:'<path d="M13 6h14v7.2a7 7 0 0 1-14 0z"/><path d="M13 8.6H9v3.5a4.5 4.5 0 0 0 4.5 4.5M27 8.6h4v3.5a4.5 4.5 0 0 1-4.5 4.5"/><path d="M20 20.4V25"/><path d="M14.5 33h11l-1.5-8h-8z"/>',
  kids:'<circle cx="13.5" cy="9.5" r="3.2"/><path d="M13.5 13v9.5M9.5 16.5h8M11 33l2.5-10.5M16 33l-2.5-10.5"/><circle cx="27" cy="16.5" r="2.6"/><path d="M27 19.5V25M24.5 21.5h5M25.5 33 27 25M28.5 33 27 25"/><path d="M17.6 19h6.9"/>',
  sprout:'<path d="M20 33V17"/><path d="M20 21c-8 0-13-5-13-12 7 0 13 5 13 12z"/><path d="M20 24c7 0 12-4 12-10-6 0-12 4-12 10z"/><path d="M12 33h16"/>',
+ pickleball:'<path d="M10 6h12a5 5 0 0 1 5 5v6a9 9 0 0 1-18 0v-6a5 5 0 0 1 5-5z"/><path d="M19 29v5"/><path d="M15.5 34h7"/><circle cx="30" cy="12" r="6"/><circle cx="28.4" cy="10.4" r=".9"/><circle cx="31.6" cy="10.4" r=".9"/><circle cx="30" cy="13.6" r=".9"/>',
+ ballother:'<circle cx="20" cy="20" r="13.5"/><path d="M6.7 17.4c8.2 1.6 19.4 1.6 26.4 0"/><path d="M13.6 8c3 7 3 17 0 24M26.4 8c-3 7-3 17 0 24"/>',
+ hike:'<path d="M4 33h32"/><path d="M7 33 18 12l6 11 4-6 8 16"/><path d="M22 8h9l-3 3 3 3h-9z"/><path d="M22 6v9"/>',
+ surf:'<path d="M6 30c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M6 35c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M14 26c3-13 10-20 18-20 0 11-6 20-15 23z"/>',
+ dive:'<circle cx="15" cy="11" r="3.4"/><path d="M18 15c4 1 7 4 8 8"/><path d="M26 23c4-1 7 1 8 4"/><path d="M4 30c3-2.6 6 2.6 9 0s6 2.6 9 0 6 2.6 9 0"/><path d="M9 20l5-3"/>',
  bell:'<path d="M20 6a9 9 0 0 0-9 9v7l-3 5h24l-3-5v-7a9 9 0 0 0-9-9z"/><path d="M16.5 31a3.5 3.5 0 0 0 7 0"/>',
  clock:'<circle cx="20" cy="20" r="13.5"/><path d="M20 11.5V20l6 3.5"/>'
 };
 const CAT = [
  ['run','路跑 / 馬拉松'],['trail','越野跑'],['tri','鐵人三項'],['bike','自行車'],
- ['swim','游泳 / 泳渡'],['obstacle','障礙賽'],['tennis','網球'],['badminton','羽球'],
- ['basketball','籃球'],['soccer','足球'],['baseball','棒 / 壘球'],['ballother','其他球類'],
+ ['swim','游泳 / 泳渡'],['obstacle','障礙賽'],['hike','登山健行'],['surf','衝浪'],
+ ['tennis','網球'],['badminton','羽球'],['tabletennis','桌球'],['pickleball','匹克球'],
+ ['ballother','其他球類'],['dive','潛水'],
 ];
 const LBL = Object.fromEntries(CAT); LBL.tabletennis='桌球'; LBL.other='其他運動';
+LBL.basketball='籃球'; LBL.soccer='足球'; LBL.baseball='棒 / 壘球';
 const ST = {open:['報名中','open'],soon:['尚未開賣','soon'],shut:['已截止','shut']};
 const TY = {race:'正式賽事',exp:'體驗活動',camp:'營隊課程'};
 
@@ -564,6 +574,7 @@ const waves=(y)=>`<path class="ln-f" d="M0 ${y}c13-7 26 7 39 0s26 7 39 0 26 7 39
 const runner=(x,y,c)=>`<g class="${c}"><circle cx="${x+9}" cy="${y-26}" r="4.6"/><path d="M${x+8} ${y-19}l-9 6 5 6-4 13 5 1 5-15-5-5 8-5 6 5 2 9 5-1-3-12-15-8z"/></g>`;
 
 const SCENE = {
+ // 新增類別沿用既有構圖（下方以別名指派）
  trail:s=>`<rect class="sky" width="320" height="118"/><circle class="sun" cx="${44+s%196}" cy="25" r="15"/>
   <path class="far" d="M0 74 44 38l34 27 32-31 44 37 34-25 46 33 34-21 52 35v45H0z"/>
   <path class="mid" d="M0 88 50 59l40 23 44-17 46 27 44-19 52 29 44-15v31H0z"/>
@@ -685,6 +696,10 @@ const SCENE = {
   <g class="solid"><path d="M126 42h26v11a13 13 0 01-26 0z"/><path d="M126 45h-7v5a7 7 0 007 7M152 45h7v5a7 7 0 01-7 7" fill="none" stroke="var(--sp)" stroke-width="2.4"/><rect x="136" y="65" width="6" height="6"/></g>
   <g class="ln-f"><path d="M78 88h18M180 92h18"/></g>`
 };
+SCENE.pickleball = SCENE.tabletennis;   // 場地＋球拍構圖相近
+SCENE.hike       = SCENE.trail;         // 山稜線
+SCENE.surf       = SCENE.swim;          // 海浪
+SCENE.dive       = SCENE.swim;
 function scene(e){
   const h = seed(e.i), s = h%1000;
   const fn = SCENE[e.s] || SCENE.other;

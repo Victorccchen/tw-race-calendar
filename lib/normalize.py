@@ -1,12 +1,16 @@
 """統一的賽事分類與正規化邏輯。所有來源都經過這裡。"""
 import re
 
-# 只收「拍類」球運動：網球、羽球、桌球、匹克球。
-# 籃球／足球／棒壘球等資訊管道已普遍，不納入。
+# 球類收錄：拍類（網球／羽球／桌球／匹克球）+ 其他球類（排球、撞球、槌球、
+# 木球、保齡球…）。籃球／足球／棒壘球資訊管道已普遍，明確排除。
 GOV = {'羽球活動':'badminton','桌球活動':'tabletennis','網球活動':'tennis',
+       '其他球類':'ballother',
        '水域活動':'swim','單車活動':'bike','跑步':'run','登山健行':'hike'}
-BALL = [('badminton',r'羽球'),('tabletennis',r'桌球'),('tennis',r'網球'),
-        ('pickleball',r'匹克球|pickleball')]
+EXCLUDED_BALL = {'basketball', 'soccer', 'baseball'}
+BALL = [('pickleball',r'匹克球|pickleball'),
+        ('badminton',r'羽球'),('tabletennis',r'桌球'),('tennis',r'網球'),
+        ('basketball',r'籃球'),('soccer',r'足球'),('baseball',r'棒球|壘球'),
+        ('ballother',r'排球|氣排球|撞球|槌球|木球|保齡球|躲避球|巧固球|地板球|高爾夫')]
 NAME = [('obstacle',r'斯巴達|spartan|障礙'),
         ('dive',r'潛水|自由潛水|freedive|scuba'),
         ('surf',r'衝浪|surf|SUP|立槳'),
@@ -71,9 +75,11 @@ def event(id, name, date, city='', location='', groups=None, sport=None, kind=No
 
 # ── 收錄範圍 ──
 # 耐力型 + 拍類球運動 + 個人商戶常見的戶外項目。
-ALLOWED = {'run','trail','tri','bike','swim','obstacle',      # 耐力
+ALLOWED = {'run','trail','tri','bike','swim','obstacle',      # 耐力／障礙
            'tennis','badminton','tabletennis','pickleball',   # 拍類
+           'ballother',                                       # 其他球類（排球、撞球、槌球…）
            'hike','surf','dive'}                              # 戶外／個人商戶
+# 明確排除：籃球、足球、棒壘球 —— 這些項目的資訊管道已經很普遍
 
 def in_scope(sport):
     return sport in ALLOWED

@@ -156,6 +156,17 @@
         ],
         "match": "ForceKids|Forcekids|小鐵人|鐵人賽"
       }
+    },
+    {
+      "id": "spartan",
+      "name": "Spartan Race Taiwan",
+      "url": "https://tw.spartan.com/zh-Hant/race/find-race",
+      "city": "",
+      "sport": "obstacle",
+      "adapter": "none",
+      "note": "障礙賽。官網 tw.spartan.com 為 Nuxt SPA，賽事資料在 __NUXT__ payload 內、以壓縮後的 JS 物件表示，非標準 JSON，不易穩定解析；查詢時台灣場館顯示 \"Taiwan (TBA)\"，代表下一場尚未定案。2026 台南三色週末（4/18-19）已結束。在地報名多由寬寬整合行銷經 KKTIX 售票，已由 sources/kktix.py 涵蓋，開賣時會自動抓到。此處以 watch 監控官網變動。",
+      "watch": true,
+      "events": []
     }
   ]
 }
