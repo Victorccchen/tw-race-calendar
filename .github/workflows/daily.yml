@@ -43,14 +43,47 @@ jobs:
           [ -f "data/review/$D.md" ] && tail -n +2 "data/review/$D.md" >> $GITHUB_STEP_SUMMARY
           echo "</details>" >> $GITHUB_STEP_SUMMARY
 
-      - name: 部署到 Vercel
+      - name: 檢查產出物
         run: |
-          npx --yes vercel@latest deploy --prod --yes \
-            --token "$VERCEL_TOKEN" --cwd web
+          set -e
+          for f in web/public/index.html web/data/events.json; do
+            [ -s "$f" ] || { echo "::error::產出物缺失或為空：$f"; exit 1; }
+          done
+          SIZE=$(wc -c < web/public/index.html)
+          [ "$SIZE" -gt 500000 ] || { echo "::error::index.html 只有 ${SIZE} bytes，疑似空頁"; exit 1; }
+          echo "index.html $((SIZE/1024)) KB · events.json $(($(wc -c < web/data/events.json)/1024)) KB"
+
+      - name: 部署到 Vercel
+        # 用官方 prebuilt 流程：先在 CI 建置成 .vercel/output 再上傳。
+        # 直接 deploy 會套用 .gitignore 規則，把 refresh.py 剛產生的
+        # web/public/index.html 排除掉，導致部署出空站台（alias 回 404）。
+        run: |
+          set -e
+          cd web
+          npx --yes vercel@latest pull --yes --environment=production --token "$VERCEL_TOKEN"
+          npx --yes vercel@latest build --prod --token "$VERCEL_TOKEN"
+          [ -s .vercel/output/static/index.html ] \
+            || { echo "::error::建置產物不含 index.html"; exit 1; }
+          npx --yes vercel@latest deploy --prebuilt --prod --yes --token "$VERCEL_TOKEN"
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 上線驗證
+        # 部署成功不等於站台正常 —— 這一步會抓到空站台或壞掉的 ICS
+        run: |
+          set -e
+          U=https://tw-race-calendar.vercel.app
+          sleep 8
+          for path in / /ics; do
+            CODE=$(curl -s -o /tmp/r -w '%{http_code}' -m 30 "$U$path")
+            SIZE=$(wc -c < /tmp/r)
+            echo "$path → HTTP $CODE, ${SIZE} bytes"
+            [ "$CODE" = "200" ] || { echo "::error::$path 回應 $CODE"; exit 1; }
+          done
+          grep -q 'BEGIN:VCALENDAR' /tmp/r || { echo "::error::/ics 不是合法行事曆"; exit 1; }
+          echo "✅ 站台與 ICS 皆正常"
 
       - name: 回寫資料狀態
         run: |
