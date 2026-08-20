@@ -15,7 +15,7 @@ import review as RV
 import normalize as N
 from _http import UA
 
-SOURCES = ['biji', 'isports', 'kktix', 'ctta', 'sunmoonlake', 'indie']
+SOURCES = ['biji', 'isports', 'kktix', 'ctta', 'sunmoonlake', 'indie', 'places']
 DATA, SNAP, CHG, SITE = (os.path.join(ROOT, p) for p in
                          ('data', 'data/snapshots', 'data/changes', 'site'))
 REVIEW = os.path.join(ROOT, 'data', 'review')

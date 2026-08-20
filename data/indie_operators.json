@@ -185,6 +185,150 @@
       "note": "障礙賽。官網 tw.spartan.com 為 Nuxt SPA，賽事資料在 __NUXT__ payload 內、以壓縮後的 JS 物件表示，非標準 JSON，不易穩定解析；查詢時台灣場館顯示 \"Taiwan (TBA)\"，代表下一場尚未定案。2026 台南三色週末（4/18-19）已結束。在地報名多由寬寬整合行銷經 KKTIX 售票，已由 sources/kktix.py 涵蓋，開賣時會自動抓到。此處以 watch 監控官網變動。",
       "watch": true,
       "events": []
+    },
+    {
+      "id": "legosurf",
+      "name": "樂高衝浪俱樂部 Lego Surfing Club",
+      "kind": "shop",
+      "url": "https://www.facebook.com/legosurfingclub/",
+      "city": "宜蘭",
+      "area": "宜蘭縣蘇澳鎮 無尾港",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "2012 年創立於蘇澳無尾港的衝浪俱樂部，提供衝浪教學，並固定發布無尾港浪況與潮汐預報。",
+      "contact": {
+        "facebook": "https://www.facebook.com/legosurfingclub/",
+        "instagram": "https://www.instagram.com/legosurfingclub/"
+      },
+      "note": "僅有 FB 與 IG，無官網。FB 對未登入訪客封鎖、IG 為 JS 渲染，皆無法自動抓取。價目與梯次需人工向店家確認後補上。",
+      "watch": false,
+      "events": [],
+      "services": [
+        {
+          "id": "lego-surf-lesson",
+          "name": "衝浪教學（無尾港）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "在蘇澳無尾港下水。店家固定發布浪況與潮汐預報，小浪日適合初學入門。",
+          "price": "價目需向店家洽詢",
+          "book": "contact",
+          "note": "僅提供 FB／IG 私訊聯繫，出發前建議先確認當日浪況。",
+          "verified": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "id": "gcoolsurf",
+      "name": "極酷衝浪 G-Cool Surf",
+      "kind": "shop",
+      "url": "https://www.surfing.com.tw/",
+      "city": "宜蘭",
+      "area": "宜蘭縣頭城鎮 烏石港／外澳",
+      "sport": "surf",
+      "adapter": "none",
+      "intro": "2005 年創立於烏石港衝浪街，教練具澳洲 ISA 衝浪學院教練證與救生員證照，獲頒宜蘭縣安全商家。烏石港為沙岸地形，較平緩、適合初學。",
+      "contact": {
+        "site": "https://www.surfing.com.tw/",
+        "booking": "https://www.surfing.com.tw/index.php"
+      },
+      "note": "官網為靜態頁，價目可自動核對；營業時間隨季節調整。",
+      "watch": true,
+      "events": [],
+      "services": [
+        {
+          "id": "gcool-exp",
+          "name": "基礎衝浪體驗課程",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "入門方案，適用 18 歲以上。",
+          "price": "NT$600／人",
+          "book": "online",
+          "url": "https://www.surfing.com.tw/tempo-package_9291.html",
+          "note": "費用含浪板、防磨（寒）衣、水域保險、海灘陽傘、冷水沖洗。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-1on1",
+          "name": "一對一衝浪教學",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "個人專班，適用 9–12 歲以上。",
+          "price": "NT$1,800／人",
+          "book": "online",
+          "url": "https://www.surfing.com.tw/tempo-package_9295.html",
+          "note": "建議課程前 30 分鐘報到，以利換裝與課程安排。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-1on2",
+          "name": "一對二衝浪教學",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "岸上 15 分鐘教學＋水中 90 分鐘協助。",
+          "price": "NT$1,500／人",
+          "book": "online",
+          "url": "https://www.surfing.com.tw/tempo-package_9296.html",
+          "note": "含水域保險、裝備、礦泉水與免費衝浪攝影（雨天及 OUT SLIDE 課程除外）。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-1onN",
+          "name": "一對多衝浪教學",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "1.5 小時課程，教練陪同 3 位學員，岸上一堂、水下一堂。適用 13 歲以上。",
+          "price": "NT$1,250／人",
+          "book": "online",
+          "url": "https://www.surfing.com.tw/tempo-package_9297.html",
+          "note": "3 人成班、上限 4 人；不足 3 人水中課程時間會縮減。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-body",
+          "name": "基礎趴板衝浪 Bodyboarding",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "最親近海浪的入門方式，適用全年齡。",
+          "price": "NT$300／人",
+          "book": "online",
+          "url": "https://www.surfing.com.tw/tempo-package_9354.html",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-trip",
+          "name": "夜・東海岸線 三天二夜（限浪人）",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "客製化出團，含浪板來回運送、短程浪點接駁與三餐。",
+          "price": "NT$5,999／人",
+          "book": "contact",
+          "url": "https://www.surfing.com.tw/tempo-package_9353.html",
+          "note": "不含普悠瑪來回車票、溫泉門票與個人消費。",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-kids",
+          "name": "兒童夏令營",
+          "sport": "surf",
+          "kid": 1,
+          "desc": "店家開設的兒童衝浪夏令營。",
+          "price": "價目與梯次需洽詢",
+          "book": "contact",
+          "url": "https://www.surfing.com.tw/tempo-package_10454.html",
+          "verified": "2026-08-20"
+        },
+        {
+          "id": "gcool-rental",
+          "name": "浪板出租・寄板會員",
+          "sport": "surf",
+          "kid": 0,
+          "desc": "提供浪板租借與寄板會員服務。",
+          "price": "價目需洽詢",
+          "book": "contact",
+          "url": "https://www.surfing.com.tw/",
+          "verified": "2026-08-20"
+        }
+      ]
     }
   ]
 }

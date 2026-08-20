@@ -39,6 +39,13 @@ def fetch(watch=True):
             if it.get('recurring'): e['r'] = 1     # 常態開課
             out.append(e)
     for op in conf['operators']:
+        if op.get('kind') == 'shop':
+            miss = [s['name'] for s in op.get('services', [])
+                    if '洽詢' in (s.get('price') or '') or not s.get('price')]
+            if miss:
+                RV.flag(op['name'], op['name'],
+                        f"以下服務缺少價目，需向店家確認：{'、'.join(miss)}",
+                        (op.get('contact') or {}).get('facebook') or op.get('url', ''))
         if op.get('adapter') == 'wp':
             _from_wordpress(op, {e['i'] for e in out})
     for op in conf['operators']:
@@ -54,7 +61,7 @@ def fetch(watch=True):
                 kid=sv.get('kid',0), desc=sv.get('desc',''),
                 price=sv.get('price',''), hours=sv.get('hours',''),
                 book=sv.get('book','contact'), note=sv.get('note',''),
-                url=(op.get('contact',{}) or {}).get('booking') or op.get('url','')))
+                url=sv.get('url') or (op.get('contact',{}) or {}).get('booking') or op.get('url','')))
     if watch: _watch(conf)
     return out
 

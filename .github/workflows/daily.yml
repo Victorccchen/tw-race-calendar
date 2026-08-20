@@ -29,6 +29,10 @@ jobs:
         run: python3 refresh.py
         env:
           TZ: Asia/Taipei
+          # 選用：設定後會依浪點座標搜尋高評價衝浪店家，結果進待驗證佇列
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+          PLACES_MIN_RATING: '4.8'
+          PLACES_MIN_REVIEWS: '20'
 
       - name: 摘要
         run: |
