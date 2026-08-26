@@ -16,7 +16,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
@@ -29,10 +29,8 @@ jobs:
         run: python3 refresh.py
         env:
           TZ: Asia/Taipei
-          # 選用：設定後會依浪點座標搜尋高評價衝浪店家，結果進待驗證佇列
-          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-          PLACES_MIN_RATING: '4.8'
-          PLACES_MIN_REVIEWS: '20'
+          # Places 探索只在本機執行（每日排程不需要，且門檻與名單需人工審核）。
+          # 若要在 CI 啟用，設定 GOOGLE_MAPS_API_KEY secret 即可。
 
       - name: 摘要
         run: |
@@ -58,14 +56,20 @@ jobs:
           echo "index.html $((SIZE/1024)) KB · events.json $(($(wc -c < web/data/events.json)/1024)) KB"
 
       - name: 部署到 Vercel
-        # Vercel CLI 上傳時會套用 .gitignore。那兩個產出物在版控中被忽略
-        # （避免 2MB 檔案每天進 git 歷史），但在 CI 是 refresh.py 現場產生的，
-        # 若不解除忽略就會被排除，部署出空站台。CI 工作區是拋棄式的，直接移除該規則。
+        # 在 git repo 內執行時，Vercel CLI 會附帶 git 中繼資料，Vercel 便把部署
+        # 歸給 commit 作者（race-calendar-bot）。該身分沒有連結 Vercel 帳號，
+        # 部署會被擋下而 CLI 無限等待 —— 這是排程連續五天跑滿 30 分鐘的原因。
+        # 解法：複製到 repo 之外的目錄再部署，讓它以純檔案上傳處理。
+        timeout-minutes: 8
         run: |
           set -e
-          sed -i '\|^web/public/index.html$|d; \|^web/data/events.json$|d' .gitignore
-          npx --yes vercel@latest deploy --prod --yes \
-            --token "$VERCEL_TOKEN" --cwd web
+          STAGE="$RUNNER_TEMP/deploy"
+          rm -rf "$STAGE" && mkdir -p "$STAGE"
+          cp -R web/. "$STAGE"/
+          rm -rf "$STAGE/.vercel" "$STAGE/.git"
+          [ -s "$STAGE/public/index.html" ] || { echo "::error::產出物沒複製到"; exit 1; }
+          cd "$STAGE"
+          npx --yes vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

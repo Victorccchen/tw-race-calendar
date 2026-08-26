@@ -92,8 +92,7 @@ def fetch():
             if not pid or pid in seen: continue
             seen.add(pid)
             name = r.get('name', '')
-            n = _norm(name)
-            if any(k and (k in n or n in k) for k in known): continue   # 已收錄（含名稱變體）
+            if _is_known(name, known): continue                    # 已收錄（含名稱變體）
             types = set(r.get('types', []))
             if types & FOOD_TYPES: continue                        # 明確的餐飲業
             if FOOD_LODGING.search(name) and not ACTIVITY.search(name):
@@ -119,6 +118,24 @@ def fetch():
     print(f'  （Places：{found} 家達 {MIN_RATING} 星／{MIN_REVIEWS} 則門檻，已列待驗證）')
     return []          # 只做發現，不直接進前台
 
+def _is_known(name, known):
+    """比對是否已收錄。Google 上的商家名常帶服務說明後綴
+    （「洄遊吧食魚體驗館」vs 名冊裡的「洄遊吧 FishBar」），
+    完整字串比不出來，改取開頭連續中文作為核心名。"""
+    n = _norm(name)
+    core = _core(name)
+    for k in known:
+        if not k: continue
+        if k in n or n in k: return True
+        if core and len(core) >= 3 and (core in k or k.startswith(core)): return True
+    return False
+
+
+def _core(s):
+    m = re.match(r'[\u4e00-\u9fff]{2,10}', (s or '').strip())
+    return m.group(0) if m else ''
+
+
 def _known_shop_names(root):
     conf = json.load(open(os.path.join(root, 'data', 'indie_operators.json'),
                           encoding='utf-8'))
@@ -127,7 +144,9 @@ def _known_shop_names(root):
         out.add(_norm(op['name']))
         # 取中文主體（去掉英文與空白），用來比對 Google 上的名稱變體
         zh = re.sub(r'[a-zA-Z0-9\s\-_.·．（）()]+', '', op['name'])
-        if len(zh) >= 4: out.add(_norm(zh))
+        if len(zh) >= 3: out.add(_norm(zh))
+        c = _core(op['name'])
+        if len(c) >= 3: out.add(_norm(c))
     return out
 
 def _norm(s):
