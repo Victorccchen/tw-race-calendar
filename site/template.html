@@ -504,9 +504,25 @@ button.mark[aria-expanded="true"] .chev{transform:rotate(180deg)}
 /* ══ REFVIEW-CSS 營隊參考 ══ */
 #camp{display:none}
 body[data-site="camp"] #camp{display:block}
+#course,.course-hero{display:none}
+body[data-site="course"] #course,body[data-site="course"] .course-hero{display:block}
 body[data-site="camp"] .hero,body[data-site="camp"] #cats,
-body[data-site="camp"] #list,body[data-site="camp"] .nav-race{display:none}
+body[data-site="camp"] #list,body[data-site="camp"] .nav-race,
+body[data-site="camp"] .course-hero,
+body[data-site="course"] .hero,body[data-site="course"] #cats,
+body[data-site="course"] #list,body[data-site="course"] .nav-race,
+body[data-site="course"] #camp,body[data-site="course"] .camp-hero:not(.course-hero){display:none}
 body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
+body[data-site="camp"] #camp{display:block}
+.course-hero{background:linear-gradient(165deg,#101d2c 0%,#16324a 48%,#1d4a5c 100%)}
+.course-hero .glow{background:radial-gradient(circle,rgba(92,192,207,.20),transparent 68%)}
+.course-hero .eyebrow{color:var(--exp)}
+.course-hero .camp-stat b{color:var(--exp)}
+.co-rg{margin:26px 0 0;font-size:15px;font-weight:700;display:flex;align-items:baseline;gap:9px;
+  padding-bottom:7px;border-bottom:1px solid var(--line)}
+.co-rg em{font-style:normal;font-family:"Fraunces",serif;font-size:12.5px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.co-rg + .rf-grid{margin-top:12px}
 #camp .rf-head{margin:0 0 6px}
 #camp .rf-lead{max-width:62ch;margin:10px 0 0;color:var(--ink-2);font-size:15px;line-height:1.7}
 #camp .rf-lead b{color:var(--ink);font-weight:600}
@@ -533,6 +549,14 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
 .rf-card .rf-fig{font-family:"Fraunces",serif;font-size:14px;font-weight:600;color:var(--brand-ink);
   font-variant-numeric:tabular-nums}
 .rf-card p{margin:0;font-size:13.5px;line-height:1.66;color:var(--ink-2)}
+.rf-card .rf-go{margin:2px 0 0}
+.rf-card .rf-go a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  font-size:13px;font-weight:600;color:var(--brand-ink);padding:6px 13px;
+  border:1px solid var(--brand-ink);border-radius:999px;transition:background .15s,color .15s}
+.rf-card .rf-go a:hover{background:var(--brand-ink);color:var(--surface)}
+.rf-card .rf-go a span{font-size:11px;opacity:.75}
+.rf-card .rf-no{margin:2px 0 0;font-size:12.5px;line-height:1.6;color:var(--ink-4);
+  padding:8px 11px;background:var(--sunken);border-radius:8px}
 .rf-card .rf-ax{display:flex;gap:5px;flex-wrap:wrap;margin-top:auto;padding-top:9px;
   border-top:1px dotted var(--line)}
 .rf-ax span{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;
@@ -563,6 +587,11 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
       <button role="menuitem" type="button" data-site="camp" aria-current="false">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 20h18L12 3z"/><path d="M12 11v9"/></svg>
         <span><b>特殊戶外營隊</b><i>十二地特色項目選項參考</i></span>
+        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5.5 5.5L20 7"/></svg>
+      </button>
+      <button role="menuitem" type="button" data-site="course" aria-current="false">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H19v16H5.5A2.5 2.5 0 0 0 3 21.5z"/><path d="M8 8h7"/></svg>
+        <span><b>專項課程營隊</b><i>飲食、藝術、科學等專項課程與訓練</i></span>
         <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5.5 5.5L20 7"/></svg>
       </button>
     </div>
@@ -666,6 +695,45 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
 
   <footer>版面樣本 16 筆（完整版約 240 筆）。資料來源：運動筆記、i運動資訊平台（教育部體育署）、中華民國網球協會、日月潭國家風景區管理處。賽事詳情與報名條件請以主辦單位公告為準。</footer>
 </div></section>
+
+<section class="camp-hero course-hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <p class="eyebrow">Specialised Courses &amp; Camps</p>
+    <h1>把一件事教到底的課</h1>
+    <p class="lede">二十六個兒童與青少年的專項課程與訓練，來自十一個國家與地區。
+      共同結構是一套方法先成形、再往外授權或複製 —— 和戶外類把特殊性綁在地形上正好相反。</p>
+    <div class="camp-stat">
+      <div><b>26</b><span>個項目</span></div>
+      <div><b>5</b><span>個類別</span></div>
+      <div><b>11</b><span>國家與地區</span></div>
+      <div><b>4</b><span>台灣本土</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="course">
+  <div class="sec-h rf-head">
+    <span class="kicker">Courses</span>
+    <h2>專項課程營隊</h2>
+  </div>
+  <p class="rf-lead">
+    三個標籤和戶外頁一致，代表<b>不同的取用理由</b>：
+    要無可取代的體驗看「在地獨有」，要有公信力的品牌看「國際知名」，
+    要別人排不到的行程看「獨家經營」。
+  </p>
+  <div class="rf-regions" id="co-cats"></div>
+  <p class="rf-count" id="co-count"></p>
+  <div id="co-body"></div>
+  <p class="rf-note">
+    <b>收錄門檻兩條</b>：對象是兒童或青少年，而且孩子實際動手。
+    廚藝界的世界級賽事（Bocuse d&rsquo;Or、麵包世界盃、Young Chef Olympiad）
+    是職業或餐飲科系層級，不是營隊，不收。
+    <br><b>連結一律指向官方網域</b>，已逐一開啟確認；少數是「總入口」而非直接報名頁
+    （愛丁堡公爵獎要再選國家、FLL 要再找在地隊伍、Arkki 與 KidZania 要再選據點），按鈕文字已標明。
+    <br><b>水果</b>是唯一查不到兒童版的品項；麵包、麵食、米飯都有對應。
+  </p>
+</section>
 
 <!-- ══ REFVIEW-HTML ══ -->
 <section class="camp-hero">
@@ -1451,7 +1519,7 @@ fillSelects(); render();
   var btn = document.getElementById('brandbtn');
   var menu = document.getElementById('brandmenu');
   var name = document.getElementById('brandname');
-  var NAMES = { race: '島嶼賽事曆', camp: '特殊戶外營隊' };
+  var NAMES = { race: '島嶼賽事曆', camp: '特殊戶外營隊', course: '專項課程營隊' };
 
   function open(on){
     menu.hidden = !on;
@@ -1467,9 +1535,11 @@ fillSelects(); render();
       b.setAttribute('aria-current', String(b.dataset.site === site));
     });
     if(site === 'camp' && window.RefView) RefView.draw();
+    if(site === 'course' && window.CourseView) CourseView.draw();
     try{ localStorage.setItem(KEY, site); }catch(e){}
     if(push){
-      try{ history.replaceState(null, '', site === 'camp' ? '#camps' : location.pathname); }catch(e){}
+      var hash = site === 'camp' ? '#camps' : site === 'course' ? '#courses' : location.pathname;
+      try{ history.replaceState(null, '', hash); }catch(e){}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     open(false);
@@ -1492,6 +1562,7 @@ fillSelects(); render();
 
   var start = 'race';
   if(location.hash === '#camps') start = 'camp';
+  else if(location.hash === '#courses') start = 'course';
   else { try{ start = localStorage.getItem(KEY) || 'race'; }catch(e){} }
   // RefView 定義在本區塊之後，初始化延到同步腳本跑完再執行
   setTimeout(function(){ go(start, false); }, 0);
@@ -1508,117 +1579,253 @@ const RF_REGIONS = [
 ];
 const RF = [
  {r:'tw',n:'龍洞攀岩場',e:'Longdong Sea Cliffs',a:[1,1,0],f:'3,500 萬年四稜砂岩',
-  d:'新北貢寮。北部最古老的四稜砂岩經海蝕形成，被稱為世界級攀岩聖地，台灣最有國際地位的戶外場域。'},
+  d:'新北貢寮。北部最古老的四稜砂岩經海蝕形成，被稱為世界級攀岩聖地，台灣最有國際地位的戶外場域。',u:'https://www.necoast-nsa.gov.tw/Attraction-Content.aspx?a=186&l=1',ul:'東北角風管處・岩場資訊'},
  {r:'tw',n:'日月潭萬人泳渡',e:'Sun Moon Lake Swim',a:[1,1,0],f:'2002 列入世界游泳名人堂',
-  d:'1983 年開辦，全程約 3,000 公尺，2026 年第 37 屆（9/20）。台灣賽事最硬的國際背書。'},
+  d:'1983 年開辦，全程約 3,000 公尺，2026 年第 37 屆（9/20）。台灣賽事最硬的國際背書。',u:'https://pulifourswim.tw/',ul:'埔里四季早泳會・報名'},
  {r:'tw',n:'太魯閣峽谷馬拉松',e:'Taroko Gorge Marathon',a:[1,1,0],f:'全球罕見甚至唯一',
-  d:'2000 年首屆，每年 11–12 月在太魯閣國家公園內。把馬拉松辦在峽谷裡，這個「唯一」是地形給的。'},
+  d:'2000 年首屆，每年 11–12 月在太魯閣國家公園內。把馬拉松辦在峽谷裡，這個「唯一」是地形給的。',un:'官方網域 taroko-marathon.com.tw 目前為空白頁；每年 5–6 月開放報名，屆時以「太魯閣峽谷馬拉松 報名」搜尋'},
  {r:'tw',n:'潟湖生態・牛車採蚵',e:'Lagoon & Oyster Farming',a:[1,0,0],f:'評論數 3,352（七股龍海號）',
-  d:'台南七股、彰化芳苑。西南海岸養殖漁業長出來的體驗，牛下海採蚵全世界少見。不是為觀光設計的活動。'},
+  d:'台南七股、彰化芳苑。西南海岸養殖漁業長出來的體驗，牛下海採蚵全世界少見。不是為觀光設計的活動。',u:'https://www.taiwanfarm.com.tw/products/tpioxg/',ul:'七股龍海號・線上預約'},
  {r:'tw',n:'烏岩角獨木舟',e:'Wuyanjiao Sea Kayak',a:[1,0,0],f:'只能從海上進入',
-  d:'宜蘭蘇澳。中央山脈起點的無路秘境，陸路到不了，只能划獨木舟從海上進去。'},
+  d:'宜蘭蘇澳。中央山脈起點的無路秘境，陸路到不了，只能划獨木舟從海上進去。',u:'https://nptoutdoor.rezio.shop/',ul:'NPT 涅普頓・預約'},
  {r:'tw',n:'攀樹・樹上探索',e:'Tree Climbing',a:[0,0,1],f:'全台 3 家',
-  d:'攀樹趣（5 歲起）、花蓮野猴子樹冠層（身高 110cm 以上、5–65 歲）、台中雄鷹（12 歲以上）。'},
- {r:'tw',n:'獨輪車',e:'Unicycling',a:[1,0,0],f:'全台 16 家・日韓各僅 1 協會',
-  d:'不少國小把獨輪車列為體育特色項目，教育系統直接養出教練市場。十二地中唯一台灣供給最厚的項目。'},
+  d:'攀樹趣（5 歲起）、花蓮野猴子樹冠層（身高 110cm 以上、5–65 歲）、台中雄鷹（12 歲以上）。',u:'https://eeeha.com/',ul:'野猴子探險森林・預約'},
+ {r:'tw',n:'獨輪車',e:'Unicycling',a:[1,0,0],f:'教育盃全國錦標賽・已辦逾 10 屆',
+  d:'列為民俗體育項目由國小推動：德化國小車隊 2012 年成立，金門多年國小為每位學生配一部車，彰化辦教育盃民俗體育錦標賽。這是教育系統直接製造供給的案例。',un:'循「教育盃全國獨輪車錦標賽」與各國小車隊查詢，無單一報名入口'},
  {r:'tw',n:'烏石港衝浪聚落',e:'Wushi Harbour Surf Cluster',a:[1,0,0],f:'一條路四家・評論數全破千',
-  d:'宜蘭頭城。特殊的不是衝浪，是聚落密度 —— 極酷 ★4.9（3,092）、蕃薯 ★4.9（1,521）、藍洋 ★4.9（1,266）比鄰而立。另有墾丁南灣與嘉義的內陸人工浪場。'},
+  d:'宜蘭頭城。特殊的不是衝浪，是聚落密度 —— 極酷 ★4.9（3,092）、蕃薯 ★4.9（1,521）、藍洋 ★4.9（1,266）比鄰而立。另有墾丁南灣與嘉義的內陸人工浪場。',u:'https://www.surfing.com.tw/',ul:'極酷衝浪俱樂部・預約'},
  {r:'tw',n:'帆船・少年航海家',e:'ASA Sailing',a:[0,1,0],f:'ASA 國際帆船課程',
-  d:'樂活海洋（台南安平）掛 ASA 課程與「少年航海家」，對應泰國普吉遊艇會的 7–17 歲三級制。屏東大鵬灣是國家級帆船基地。全台真正在教的約六家。'},
+  d:'樂活海洋（台南安平）掛 ASA 課程與「少年航海家」，對應泰國普吉遊艇會的 7–17 歲三級制。屏東大鵬灣是國家級帆船基地。全台真正在教的約六家。',u:'https://www.lohasocean.com/',ul:'樂活海洋・課程與報名'},
  {r:'tw',n:'跑酷',e:'Parkour',a:[0,1,0],f:'法國 ADD 分支・ADAPT 國際認證',
-  d:'ADD Academy Taiwan 是法國 ADD 的分支，摩猴跑酷 FRMP 的教練具 ADAPT 國際認證。台中豐樂雕塑公園是台灣第一座跑酷公園。兒童課程 6 歲起。'},
+  d:'ADD Academy Taiwan 是法國 ADD 的分支，摩猴跑酷 FRMP 的教練具 ADAPT 國際認證。台中豐樂雕塑公園是台灣第一座跑酷公園。兒童課程 6 歲起。',u:'https://www.parkour.tw/',ul:'台灣跑酷資訊網・找教室'},
  {r:'tw',n:'定向越野營',e:'Orienteering Camp',a:[0,0,1],f:'全台 1 個營隊・0 家業者',
-  d:'「小小航海王」自稱全國首創，Places 掃不到任何常態營運者。三天兩夜、小三～國一、NT$7,300–8,200，苗栗三義。對照日本有全國協會與青少年錦標賽。'},
+  d:'「小小航海王」自稱全國首創，Places 掃不到任何常態營運者。三天兩夜、小三～國一、NT$7,300–8,200，苗栗三義。對照日本有全國協會與青少年錦標賽。',u:'https://camp.hoya.org.tw/',ul:'小小航海王・營隊報名'},
 
  {r:'jp',n:'競技雪合戰',e:'Yukigassen',a:[1,1,1],f:'1987 制定國際規則・輸出 10 國',
-  d:'北海道壯瞥町為冬季振興發明，1989 首屆。7 人一隊、3 分鐘、每局 90 顆雪球，設小學高年級組。'},
+  d:'北海道壯瞥町為冬季振興發明，1989 首屆。7 人一隊、3 分鐘、每局 90 顆雪球，設小學高年級組。',u:'https://www.yukigassen.jp/',ul:'昭和新山國際雪合戰・官方'},
  {r:'jp',n:'浮冰行走',e:'Drift Ice Walk',a:[1,1,1],f:'小學生 ¥2,600',
-  d:'知床，世界流冰能抵達的最南端。穿乾式防寒衣走在海上浮冰。門檻是身高 130cm 以上的小學生。'},
+  d:'知床，世界流冰能抵達的最南端。穿乾式防寒衣走在海上浮冰。門檻是身高 130cm 以上的小學生。',u:'https://www.shinra.or.jp/',ul:'知床シンラ・行程預約'},
  {r:'jp',n:'海女體驗',e:'Ama Divers',a:[1,0,1],f:'全日本 1 家・評論 387',
-  d:'三重鳥羽。另有「跟海女學習 KIDS」課程。需求明顯超過供給；韓國濟州海女已登錄 UNESCO，日本尚未。'},
+  d:'三重鳥羽。另有「跟海女學習 KIDS」課程。需求明顯超過供給；韓國濟州海女已登錄 UNESCO，日本尚未。',u:'https://amakoya.com/',ul:'海女小屋・體驗預約'},
  {r:'jp',n:'沖永良部島洞穴',e:'Caving',a:[1,0,1],f:'島上 200–300 個洞窟',
-  d:'鹿兒島，被稱為「洞窟の聖地」。全日本掃到 3 家，3 家全在同一座島上。小學生以上可參加初級路線。'},
+  d:'鹿兒島，被稱為「洞窟の聖地」。全日本掃到 3 家，3 家全在同一座島上。小學生以上可參加初級路線。',u:'https://www.okecaving.com/',ul:'沖永良部島ケイビング・預約'},
  {r:'jp',n:'山伏修行',e:'Yamabushi Training',a:[1,0,1],f:'3 天・白裝束',
-  d:'出羽三山（山形羽黑）的修驗道修行，一般人可報名。宗教修行變成戶外行程，十二地裡只有日韓有。'},
+  d:'出羽三山（山形羽黑）的修驗道修行，一般人可報名。宗教修行變成戶外行程，十二地裡只有日韓有。',u:'https://hagurokanko.jp/',ul:'羽黑町觀光協會・修行體驗'},
  {r:'jp',n:'無人島求生',e:'Island Survival',a:[1,0,1],f:'妻ヶ島無電無自來水',
-  d:'搭帳、生火、取得食材全部自己來。和歌山地ノ島可包島；瀬戸内行程做成自製竹筏渡海＋天文台觀星。'},
+  d:'搭帳、生火、取得食材全部自己來。和歌山地ノ島可包島；瀬戸内行程做成自製竹筏渡海＋天文台觀星。',u:'https://select.mujinto.jp/',ul:'無人島セレクト・預約'},
  {r:'jp',n:'攀樹認證 TCJ',e:'Tree Climbing Japan',a:[0,1,1],f:'6,000 認證・年 350 場・10 級',
-  d:'2000 年成立，把攀樹輸出到台灣的源頭。Places 只掃到 1 家店，但制度端有六千名持證者。'},
+  d:'2000 年成立，把攀樹輸出到台灣的源頭。Places 只掃到 1 家店，但制度端有六千名持證者。',u:'https://treeclimbingjapan.org/',ul:'TCJ・活動與認證'},
  {r:'jp',n:'山村留學',e:'Rural Village Study',a:[1,0,0],f:'一整學年・¥65,000／月',
-  d:'都市中小學生離家轉入山村小學讀一整年（4 月–翌年 3 月）。北海道與長野有縣級制度，非單一業者產品。'},
+  d:'都市中小學生離家轉入山村小學讀一整年（4 月–翌年 3 月）。北海道與長野有縣級制度，非單一業者產品。',u:'https://sansonryugaku.nagano.jp/',ul:'信州自然留學・招生'},
  {r:'jp',n:'白馬分齡營',e:'Evergreen Hakuba',a:[0,0,0],f:'夏 ¥175,000／冬 ¥165,000',
-  d:'可直接報名的產品。7–8／9–12／13–16 歲三段分齡，攀樹與定向越野寫進課表；冬營 8–15 歲含雪鞋與冰屋。'},
+  d:'可直接報名的產品。7–8／9–12／13–16 歲三段分齡，攀樹與定向越野寫進課表；冬營 8–15 歲含雪鞋與冰屋。',u:'https://www.evergreen-hakuba.com/',ul:'Evergreen 白馬・梯次與報名'},
 
  {r:'kr',n:'濟州海女文化',e:'Jeju Haenyeo',a:[1,1,0],f:'UNESCO 人類無形文化遺產（2016）',
-  d:'2016 年 12 月第 11 屆政府間委員會決議登錄。內容含潛水技法、祈求平安的潛水굿祭儀與海女歌謠。'},
+  d:'2016 年 12 月第 11 屆政府間委員會決議登錄。內容含潛水技法、祈求平安的潛水굿祭儀與海女歌謠。',u:'https://www.jeju.go.kr/haenyeo/',ul:'濟州海女博物館・官方'},
  {r:'kr',n:'韓國潮灘',e:'Getbol Tidal Flats',a:[1,1,0],f:'UNESCO 世界自然遺產（2021）',
-  d:'2021/7/26 第 44 屆世界遺產委員會登錄，四處組成。EAAF 東亞–澳大拉西亞遷徙路線候鳥中繼站。'},
+  d:'2021/7/26 第 44 屆世界遺產委員會登錄，四處組成。EAAF 東亞–澳大拉西亞遷徙路線候鳥中繼站。',u:'https://www.getbolworldheritage.org/',ul:'韓國潮灘世界遺產・官方'},
  {r:'kr',n:'華川山鱒魚冰釣節',e:'Hwacheon Ice Festival',a:[1,1,0],f:'CNN 冬季七大不可思議（2011）',
-  d:'2026 會期 1/10–2/1 共 23 天。冰釣 15,000 원；徒手抓魚需滿 14 歲。年參觀 186 萬人次。'},
+  d:'2026 會期 1/10–2/1 共 23 天。冰釣 15,000 원；徒手抓魚需滿 14 歲。年參觀 186 萬人次。',u:'https://www.narafestival.com/',ul:'華川山鱒魚節・購票'},
  {r:'kr',n:'海軍陸戰隊營',e:'Marine Corps Camp',a:[1,0,1],f:'7 週訓練壓縮成 5 天',
-  d:'軍方直接主辦的青少年營隊，十二地唯一。另有 1–4 天短版本。2026 冬季第 137 期（1/12）。'},
+  d:'軍方直接主辦的青少年營隊，十二地唯一。另有 1–4 天短版本。2026 冬季第 137 期（1/12）。',u:'https://www.haebyeong.com/mccamp',ul:'海兵隊營・梯次公告'},
  {r:'kr',n:'國土大長征',e:'National March',a:[1,0,0],f:'3 泊 4 日・60 公里',
-  d:'韓國青年文化裡近似成年儀式。World Vision 版本走東海岸해파랑길，一梯國中生 120 人。'},
+  d:'韓國青年文化裡近似成年儀式。World Vision 版本走東海岸해파랑길，一梯國中生 120 人。',u:'https://www.worldvision.or.kr/',ul:'World Vision 韓國・招募公告'},
  {r:'kr',n:'麗水免費海洋運動',e:'Yeosu Free Programme',a:[1,0,0],f:'0 원・8 個項目',
-  d:'7/1–8/30，市府開放小艇帆船、風浪板、皮艇、獨木舟、水肺潛水等八項免費體驗。'},
+  d:'7/1–8/30，市府開放小艇帆船、風浪板、皮艇、獨木舟、水肺潛水等八項免費體驗。',u:'https://www.yeosu.go.kr/',ul:'麗水市政府・活動公告'},
 
  {r:'cn',n:'紫雲苗廳',e:'Miao Room',a:[1,1,1],f:'容積 1,057 萬 m³・世界第一',
-  d:'貴州。2014 年全國洞穴大會認定為世界已知體積與表面積最大的洞廳。長 890m、寬 349m、高 238m。'},
+  d:'貴州。2014 年全國洞穴大會認定為世界已知體積與表面積最大的洞廳。長 890m、寬 349m、高 238m。',un:'需隨專業探洞隊進入，無公開報名入口'},
  {r:'cn',n:'陽朔攀岩',e:'Yangshuo Climbing',a:[1,1,0],f:'1,000+ 條路線',
-  d:'桂林喀斯特峰林。數量、品質與難度級別都是中國之最，國際攀岩者長期造訪的目的地。'},
+  d:'桂林喀斯特峰林。數量、品質與難度級別都是中國之最，國際攀岩者長期造訪的目的地。',un:'無單一官方單位，以「陽朔 攀岩 嚮導」搜尋在地業者'},
  {r:'cn',n:'少林塔溝武校',e:'Shaolin Tagou',a:[1,1,0],f:'在校師生 35,000+',
-  d:'河南登封，三校區佔地 2,400 餘畝。世界規模最大的武術學校之一，全日制寄宿型態。'},
+  d:'河南登封，三校區佔地 2,400 餘畝。世界規模最大的武術學校之一，全日制寄宿型態。',u:'https://www.shaolintagou.com/',ul:'少林塔溝教育集團・招生'},
 
  {r:'th',n:'泰拳',e:'Muay Thai',a:[1,1,0],f:'IOC 全面承認（2021/7/20）',
-  d:'源自 16 世紀戰場武術 Muay Boran。已產品化為學校假期營；喀比可上午泰拳、下午攀岩。'},
+  d:'源自 16 世紀戰場武術 Muay Boran。已產品化為學校假期營；喀比可上午泰拳、下午攀岩。',u:'https://www.tigermuaythai.com/',ul:'Tiger Muay Thai・課程預約'},
  {r:'th',n:'萊雷攀岩',e:'Railay Climbing',a:[1,1,0],f:'700+ 條路線・5.4 至 5.14a',
-  d:'東南亞首要攀岩地，石灰岩鐘乳石懸岩。正式課程 13 歲，部分業者為 7 歲甚至 5 歲開簡單路線。'},
+  d:'東南亞首要攀岩地，石灰岩鐘乳石懸岩。正式課程 13 歲，部分業者為 7 歲甚至 5 歲開簡單路線。',u:'https://www.realrocksclimbing.com/',ul:'Real Rocks Climbing・預約'},
  {r:'th',n:'龜島潛水',e:'Koh Tao Diving',a:[0,1,0],f:'疫情前年年全球發證最多',
-  d:'PADI 分級把年齡拆得很細：8–9 歲泳池限 2m、10–11 歲限 12m、12–14 歲限 18m，陪同規定都寫死。'},
+  d:'PADI 分級把年齡拆得很細：8–9 歲泳池限 2m、10–11 歲限 12m、12–14 歲限 18m，陪同規定都寫死。',u:'https://www.padi.com/diving-in/koh-tao',ul:'PADI 龜島・找潛店與課程'},
  {r:'th',n:'普吉泰王盃帆船賽',e:"Phuket King's Cup",a:[0,1,0],f:'亞洲最大・1987 創辦',
-  d:'每年 12 月第一週。普吉遊艇會用 O’pen Skiff 做 7–17 歲三級訓練，可直通全國錦標賽。'},
+  d:'每年 12 月第一週。普吉遊艇會用 O’pen Skiff 做 7–17 歲三級訓練，可直通全國錦標賽。',u:'https://kingscup.com/',ul:'泰王盃帆船賽・官方'},
  {r:'th',n:'志工營 ค่ายอาสา',e:'Volunteer Camp',a:[1,0,0],f:'台日韓皆無此型態',
-  d:'種樹、種珊瑚、築攔砂堰、淨灘。強調參加者平等、共同訂規則、投票決定 —— 用戶外勞動教公民參與。'},
+  d:'種樹、種珊瑚、築攔砂堰、淨灘。強調參加者平等、共同訂規則、投票決定 —— 用戶外勞動教公民參與。',u:'https://www.camphub.in.th/',ul:'CampHUB・泰國營隊總覽'},
  {r:'th',n:'Hong 潟湖獨木舟',e:'Sea Canoe',a:[1,0,0],f:'崩塌洞穴潟湖',
-  d:'攀牙灣石灰岩島，洞頂塌陷形成封閉潟湖，只能划獨木舟從水面下的低矮洞口鑽進去。'},
+  d:'攀牙灣石灰岩島，洞頂塌陷形成封閉潟湖，只能划獨木舟從水面下的低矮洞口鑽進去。',u:'https://www.johngray-seacanoe.com/',ul:'John Gray Sea Canoe・預約'},
  {r:'th',n:'藤球',e:'Sepak Takraw',a:[1,0,0],f:'全泰 12 處・台日韓皆 0',
-  d:'東南亞國技。不稀缺但只有這裡有 —— 用家數量它很普通，用地理分布量它是十二地獨有。'},
+  d:'東南亞國技。不稀缺但只有這裡有 —— 用家數量它很普通，用地理分布量它是十二地獨有。',un:'各地公共球場為主，無報名制'},
 
  {r:'my',n:'神山 Via Ferrata',e:'Mount Kinabalu Via Ferrata',a:[1,1,1],f:'金氏認證・海拔 3,776m',
-  d:'Mountain Torq 架設，2007 年 12 月啟用，亞洲第一條。位於京那巴魯公園 —— 馬來西亞第一個世界遺產。'},
+  d:'Mountain Torq 架設，2007 年 12 月啟用，亞洲第一條。位於京那巴魯公園 —— 馬來西亞第一個世界遺產。',u:'https://mountaintorq.com/',ul:'Mountain Torq・唯一營運方'},
 
  {r:'vn',n:'韓松洞',e:'Hang Son Doong',a:[1,1,1],f:'容積 3,850 萬 m³・法定十年獨家',
-  d:'世界最大洞穴通道，波音 747 可飛過。Oxalis 取得 2020–2030 年獨家權，是全球唯一獲授權的業者。'},
+  d:'世界最大洞穴通道，波音 747 可飛過。Oxalis 取得 2020–2030 年獨家權，是全球唯一獲授權的業者。',u:'https://oxalisadventure.com/',ul:'Oxalis・唯一授權業者'},
 
  {r:'ph',n:'錫亞高 Cloud 9',e:'Siargao Cloud 9',a:[1,1,0],f:'2026 升 WSL 冠軍巡迴賽站',
-  d:'1996 年首辦國際衝浪賽，2014 年進 WSL 資格賽，2026 年升冠軍巡迴（10/31–11/10）。十二年爬完的路徑。'},
+  d:'1996 年首辦國際衝浪賽，2014 年進 WSL 資格賽，2026 年升冠軍巡迴（10/31–11/10）。十二年爬完的路徑。',u:'https://www.worldsurfleague.com/',ul:'World Surf League・賽程'},
  {r:'ph',n:'科隆灣沉船潛水',e:'Coron Bay Wrecks',a:[1,1,0],f:'1944/9/24 整支艦隊沉沒',
-  d:'24 架美軍 Helldiver 突襲藏在灣內的日本補給艦隊。戶外活動與歷史現場重疊，十二地無第二例。'},
+  d:'24 架美軍 Helldiver 突襲藏在灣內的日本補給艦隊。戶外活動與歷史現場重疊，十二地無第二例。',u:'https://www.divinginpalawan.com/diving-in-coron/',ul:'Coron 潛水・行程與深度分級'},
  {r:'ph',n:'Arnis 菲律賓魔杖',e:'Arnis / Eskrima',a:[1,1,0],f:'共和國第 9850 號法案（2009）',
-  d:'2009/12/11 簽署，明文定為國技與國家運動。十二地唯一用單獨立法確立地位的國技。'},
+  d:'2009/12/11 簽署，明文定為國技與國家運動。十二地唯一用單獨立法確立地位的國技。',u:'https://pnat-pekaf.org/',ul:'菲律賓 Arnis 總會・官方'},
  {r:'ph',n:'Kawasan 溪降',e:'Kawasan Canyoneering',a:[1,0,0],f:'宿霧 Badian',
-  d:'一連串藍綠色水潭串成的溪降路線，以跳水段落聞名。門檻與性格都和台日的繩索式溪降不同。'},
+  d:'一連串藍綠色水潭串成的溪降路線，以跳水段落聞名。門檻與性格都和台日的繩索式溪降不同。',u:'https://www.kawasancanyoneering.com.ph/',ul:'Kawasan Canyoneering・預約'},
 
  {r:'sg',n:'全民戶外冒險教育',e:'NOAE · Outward Bound',a:[1,1,1],f:'K-12 期間必修 3 次',
-  d:'2016 年國家藍圖規定每個公立學校學童要有三次多日戶外體驗，全體中三生五天遠征。烏敏島的 OBS 是世界第一座專建的 Outward Bound 中心。'},
+  d:'2016 年國家藍圖規定每個公立學校學童要有三次多日戶外體驗，全體中三生五天遠征。烏敏島的 OBS 是世界第一座專建的 Outward Bound 中心。',u:'https://obs.nyc.gov.sg/',ul:'Outward Bound Singapore・官方'},
 
  {r:'bn',n:'烏魯淡布隆樹冠步道',e:'Ulu Temburong Canopy',a:[1,0,1],f:'離地 50 公尺・全長 600m+',
-  d:'婆羅洲之心保育區，550 km²。鋼塔與吊橋構成，龍腦香科巨木高逾 70 公尺。上去要爬 826 階木梯。'},
+  d:'婆羅洲之心保育區，550 km²。鋼塔與吊橋構成，龍腦香科巨木高逾 70 公尺。上去要爬 826 階木梯。',u:'https://www.bruneitourism.com/places/ulu-temburong-national-park/',ul:'汶萊觀光局・園區資訊'},
 
  {r:'au',n:'Bells Beach',e:'Rip Curl Pro Bells Beach',a:[1,1,0],f:'1962 年起連續舉辦',
-  d:'世界最長壽的衝浪賽事，每年復活節，1973 年起轉為職業賽。連續性本身就是別人無法複製的資產。'},
+  d:'世界最長壽的衝浪賽事，每年復活節，1973 年起轉為職業賽。連續性本身就是別人無法複製的資產。',u:'https://www.ripcurl.com/pages/rip-curl-pro-bells-beach',ul:'Rip Curl Pro Bells Beach・官方'},
  {r:'au',n:'Nippers 少年衝浪救生',e:'Surf Life Saving Nippers',a:[1,0,0],f:'5–14 歲・全國俱樂部制',
-  d:'不是玩水，是正式救生訓練 —— 泳渡、板槳、沙灘衝刺、旗標搶奪，並銜接到成年志願救生員。'},
+  d:'不是玩水，是正式救生訓練 —— 泳渡、板槳、沙灘衝刺、旗標搶奪，並銜接到成年志願救生員。',u:'https://sls.com.au/',ul:'Surf Life Saving Australia・找俱樂部'},
 
  {r:'nz',n:'高空彈跳',e:'Bungy · Kawarau Bridge',a:[1,1,1],f:'1988/4/12 世界第一個商業彈跳',
-  d:'AJ Hackett 與 Henry van Asch 在皇后鎮 Kawarau 橋推出，同年 11 月正式營運。原始場地仍在跳。'},
+  d:'AJ Hackett 與 Henry van Asch 在皇后鎮 Kawarau 橋推出，同年 11 月正式營運。原始場地仍在跳。',u:'https://www.bungy.co.nz/',ul:'AJ Hackett Bungy・預約'},
  {r:'nz',n:'Zorb 滾球',e:'Zorbing',a:[1,1,1],f:'1994 年紐西蘭人發明',
-  d:'Andrew Akers 與 Dwane van der Sluis 在自家車庫做出雙層充氣球，1997 年在羅托魯瓦設第一個永久場地。'},
+  d:'Andrew Akers 與 Dwane van der Sluis 在自家車庫做出雙層充氣球，1997 年在羅托魯瓦設第一個永久場地。',u:'https://zorb.com/',ul:'ZORB Rotorua・預約'},
  {r:'nz',n:'黑水漂',e:'Black Water Rafting',a:[1,1,1],f:'Ruakuri 洞唯一營運權',
-  d:'抱著內胎順地下伏流漂過螢火蟲洞，這個項目就是在懷托摩發明的。發明地＋唯一營運權，結構同韓松洞。'},
+  d:'抱著內胎順地下伏流漂過螢火蟲洞，這個項目就是在懷托摩發明的。發明地＋唯一營運權，結構同韓松洞。',u:'https://www.waitomo.com/',ul:'Discover Waitomo・預約'},
  {r:'nz',n:'噴射快艇',e:'Jet Boating',a:[1,1,0],f:'1958 世界第一個商業營運',
-  d:'比高空彈跳早三十年。為了在極淺的高山河道行船而捨棄螺旋槳改用噴射推進 —— 地形逼出來的發明。'}
+  d:'比高空彈跳早三十年。為了在極淺的高山河道行船而捨棄螺旋槳改用噴射推進 —— 地形逼出來的發明。',u:'https://www.shotoverjet.com/',ul:'Shotover Jet・預約'}
 ];
+
+
+/* ══ COURSEVIEW-JS 專項課程營隊 ══
+   c = 類別；r = 區域；a = [在地獨有, 國際知名, 獨家經營]。 */
+const CO_CATS = [['food','飲食與廚藝'],['art','藝術與身體'],['sci','科學與工程'],
+                 ['soc','社會與文化'],['env','環境與空間']];
+const CO_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲'};
+const CO = [
+ {c:'art',r:'am',n:'Interlochen 藝術營',cty:'美國',y:'1928',a:[1,1,0],f:'美國最老也最大的暑期藝術營',
+  d:'1928/6/24 首季、115 名學生，原名全國高中管弦樂團營。現涵蓋音樂、戲劇、舞蹈、寫作、電影與視覺藝術。',
+  u:'https://www.interlochen.org/camp',ul:'Interlochen 夏令營報名'},
+ {c:'art',r:'jp',n:'鈴木教學法',cty:'日本',y:'1945',a:[1,1,0],f:'至少 40 個國家',
+  d:'鈴木鎮一在松本提出的「母語教學法」—— 把幼兒學會母語的原理搬到學樂器上。1964 年赴美巡演後推向世界。',
+  u:'https://www.suzukimethod.or.jp/english/',ul:'才能教育研究会（英文）'},
+ {c:'env',r:'eu',n:'森林學校',cty:'丹麥',y:'1950s',a:[1,1,0],f:'日本現有約 250 個團體',
+  d:'1950 年代丹麥 Ella Flautau 首創，兒童主導、遊戲導向。德國 1993 年才有第一所獲官方補助；日本 2004 年成立全國論壇。',
+  u:'https://morinoyouchien.org/',ul:'森のようちえん全国ネットワーク'},
+ {c:'soc',r:'eu',n:'愛丁堡公爵獎',cty:'英國',y:'1956',a:[1,1,0],f:'144 個國家 —— 本清單最高',
+  d:'菲利普親王創立。四個必修面向：志願服務、體能、技能、探險遠征 —— 唯一把戶外與非戶外綁進同一套架構的計畫。',
+  u:'https://www.intaward.org/',ul:'國際獎章協會・查各國承辦單位'},
+ {c:'soc',r:'eu',n:'海牙國際模擬聯合國',cty:'荷蘭',y:'1968',a:[1,1,0],f:'學生來自 100+ 個國家',
+  d:'1968 年起辦、1981 年成立基金會。世界規模最大的中學生聯合國模擬會議，每年一月底四天、約 200 校 3,200 人。',
+  u:'https://thehague.thimun.org/',ul:'THIMUN 海牙大會'},
+ {c:'art',r:'am',n:'El Sistema',cty:'委內瑞拉',y:'1975',a:[1,1,0],f:'影響 70+ 國家',
+  d:'不是才藝班，是用樂團當社會介入工具，目標客群是高風險社區的孩子。Sistema Global 在 40 多國運作。',
+  u:'https://sistemaglobal.org/',ul:'Sistema Global・查各國計畫'},
+ {c:'sci',r:'am',n:'約翰霍普金斯 CTY',cty:'美國',y:'1979',a:[0,1,0],f:'首創超齡測驗鑑別資優',
+  d:'原是研究「學術早慧兒童如何學習」的計畫，成為第一個用超齡測驗鑑別資優生並提供對應課程的體系。',
+  u:'https://cty.jhu.edu/',ul:'CTY 課程與資格檢定'},
+ {c:'sci',r:'am',n:'Space Camp',cty:'美國',y:'1982',a:[1,1,1],f:'世界最老最大 STEM 營・逾 75 萬人次',
+  d:'設在世界最大的太空博物館內，學員來自全美 50 州與 150 多個國家。這裡是農神五號的誕生地。',
+  u:'https://www.rocketcenter.com/SpaceCamp',ul:'Space Camp 梯次與報名'},
+ {c:'food',r:'eu',n:'Le Cordon Bleu 兒童工作坊',cty:'法國',y:'1895',a:[1,1,0],f:'6 / 8–12 / 13–17 三段分齡',
+  d:'8–12 歲由主廚親自帶、配助教，每個孩子有獨立工作檯；13–17 歲另有 Futures Chefs；6 歲起可親子同行。',
+  u:'https://www.cordonbleu.edu/paris/culinary-workshop-children/en',ul:'Les Petits Cordons Bleus 報名'},
+ {c:'food',r:'jp',n:'ABC Cooking Studio・ABC Kids',cty:'日本',y:'1985',a:[1,1,0],f:'ABC Kids 日本 25 間・台北有據點',
+  d:'1985 年靜岡起家。ABC Kids 專為 4–12 歲設計，教飲食基礎而非才藝表演。海外十城 20 間，含台北。',
+  u:'https://www.abc-cooking-studio.com/',ul:'ABC Cooking Studio 各地據點'},
+ {c:'food',r:'am',n:'Bake for Good',cty:'美國',y:'1992',a:[1,1,0],f:'免費・4–12 年級・逾 9 萬名學童',
+  d:'King Arthur Baking（1790 年創立、員工持股）的公益計畫。學做麵包的數學與科學，材料公司提供，一次做兩條：一條自己留、一條送給有需要的人。',
+  u:'https://www.kingarthurbaking.com/learn/bakeforgood',ul:'Bake for Good 學校申請'},
+ {c:'env',r:'eu',n:'Arkki 兒童建築學校',cty:'芬蘭',y:'1993',a:[1,1,0],f:'授權 10 國・台灣尚未引進',
+  d:'1993 年創立。亞洲從越南起步（與 UNICEF 合作），中國已開、泰國興建中、新加坡有據點。台灣不在名單上。',
+  u:'https://www.arkki.com/',ul:'Arkki International・授權與課程'},
+ {c:'food',r:'am',n:'可食校園',cty:'美國',y:'1995',a:[1,1,0],f:'菜園＋廚房教室・寫進正課',
+  d:'Alice Waters 把柏克萊一所中學的一英畝荒地翻成有機菜園。不是課後社團，是正課的一部分，連結數學、科學、文化與歷史。',
+  u:'https://edibleschoolyard.org/',ul:'Edible Schoolyard Project'},
+ {c:'art',r:'tw',n:'雲門教室 生活律動',cty:'台灣',y:'1995',a:[1,0,1],f:'30+ 位專家組課程委員會',
+  d:'1995 年起研發、1998 年成立。以身體為主軸，課程委員會由三十多位幼教、心理、藝術、舞蹈與身心發展專家組成，三年小改、五年大改。',
+  u:'https://www.cgds.com.tw/course/child/index',ul:'雲門教室・兒童課程'},
+ {c:'sci',r:'am',n:'FIRST LEGO League',cty:'美國',y:'1998',a:[0,1,0],f:'單季 30 萬支隊伍・95+ 國',
+  d:'1998 年由 FIRST 創辦人 Dean Kamen 與樂高的 Kjeld Kirk Kristiansen 合作創立。4–16 歲分 Explore 與 Challenge 兩級。',
+  u:'https://www.firstlegoleague.org/',ul:'FLL 官方・找在地隊伍'},
+ {c:'soc',r:'am',n:'KidZania 職業體驗城',cty:'墨西哥',y:'1999',a:[1,1,0],f:'edutainment 這個類型的起點',
+  d:'1999/9 墨西哥市 Santa Fe 開幕，原名「兒童之城」。街道、醫院、銀行、超市、消防隊構成擬真城市，孩子扮演數十種職業。',
+  u:'https://kidzania.com/en',ul:'KidZania 全球據點'},
+ {c:'food',r:'jp',n:'孩子自己做的便當日',cty:'日本',y:'2001',a:[1,1,0],f:'約 2,400 所學校・47 個都道府縣',
+  d:'菜單、採買、烹調、裝盒、收拾全部由小五小六自己完成，一年五次。對家長只有一句：請不要幫忙。不需場地器材師資費用。',
+  u:'https://bentounohi.co.jp/',ul:'子どもが作る弁当の日'},
+ {c:'soc',r:'tw',n:'十三行考古體驗',cty:'台灣',y:'2003',a:[1,0,1],f:'北台灣第一座考古博物館',
+  d:'2003/4/24 開館，建在國定二級古蹟十三行遺址上。兒童考古體驗室的沙中埋有仿古文物，挖出後拼接陶器與人骨。',
+  u:'https://www.sshm.ntpc.gov.tw/',ul:'十三行博物館官網'},
+ {c:'food',r:'eu',n:'校園菜園計畫',cty:'義大利',y:'2004',a:[1,1,0],f:'全義 500+ 座・160 個市鎮',
+  d:'Slow Food 的兒童部門。概念源自 Alice Waters 的柏克萊菜園。參與者含家長、祖父母與在地生產者，組成學習社群。',
+  u:'https://www.slowfood.com/blog-and-news/edible-school-gardens/',ul:'Slow Food 校園菜園'},
+ {c:'sci',r:'am',n:'VEX 機器人競賽',cty:'美國',y:'2004',a:[0,1,0],f:'金氏認定・世界最大機器人競賽',
+  d:'唯一把晉升路徑做成產品：VEX 123（Pre-K）→ GO → IQ → V5 → U（大學）→ AI（取消人工操控）。2 萬隊、50 國。2026/5 與 REC Foundation 分家，主辦歸屬須確認。',
+  u:'https://www.vexrobotics.com/competition',ul:'VEX 各級賽事總覽'},
+ {c:'food',r:'eu',n:'Eataly La Scuola 兒童課',cty:'義大利',y:'2007',a:[1,1,0],f:'手作義大利麵與披薩',
+  d:'2007/1/27 都靈首店，開宗明義要做成「一所學校、一個市場、一張餐桌」。走「把課開在賣場裡」的路線。',
+  u:'https://www.eataly.com/us_en/classes-and-events',ul:'Eataly 課程與活動'},
+ {c:'sci',r:'tw',n:'數感實驗室',cty:'台灣',y:'2016',a:[1,0,1],f:'冬夏令營年服務 3,000+ 學生',
+  d:'2016 年賴以威教授與廖珮妤創辦，台師大衍生新創。實體＋線上並行，與科教館合作辦師培與資優班。',
+  u:'https://numeracylab.com/',ul:'數感實驗室・營隊與課程'},
+ {c:'art',r:'tw',n:'LALASO 拉拉手游泳學院',cty:'台灣',y:'2016',a:[1,0,1],f:'三段目的完全不同',
+  d:'台中。親子（3 個月–3 歲）教親子關係與適應水性、不教泳技；幼兒（2–6 歲）玩樂學習與水中閉氣移動；兒童（5–12 歲）走荷蘭自救訓練與水球。全檔唯一的方法輸入案例。',
+  u:'https://lalasobaby.com/',ul:'拉拉手游泳學院'},
+ {c:'food',r:'eu',n:'Mamma Ciccia Cooking Academy',cty:'義大利',y:'2017',a:[1,0,0],f:'餐廳開課十餘年後成立學院',
+  d:'科莫湖畔。單一據點的家族事業，不是跨國體系 —— 示範了從一間餐廳的副業長成獨立學院，是台灣餐飲業者最容易複製的規模。',
+  u:'https://www.mammaciccia.it/en/cooking-academy',ul:'Cooking Academy 課程'},
+ {c:'food',r:'jp',n:'中野烏龍麵學校',cty:'日本',y:'常態',a:[1,0,0],f:'60 分鐘・從入學到畢業',
+  d:'香川琴平，讚岐烏龍麵原鄉。把單一品項做成完整儀式 —— 不是「教你做麵」，是「你來這間學校讀一小時的書」，還發畢業證書。',
+  u:'https://www.nakanoya.net/',ul:'中野うどん学校'},
+ {c:'food',r:'jp',n:'田植體驗與稻作教室',cty:'日本',y:'常態',a:[1,0,0],f:'2 小時單次 ～ 全年育苗到脫穀',
+  d:'把食育和戶外休閒綁在一起。台灣有同樣的稻作條件與剛通過的法源，缺的是把它做成有年度節奏的產品。',
+  un:'各地農會與自然學校自辦，無單一官方入口 —— 建議以「田植え体験 + 地區名」搜尋'}
+];
+
+window.CourseView = (function(){
+  var AX=['在地獨有','國際知名','獨家經營'], pick='all', drawn=false;
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function card(it){
+    var sc=it.a[0]+it.a[1]+it.a[2];
+    var ax=it.a.map(function(on,i){
+      return '<span class="'+(on?(sc===3?'on x3':'on'):'')+'">'+AX[i]+'</span>';}).join('');
+    return '<article class="rf-card'+(sc===3?' full':'')+'">'
+      +'<div class="rf-top"><h4>'+esc(it.n)+'</h4>'
+      +'<span class="rf-rg">'+esc(it.cty)+' · '+esc(it.y)+'</span></div>'
+      +'<div class="rf-fig">'+esc(it.f)+'</div>'
+      +'<p>'+esc(it.d)+'</p>'
+      +(it.u?'<p class="rf-go"><a href="'+esc(it.u)+'" target="_blank" rel="noopener">'
+             +esc(it.ul)+'<span aria-hidden="true">↗</span></a></p>'
+            :(it.un?'<p class="rf-no">'+esc(it.un)+'</p>':''))
+      +'<div class="rf-ax">'+ax+'</div></article>';
+  }
+  function draw(){
+    var w=document.getElementById('co-cats');
+    if(!drawn){
+      w.innerHTML='<button data-c="all" aria-pressed="true">全部</button>'
+        +CO_CATS.map(function(x){return '<button data-c="'+x[0]+'" aria-pressed="false">'+x[1]+'</button>';}).join('');
+      w.addEventListener('click',function(ev){
+        var b=ev.target.closest('button[data-c]'); if(!b) return;
+        pick=b.dataset.c;
+        w.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+        paint();
+      });
+      drawn=true;
+    }
+    paint();
+  }
+  function paint(){
+    var rows = pick==='all' ? CO : CO.filter(function(x){return x.c===pick;});
+    var byRg = {tw:[],jp:[],eu:[],am:[]};
+    rows.forEach(function(x){ byRg[x.r].push(x); });
+    var html='';
+    ['tw','jp','eu','am'].forEach(function(k){
+      if(!byRg[k].length) return;
+      html += '<h3 class="co-rg">'+CO_RG[k]+'<em>'+byRg[k].length+'</em></h3>'
+            + '<div class="rf-grid">'+byRg[k].map(card).join('')+'</div>';
+    });
+    document.getElementById('co-count').innerHTML='<b>'+rows.length+'</b> 個項目';
+    document.getElementById('co-body').innerHTML=html;
+  }
+  return {draw:draw,data:CO};
+})();
 
 window.RefView = (function(){
   var AX = ['在地獨有','國際知名','獨家經營'];
@@ -1639,6 +1846,9 @@ window.RefView = (function(){
       + '<div class="rf-en">' + esc(it.e) + '</div>'
       + '<div class="rf-fig">' + esc(it.f) + '</div>'
       + '<p>' + esc(it.d) + '</p>'
+      + (it.u ? '<p class="rf-go"><a href="' + esc(it.u) + '" target="_blank" rel="noopener">'
+                + esc(it.ul) + '<span aria-hidden="true">\u2197</span></a></p>'
+              : (it.un ? '<p class="rf-no">' + esc(it.un) + '</p>' : ''))
       + '<div class="rf-ax">' + ax + '</div></article>';
   }
 
