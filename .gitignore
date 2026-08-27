@@ -21,3 +21,4 @@ __pycache__/
 
 # 店家原圖（僅供重新壓縮用，壓縮版已內嵌於 site/template.html）
 assets/shopimg/
+.claude/
