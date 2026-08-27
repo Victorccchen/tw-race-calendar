@@ -562,7 +562,7 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
       </button>
       <button role="menuitem" type="button" data-site="camp" aria-current="false">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 20h18L12 3z"/><path d="M12 11v9"/></svg>
-        <span><b>特殊戶外營隊</b><i>十二地選項參考・非戶外特色營</i></span>
+        <span><b>特殊戶外營隊</b><i>十二地特色項目選項參考</i></span>
         <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5.5 5.5L20 7"/></svg>
       </button>
     </div>
@@ -673,12 +673,12 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
   <div class="wrap">
     <p class="eyebrow">Outdoor Camps Worldwide</p>
     <h1>值得特地去一趟的營隊</h1>
-    <p class="lede">十二個國家與地區的特色戶外項目，加上一組跨國的非戶外特色營。
+    <p class="lede">十二個國家與地區的特色戶外項目。
       這是一份選項清單，不是排名 —— 供安排營隊時取用。</p>
     <div class="camp-stat">
-      <div><b>60</b><span>個項目</span></div>
-      <div><b>13</b><span>個地區</span></div>
-      <div><b>10</b><span>三軸全中</span></div>
+      <div><b>46</b><span>個項目</span></div>
+      <div><b>12</b><span>個地區</span></div>
+      <div><b>9</b><span>三軸全中</span></div>
       <div><b>3</b><span>個取用維度</span></div>
     </div>
   </div>
@@ -699,12 +699,12 @@ body[data-site="race"] .nav-camp,body[data-site="race"] .camp-hero{display:none}
   <p class="rf-count" id="rf-count"></p>
   <div class="rf-grid" id="rf-grid" style="scroll-margin-top:80px"></div>
   <p class="rf-note">
-    <b>三軸全中的十項</b>：越南韓松洞（世界最大洞穴通道＋政府十年獨家）、
+    <b>三軸全中的九項</b>：越南韓松洞（世界最大洞穴通道＋政府十年獨家）、
     馬來西亞神山鐵道（金氏認證世界最高）、中國紫雲苗廳（世界最大洞廳）、
     紐西蘭高空彈跳／Zorb 滾球／黑水漂（三者皆發明於當地）、
-    日本競技雪合戰／浮冰行走、新加坡全民戶外冒險教育、美國 Space Camp。
+    日本競技雪合戰／浮冰行走、新加坡全民戶外冒險教育。
     <br><b>資料限制</b>：台日泰韓四地做過 Google Places 全國掃描佐證家數；
-    其餘八地與非戶外類只收有第三方認定的項目，因此未涵蓋的優質選項不少。
+    其餘八地只收有第三方認定的項目，因此未涵蓋的優質選項不少。
     「國際知名」這條軸偏向有英文資料與官方申報的項目。
   </p>
 </section>
@@ -1504,7 +1504,7 @@ fillSelects(); render();
 const RF_REGIONS = [
   ['tw','台灣'],['jp','日本'],['kr','韓國'],['cn','中國'],
   ['th','泰國'],['my','馬來西亞'],['vn','越南'],['ph','菲律賓'],
-  ['sg','新加坡'],['bn','汶萊'],['au','澳洲'],['nz','紐西蘭'],['nx','非戶外']
+  ['sg','新加坡'],['bn','汶萊'],['au','澳洲'],['nz','紐西蘭']
 ];
 const RF = [
  {r:'tw',n:'龍洞攀岩場',e:'Longdong Sea Cliffs',a:[1,1,0],f:'3,500 萬年四稜砂岩',
@@ -1609,36 +1609,7 @@ const RF = [
  {r:'nz',n:'黑水漂',e:'Black Water Rafting',a:[1,1,1],f:'Ruakuri 洞唯一營運權',
   d:'抱著內胎順地下伏流漂過螢火蟲洞，這個項目就是在懷托摩發明的。發明地＋唯一營運權，結構同韓松洞。'},
  {r:'nz',n:'噴射快艇',e:'Jet Boating',a:[1,1,0],f:'1958 世界第一個商業營運',
-  d:'比高空彈跳早三十年。為了在極淺的高山河道行船而捨棄螺旋槳改用噴射推進 —— 地形逼出來的發明。'},
-
- {r:'nx',n:'Space Camp',e:'Huntsville, Alabama · 美國',a:[1,1,1],f:'1982 創辦・逾 75 萬人次',
-  d:'設在世界最大的太空博物館內，是世界最老也最大的 STEM 營隊，學員來自 150 多個國家。'},
- {r:'nx',n:'愛丁堡公爵獎',e:"Duke of Edinburgh's Award · 英國",a:[1,1,0],f:'1956 創立・144 個國家',
-  d:'菲利普親王創立的青年獎章制度，含志願服務、體能、技能與探險遠征四項。已擴展至美洲 29、非洲 36、亞太 32、歐洲與阿拉伯 47 國。'},
- {r:'nx',n:'海牙國際模擬聯合國',e:'THIMUN · 荷蘭',a:[1,1,0],f:'學生來自 100+ 國',
-  d:'1968 年起辦，1981 年成立基金會。世界規模最大也最具聲望的中學生聯合國模擬會議，每年一月底四天，約 200 校 3,200 人。已擴展至新加坡與卡達。'},
- {r:'nx',n:'Interlochen 藝術營',e:'Interlochen Arts Camp · 美國',a:[1,1,0],f:'1928 創辦・美國最老最大',
-  d:'1928/6/24 首季，115 名學生，原名全國高中管弦樂團營。現為美國最老也最大的暑期藝術營與藝術寄宿高中，涵蓋音樂、戲劇、舞蹈、寫作、電影與視覺藝術。'},
- {r:'nx',n:'Arkki 兒童建築學校',e:'Arkki · 芬蘭',a:[1,1,0],f:'授權 10 國・台灣尚未引進',
-  d:'1993 年創立。亞洲從越南起步（與 UNICEF 合作），中國已開、泰國興建中、新加坡有據點。台灣不在名單上。'},
- {r:'nx',n:'El Sistema',e:'委內瑞拉 · 集體音樂教育',a:[1,1,0],f:'1975 創辦・影響 70+ 國',
-  d:'不是才藝班，是用樂團當社會介入工具，目標客群是高風險社區的孩子。Sistema Global 在 40 多國運作。'},
- {r:'nx',n:'鈴木教學法',e:'Suzuki Talent Education · 日本',a:[1,1,0],f:'1945 起・至少 40 個國家',
-  d:'鈴木鎮一在松本提出的「母語教學法」—— 把幼兒學會母語的原理搬到學樂器上。1964 年十名日本兒童赴美巡演後推向世界。'},
- {r:'nx',n:'森林學校',e:'Forest School · 丹麥→德日',a:[1,1,0],f:'日本 250 個團體',
-  d:'1950 年代丹麥 Ella Flautau 首創。德國 1993 年才有第一所獲官方補助；日本 2004 年成立全國論壇。'},
- {r:'nx',n:'KidZania 職業體驗城',e:'KidZania · 墨西哥',a:[1,1,0],f:'1999 年墨西哥市首座',
-  d:'原名「兒童之城」。街道、醫院、銀行、超市、消防隊構成的擬真城市，孩子在裡面扮演數十種職業。edutainment 這個類型的起點。'},
- {r:'nx',n:'約翰霍普金斯 CTY',e:'Center for Talented Youth · 美國',a:[0,1,0],f:'1979・首創超齡測驗鑑別',
-  d:'原本是一項研究「學術早慧兒童如何學習」的計畫，成為第一個用超齡測驗鑑別資優生並提供對應課程的體系。'},
- {r:'nx',n:'FIRST LEGO League',e:'FLL · 機器人競賽',a:[0,1,0],f:'單季 30 萬隊・95+ 國',
-  d:'4–16 歲分 Explore 與 Challenge 兩級。三軸只中一項，但有現成分級與賽制，是本組最容易接軌的。'},
- {r:'nx',n:'數感實驗室',e:'Numeracy Lab · 台灣',a:[1,0,1],f:'年服務 3,000+ 學生',
-  d:'2016 年賴以威教授與廖珮妤創辦，台師大衍生新創。冬夏令營實體＋線上並行，與科教館合作辦師培與資優班。'},
- {r:'nx',n:'雲門教室 生活律動',e:'Cloud Gate · Living Movement · 台灣',a:[1,0,1],f:'1995 研發・1998 成立',
-  d:'以身體為主軸的課程體系，由三十多位幼教、心理、藝術、舞蹈與身心發展專家組成課程委員會，三年小改、五年大改。台灣少見的自建課程研發機制。'},
- {r:'nx',n:'十三行考古體驗',e:'Shihsanhang Museum · 台灣',a:[1,0,1],f:'考古挖沙・拼接陶器',
-  d:'新北八里。兒童考古體驗室裡沙中藏有仿古文物，孩子動手挖掘後拼接陶器與人骨；另有考古實驗室與 VR 導覽。台灣唯一以考古為主題的常態兒童體驗。'}
+  d:'比高空彈跳早三十年。為了在極淺的高山河道行船而捨棄螺旋槳改用噴射推進 —— 地形逼出來的發明。'}
 ];
 
 window.RefView = (function(){
