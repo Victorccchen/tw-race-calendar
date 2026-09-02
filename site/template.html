@@ -701,13 +701,13 @@ body[data-site="camp"] #camp{display:block}
   <div class="wrap">
     <p class="eyebrow">Specialised Courses &amp; Camps</p>
     <h1>把一件事教到底的課</h1>
-    <p class="lede">三十二個兒童與青少年的專項課程與訓練，來自十二個國家與地區。
+    <p class="lede">三十八個兒童與青少年的專項課程與訓練，來自十四個國家與地區。
       共同結構是一套方法先成形、再往外授權或複製 —— 和戶外類把特殊性綁在地形上正好相反。</p>
     <div class="camp-stat">
-      <div><b>32</b><span>個項目</span></div>
-      <div><b>6</b><span>個類別</span></div>
-      <div><b>12</b><span>國家與地區</span></div>
-      <div><b>5</b><span>台灣本土</span></div>
+      <div><b>38</b><span>個項目</span></div>
+      <div><b>7</b><span>個類別</span></div>
+      <div><b>14</b><span>國家與地區</span></div>
+      <div><b>6</b><span>台灣本土</span></div>
     </div>
   </div>
 </section>
@@ -1695,7 +1695,7 @@ const RF = [
 /* ══ COURSEVIEW-JS 專項課程營隊 ══
    c = 類別；r = 區域；a = [在地獨有, 國際知名, 獨家經營]。 */
 const CO_CATS = [['food','飲食與廚藝'],['art','藝術與身體'],['sci','科學與工程'],
-                 ['soc','社會與文化'],['env','環境與空間'],['game','棋類與桌遊']];
+                 ['soc','社會與文化'],['env','環境與空間'],['game','棋類與桌遊'],['move','動作與馬戲']];
 const CO_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲'};
 const CO = [
  {c:'art',r:'am',n:'Interlochen 藝術營',cty:'美國',y:'1928',a:[1,1,0],f:'美國最老也最大的暑期藝術營',
@@ -1773,6 +1773,24 @@ const CO = [
  {c:'food',r:'jp',n:'中野烏龍麵學校',cty:'日本',y:'常態',a:[1,0,0],f:'60 分鐘・從入學到畢業',
   d:'香川琴平，讚岐烏龍麵原鄉。把單一品項做成完整儀式 —— 不是「教你做麵」，是「你來這間學校讀一小時的書」，還發畢業證書。',
   u:'https://www.nakanoya.net/',ul:'中野うどん学校'},
+ {c:'move',r:'eu',n:'國際體操總會與世界體操節',cty:'比利時／瑞士',y:'1881',a:[1,1,0],f:'世界現存最古老的國際運動組織',
+  d:'FIG 於 1881/7/23 在比利時列日成立，由比、法、荷三國體操協會發起，是世界第一個國際單項運動總會。旗下 World Gymnaestrada 自 1953 年首辦於阿姆斯特丹，每四年一次、逾 2 萬人來自 50 多國，而且完全非競賽 —— 不比名次，只做團體展演。',
+  u:'https://www.gymnastics.sport/',ul:'FIG 國際體操總會'},
+ {c:'move',r:'am',n:'蒙特婁國立馬戲學校',cty:'加拿大',y:'1981',a:[1,1,0],f:'創立時北美唯一',
+  d:'1981 年成立，當時加拿大與整個北美都還沒有同類機構。蒙特婁後來成為世界馬戲重鎮，這所學校是源頭之一。收中學到高等教育階段，是把馬戲當成正規學制在辦。',
+  u:'https://ecolenationaledecirque.ca/en/',ul:'École nationale de cirque'},
+ {c:'move',r:'am',n:'Circus Smirkus 青少年馬戲營',cty:'美國',y:'1987',a:[1,1,0],f:'非營利・有巡演帳篷',
+  d:'1987 年由 Rob Mermin 創辦於佛蒙特州 Greensboro 的非營利國際青少年馬戲團，自有巡演帳篷。除了巡演團，另辦 Smirkus Camp 分梯營隊 —— 學完可以真的上台演，不是只有結業表演。',
+  u:'https://www.smirkus.org/smirkus-camp/',ul:'Smirkus Camp 梯次'},
+ {c:'move',r:'am',n:'Loopkicks Tricking Camp',cty:'美國',y:'1999',a:[0,1,0],f:'Tricking 的代表性營隊',
+  d:'1999 年成立於灣區，原本是武術表演隊，後來投入 Tricking（結合武術踢技、體操翻騰與街舞的動作技藝）。每年辦 Tricking Camp，吸引全球參加者集中創作與交流。Tricking 沒有正式總會，這類 camp 就是它的體制。',
+  u:'https://www.loopkickstricking.com/',ul:'Loopkicks Tricking'},
+ {c:'move',r:'eu',n:'英國跑酷正式運動化',cty:'英國',y:'2017',a:[1,1,0],f:'全球第一個承認跑酷為運動的國家',
+  d:'2017 年由 Parkour UK 推動，經 Sport England、Scotland、Wales、Northern Ireland 四方認可，英國成為全球第一個正式承認跑酷為運動的國家 —— 跑酷因此取得官方管理機構地位，並可申請樂透與國家經費。這是一項街頭活動被制度接住的完整案例。',
+  u:'https://parkour.uk/discover-parkour',ul:'Parkour UK'},
+ {c:'move',r:'tw',n:'FOCA 福爾摩沙馬戲團',cty:'台灣',y:'2011',a:[1,0,1],f:'兒童馬戲課程＋馬戲藝術節',
+  d:'2011 年從街頭表演起家，一路做進劇場、學校與自搭馬戲棚，並到國際演出，至今累積二十部作品。設有兒童馬戲課程，並主辦 FOCASA 馬戲藝術節，邀來法國、澳洲、南韓、日本、香港、柬埔寨的馬戲藝術家。',
+  u:'https://focasa.tw/',ul:'FOCA 福爾摩沙馬戲團'},
  {c:'game',r:'eu',n:'亞美尼亞學校西洋棋',cty:'亞美尼亞',y:'2011',a:[1,1,1],f:'全球第一個也是唯一必修的國家',
   d:'2011 年起小學二、三、四年級必修西洋棋，由教育部推動「Chess at School」計畫。這是全世界唯一把西洋棋列入國家課綱必修的案例，性質同新加坡把戶外冒險寫進學制。',
   u:'https://chessfed.am/en/static-page/detail/2',ul:'亞美尼亞棋協・學校西洋棋計畫'},
