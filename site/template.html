@@ -504,7 +504,18 @@ button.mark[aria-expanded="true"] .chev{transform:rotate(180deg)}
 /* ══ REFVIEW-CSS 營隊參考 ══ */
 #camp{display:none}
 body[data-site="camp"] #camp{display:block}
-#course,.course-hero{display:none}
+#course,.course-hero,#show,.show-hero{display:none}
+body[data-site="show"] #show,body[data-site="show"] .show-hero{display:block}
+body[data-site="show"] .hero,body[data-site="show"] #cats,
+body[data-site="show"] #list,body[data-site="show"] .nav-race,
+body[data-site="show"] #camp,body[data-site="show"] #course,
+body[data-site="show"] .camp-hero:not(.show-hero){display:none}
+body[data-site="camp"] .show-hero,body[data-site="course"] .show-hero,
+body[data-site="race"] .show-hero{display:none}
+.show-hero{background:linear-gradient(165deg,#241528 0%,#3b1f3d 46%,#5a2f4a 100%)}
+.show-hero .glow{background:radial-gradient(circle,rgba(221,164,74,.20),transparent 68%)}
+.show-hero .eyebrow{color:#e6bb7a}
+.show-hero .camp-stat b{color:#e6bb7a}
 body[data-site="course"] #course,body[data-site="course"] .course-hero{display:block}
 body[data-site="camp"] .hero,body[data-site="camp"] #cats,
 body[data-site="camp"] #list,body[data-site="camp"] .nav-race,
@@ -592,6 +603,11 @@ body[data-site="camp"] #camp{display:block}
       <button role="menuitem" type="button" data-site="course" aria-current="false">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H19v16H5.5A2.5 2.5 0 0 0 3 21.5z"/><path d="M8 8h7"/></svg>
         <span><b>專項課程營隊</b><i>飲食、藝術、科學等專項課程與訓練</i></span>
+        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5.5 5.5L20 7"/></svg>
+      </button>
+      <button role="menuitem" type="button" data-site="show" aria-current="false">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v11H4z"/><path d="M8 20h8"/><path d="M12 15v5"/></svg>
+        <span><b>表演藝術活動</b><i>劇場、偶戲、馬戲與音樂劇・親子可看</i></span>
         <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5.5 5.5L20 7"/></svg>
       </button>
     </div>
@@ -696,6 +712,43 @@ body[data-site="camp"] #camp{display:block}
   <footer>版面樣本 16 筆（完整版約 240 筆）。資料來源：運動筆記、i運動資訊平台（教育部體育署）、中華民國網球協會、日月潭國家風景區管理處。賽事詳情與報名條件請以主辦單位公告為準。</footer>
 </div></section>
 
+<section class="camp-hero show-hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <p class="eyebrow">Performing Arts for Families</p>
+    <h1>可以帶孩子去看的演出</h1>
+    <p class="lede">劇場、偶戲、馬戲與音樂劇 —— 這一站收的是「看」而不是「學」。
+      重點放在把孩子當正式觀眾對待的節目與組織。</p>
+    <div class="camp-stat">
+      <div><b>7</b><span>個項目</span></div>
+      <div><b>3</b><span>種型態</span></div>
+      <div><b>50 萬</b><span>單一計畫年招待人數</span></div>
+      <div><b>2</b><span>台灣本土</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="show">
+  <div class="sec-h rf-head">
+    <span class="kicker">Performing Arts</span>
+    <h2>表演藝術活動</h2>
+  </div>
+  <p class="rf-lead">
+    和另外三站不同，這裡<b>不是課程也不是報名參賽</b> ——
+    是可以買票帶孩子去看的演出，以及能查到這類節目的國際組織與藝術節。
+  </p>
+  <div class="rf-regions" id="pf-types"></div>
+  <p class="rf-count" id="pf-count"></p>
+  <div id="pf-body"></div>
+  <p class="rf-note">
+    <b>收錄標準</b>：節目本身把兒童或親子當正式觀眾，不是「小孩也能進場」而已。
+    偶戲與無台詞馬戲對幼齡門檻最低 —— 不需識字、不需久坐。
+    <br><b>連結已驗證</b>：七筆都確認落地頁確實看得到兒童或親子的節目內容，
+    不只是網域能開。UNIMA 與 ASSITEJ 是查詢入口（各國分會與藝術節列表），
+    其餘四筆可直接查場次。
+  </p>
+</section>
+
 <section class="camp-hero course-hero">
   <div class="glow"></div>
   <div class="wrap">
@@ -729,8 +782,13 @@ body[data-site="camp"] #camp{display:block}
     <b>收錄門檻兩條</b>：對象是兒童或青少年，而且孩子實際動手。
     廚藝界的世界級賽事（Bocuse d&rsquo;Or、麵包世界盃、Young Chef Olympiad）
     是職業或餐飲科系層級，不是營隊，不收。
-    <br><b>連結一律指向官方網域</b>，已逐一開啟確認；少數是「總入口」而非直接報名頁
-    （愛丁堡公爵獎要再選國家、FLL 要再找在地隊伍、Arkki 與 KidZania 要再選據點），按鈕文字已標明。
+    <br><b>關於連結</b>：全部指向官方網域並逐一開啟確認，另做過一次內容稽核 ——
+    檢查落地頁是否真的看得到兒童課程字樣。結果 22 筆通過、11 筆偏少、3 筆首頁查不到
+    （Space Camp、十三行、Loopkicks 為前端渲染或分頁在內層）。
+    <b>按鈕文字說明的是你會落在哪一頁</b>：寫「報名」「梯次」的是直接頁，
+    寫「官方」「各地據點」「找課程」的則需要再點一層 ——
+    愛丁堡公爵獎要選國家、FLL 要找在地隊伍、Arkki 與 KidZania 要選據點。
+    <b>若點進去找不到兒童課程，多半是該機構把它放在更內層或季節性開放</b>，不是連錯。
     <br><b>水果</b>是唯一查不到兒童版的品項；麵包、麵食、米飯都有對應。
   </p>
 </section>
@@ -1519,7 +1577,7 @@ fillSelects(); render();
   var btn = document.getElementById('brandbtn');
   var menu = document.getElementById('brandmenu');
   var name = document.getElementById('brandname');
-  var NAMES = { race: '島嶼賽事曆', camp: '特殊戶外營隊', course: '專項課程營隊' };
+  var NAMES = { race: '島嶼賽事曆', camp: '特殊戶外營隊', course: '專項課程營隊', show: '表演藝術活動' };
 
   function open(on){
     menu.hidden = !on;
@@ -1536,9 +1594,10 @@ fillSelects(); render();
     });
     if(site === 'camp' && window.RefView) RefView.draw();
     if(site === 'course' && window.CourseView) CourseView.draw();
+    if(site === 'show' && window.ShowView) ShowView.draw();
     try{ localStorage.setItem(KEY, site); }catch(e){}
     if(push){
-      var hash = site === 'camp' ? '#camps' : site === 'course' ? '#courses' : location.pathname;
+      var hash = site === 'camp' ? '#camps' : site === 'course' ? '#courses' : site === 'show' ? '#shows' : location.pathname;
       try{ history.replaceState(null, '', hash); }catch(e){}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -1563,6 +1622,7 @@ fillSelects(); render();
   var start = 'race';
   if(location.hash === '#camps') start = 'camp';
   else if(location.hash === '#courses') start = 'course';
+  else if(location.hash === '#shows') start = 'show';
   else { try{ start = localStorage.getItem(KEY) || 'race'; }catch(e){} }
   // RefView 定義在本區塊之後，初始化延到同步腳本跑完再執行
   setTimeout(function(){ go(start, false); }, 0);
@@ -1703,7 +1763,7 @@ const CO = [
   u:'https://www.interlochen.org/camp',ul:'Interlochen 夏令營報名'},
  {c:'art',r:'jp',n:'鈴木教學法',cty:'日本',y:'1945',a:[1,1,0],f:'至少 40 個國家',
   d:'鈴木鎮一在松本提出的「母語教學法」—— 把幼兒學會母語的原理搬到學樂器上。1964 年赴美巡演後推向世界。',
-  u:'https://www.suzukimethod.or.jp/english/',ul:'才能教育研究会（英文）'},
+  u:'https://www.suzukimethod.or.jp/english/E_mthd111.html',ul:'才能教育研究会・教學法說明'},
  {c:'env',r:'eu',n:'森林學校',cty:'丹麥',y:'1950s',a:[1,1,0],f:'日本現有約 250 個團體',
   d:'1950 年代丹麥 Ella Flautau 首創，兒童主導、遊戲導向。德國 1993 年才有第一所獲官方補助；日本 2004 年成立全國論壇。',
   u:'https://morinoyouchien.org/',ul:'森のようちえん全国ネットワーク'},
@@ -1727,7 +1787,7 @@ const CO = [
   u:'https://www.cordonbleu.edu/paris/culinary-workshop-children/en',ul:'Les Petits Cordons Bleus 報名'},
  {c:'food',r:'jp',n:'ABC Cooking Studio・ABC Kids',cty:'日本',y:'1985',a:[1,1,0],f:'ABC Kids 日本 25 間・台北有據點',
   d:'1985 年靜岡起家。ABC Kids 專為 4–12 歲設計，教飲食基礎而非才藝表演。海外十城 20 間，含台北。',
-  u:'https://www.abc-cooking-studio.com/',ul:'ABC Cooking Studio 各地據點'},
+  u:'https://www.abc-cooking.com.tw/',ul:'ABC Cooking 台灣・課程與門市'},
  {c:'food',r:'am',n:'Bake for Good',cty:'美國',y:'1992',a:[1,1,0],f:'免費・4–12 年級・逾 9 萬名學童',
   d:'King Arthur Baking（1790 年創立、員工持股）的公益計畫。學做麵包的數學與科學，材料公司提供，一次做兩條：一條自己留、一條送給有需要的人。',
   u:'https://www.kingarthurbaking.com/learn/bakeforgood',ul:'Bake for Good 學校申請'},
@@ -1787,7 +1847,7 @@ const CO = [
   u:'https://www.loopkickstricking.com/',ul:'Loopkicks Tricking'},
  {c:'move',r:'eu',n:'英國跑酷正式運動化',cty:'英國',y:'2017',a:[1,1,0],f:'全球第一個承認跑酷為運動的國家',
   d:'2017 年由 Parkour UK 推動，經 Sport England、Scotland、Wales、Northern Ireland 四方認可，英國成為全球第一個正式承認跑酷為運動的國家 —— 跑酷因此取得官方管理機構地位，並可申請樂透與國家經費。這是一項街頭活動被制度接住的完整案例。',
-  u:'https://parkour.uk/discover-parkour',ul:'Parkour UK'},
+  u:'https://parkour.uk/find-a-class',ul:'Parkour UK・找課程'},
  {c:'move',r:'tw',n:'FOCA 福爾摩沙馬戲團',cty:'台灣',y:'2011',a:[1,0,1],f:'兒童馬戲課程＋馬戲藝術節',
   d:'2011 年從街頭表演起家，一路做進劇場、學校與自搭馬戲棚，並到國際演出，至今累積二十部作品。設有兒童馬戲課程，並主辦 FOCASA 馬戲藝術節，邀來法國、澳洲、南韓、日本、香港、柬埔寨的馬戲藝術家。',
   u:'https://focasa.tw/',ul:'FOCA 福爾摩沙馬戲團'},
@@ -1813,6 +1873,86 @@ const CO = [
   d:'把食育和戶外休閒綁在一起。台灣有同樣的稻作條件與剛通過的法源，缺的是把它做成有年度節奏的產品。',
   un:'各地農會與自然學校自辦，無單一官方入口 —— 建議以「田植え体験 + 地區名」搜尋'}
 ];
+
+
+/* ══ SHOWVIEW-JS 表演藝術活動 ══
+   t = 型態；r = 區域。這一站收「可以帶孩子去看的演出」，不是課程。 */
+const PF_TYPES = [['stage','劇場與音樂劇'],['circus','偶戲與馬戲'],['fest','藝術節與組織']];
+const PF_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲'};
+const PF = [
+ {t:'circus',r:'eu',n:'國際偶戲聯盟 UNIMA',cty:'捷克・布拉格',y:'1929',
+  f:'世界最古老的國際劇場組織',
+  d:'1929 年創立於布拉格，是世界上最古老的國際劇場組織。偶戲對幼齡觀眾的門檻最低 —— 不需要識字、不需要坐滿兩小時，是很多孩子第一次進劇場看的東西。各國分會可查在地偶戲節與劇團。',
+  u:'https://www.unima.org/en/',ul:'UNIMA・各國分會與活動'},
+ {t:'fest',r:'eu',n:'國際兒童與青少年劇場協會',cty:'國際',y:'1965',
+  f:'83 個國家中心',
+  d:'ASSITEJ 是專門為兒童與青少年劇場成立的國際協會，1965 年創立，目前有 83 個國家中心。它的網站是找「世界各地有什麼兒童劇場節」最快的入口 —— 節目表與藝術節列表都掛在上面。',
+  u:'https://assitej-international.org/',ul:'ASSITEJ・國際兒童劇場網絡'},
+ {t:'circus',r:'am',n:'太陽劇團',cty:'加拿大',y:'1984',
+  f:'街頭表演者出身・全球巡演',
+  d:'1984/6/16 由街頭表演者 Guy Laliberté 與 Gilles Ste-Croix 在魁北克 Baie-Saint-Paul 創立，前身是 1979–83 的高蹺劇團 Les Échassiers。首部作品在魁北克演了十三週。無台詞、以雜技與視覺為主，語言不構成門檻，適合帶年幼孩子看。',
+  u:'https://www.cirquedusoleil.com/',ul:'Cirque du Soleil・巡演場次'},
+ {t:'fest',r:'eu',n:'愛丁堡國際兒童藝術節',cty:'蘇格蘭',y:'常年',
+  f:'年逾 18,000 人次',
+  d:'由蘇格蘭的國家組織 Imaginate 主辦，專門發展與呈現給兒童及青少年的專業劇場與舞蹈。每年一屆，是歐洲少數整個藝術節都以孩子為對象的規格。',
+  u:'https://www.imaginate.org.uk/festival/',ul:'Imaginate・藝術節節目'},
+ {t:'stage',r:'jp',n:'劇團四季「こころの劇場」',cty:'日本',y:'2008',
+  f:'年招待約 50 萬名小學生・免費',
+  d:'2008 年起由舞台藝術中心與劇團四季合辦，文化廳與眾多企業協辦，免費招待全日本小學生進劇場看音樂劇。2023 年度演了 398 場、走過 137 個城市，從北海道利尻島到沖繩宮古島與石垣島，招待約 50 萬名兒童。',
+  u:'https://www.shiki.jp/group/csr/kokoro.html',ul:'劇團四季・こころの劇場'},
+ {t:'stage',r:'tw',n:'紙風車 368 鄉鎮兒童藝術工程',cty:'台灣',y:'2006',
+  f:'319 鄉鎮・近 80 萬觀眾',
+  d:'完全靠民間捐款，把國家劇院級的演出送到全國每一個鄉鎮。第一階段歷時五年，2011/12/3 在第 319 鄉（台北萬里）畫下句點 —— 累計超過 2 億 1 千萬捐款、29 萬公里奔走、近 80 萬名觀眾。2012 年接著啟動 368 鄉鎮市區工程，至今仍在巡演。',
+  u:'https://www.paperwindmill.com.tw/paper368',ul:'紙風車 368・巡演場次'},
+ {t:'stage',r:'tw',n:'如果兒童劇團',cty:'台灣',y:'2000',
+  f:'年演逾 300 場・累計觀眾破百萬',
+  d:'2000/1/24 由趙自強（水果奶奶）創立，已製作三十齣年度大戲，年演出超過三百場、累計觀眾破百萬，2004 至 2024 連續獲選政府扶植團隊。除了演出，也在國家兩廳院等場館辦兒童戲劇工作坊。',
+  u:'https://www.ifkids.com.tw/','ul':'如果兒童劇團・演出資訊'}
+];
+
+window.ShowView = (function(){
+  var pick='all', drawn=false;
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function card(it){
+    return '<article class="rf-card">'
+      +'<div class="rf-top"><h4>'+esc(it.n)+'</h4>'
+      +'<span class="rf-rg">'+esc(it.cty)+' · '+esc(it.y)+'</span></div>'
+      +'<div class="rf-fig">'+esc(it.f)+'</div>'
+      +'<p>'+esc(it.d)+'</p>'
+      +'<p class="rf-go"><a href="'+esc(it.u)+'" target="_blank" rel="noopener">'
+      +esc(it.ul)+'<span aria-hidden="true">↗</span></a></p></article>';
+  }
+  function draw(){
+    var w=document.getElementById('pf-types');
+    if(!drawn){
+      w.innerHTML='<button data-t="all" aria-pressed="true">全部</button>'
+        +PF_TYPES.map(function(x){return '<button data-t="'+x[0]+'" aria-pressed="false">'+x[1]+'</button>';}).join('');
+      w.addEventListener('click',function(ev){
+        var b=ev.target.closest('button[data-t]'); if(!b) return;
+        pick=b.dataset.t;
+        w.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+        paint();
+      });
+      drawn=true;
+    }
+    paint();
+  }
+  function paint(){
+    var rows = pick==='all' ? PF : PF.filter(function(x){return x.t===pick;});
+    var by={tw:[],jp:[],eu:[],am:[]};
+    rows.forEach(function(x){ by[x.r].push(x); });
+    var html='';
+    ['tw','jp','eu','am'].forEach(function(k){
+      if(!by[k].length) return;
+      html+='<h3 class="co-rg">'+PF_RG[k]+'<em>'+by[k].length+'</em></h3>'
+           +'<div class="rf-grid">'+by[k].map(card).join('')+'</div>';
+    });
+    document.getElementById('pf-count').innerHTML='<b>'+rows.length+'</b> 個項目';
+    document.getElementById('pf-body').innerHTML=html;
+  }
+  return {draw:draw,data:PF};
+})();
 
 window.CourseView = (function(){
   var AX=['在地獨有','國際知名','獨家經營'], pick='all', drawn=false;
