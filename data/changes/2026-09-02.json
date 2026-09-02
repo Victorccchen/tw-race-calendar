@@ -45,138 +45,48 @@
   "url": "https://www.facebook.com/supsunrise"
  },
  {
-  "kind": "報名狀態",
-  "id": "biji-12966",
-  "name": "2026 Maokong 貓空 Night Trail",
-  "date": "20261009",
-  "src": "運動筆記",
-  "detail": "報名狀態：09-01截止 → 已截止報名",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12966"
- },
- {
-  "kind": "報名狀態",
-  "id": "biji-12942",
-  "name": "2026龍崎文衡殿第三屆赤兔馬全國馬拉松",
-  "date": "20261025",
-  "src": "運動筆記",
-  "detail": "報名狀態：已截止報名 → 09-10截止",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12942"
- },
- {
-  "kind": "報名狀態",
-  "id": "biji-12882",
-  "name": "2026第十屆板橋馬拉松路跑賽(秋季普查)",
-  "date": "20261108",
-  "src": "運動筆記",
-  "detail": "報名狀態：09-01截止 → 已截止報名",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12882"
- },
- {
-  "kind": "報名狀態",
-  "id": "biji-12864",
-  "name": "2026第八屆故宮南院馬拉松",
-  "date": "20261206",
-  "src": "運動筆記",
-  "detail": "報名狀態：10-07截止 → 已截止報名",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12864"
- },
- {
-  "kind": "消失",
+  "kind": "連結失效",
   "id": "isp-A000026504",
   "name": "2026年滾水超級盃全國羽球錦標賽",
   "date": "20260919",
   "src": "i運動（體育署）",
-  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "detail": "HTTP 400",
   "url": "https://www.facebook.com/guenshuei.A"
  },
  {
-  "kind": "消失",
+  "kind": "新增",
+  "id": "isp-A000026504",
+  "name": "2026年滾水超級盃全國羽球錦標賽",
+  "date": "20260919",
+  "src": "i運動（體育署）",
+  "detail": "高雄市 · badminton",
+  "url": "https://www.facebook.com/guenshuei.A"
+ },
+ {
+  "kind": "新增",
   "id": "isp-A000026445",
   "name": "115年全國槌球錦標賽",
   "date": "20261003",
   "src": "i運動（體育署）",
-  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "detail": "基隆市 · ballother",
   "url": ""
  },
  {
-  "kind": "消失",
+  "kind": "新增",
   "id": "isp-A000026492",
   "name": "115年第三屆重光盃全國槌球錦標賽",
   "date": "20261003",
   "src": "i運動（體育署）",
-  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "detail": "高雄市 · ballother",
   "url": ""
  },
  {
-  "kind": "報名截止",
-  "id": "biji-12942",
-  "name": "2026龍崎文衡殿第三屆赤兔馬全國馬拉松",
-  "date": "20261025",
-  "src": "運動筆記",
-  "detail": "報名截止：2026-08-31 → 2026-09-10",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12942"
- },
- {
   "kind": "新增",
-  "id": "biji-13166",
-  "name": "2026 SUPERACE 黑馬半程馬拉松",
-  "date": "20261114",
-  "src": "運動筆記",
-  "detail": "臺北 · surf",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13166"
- },
- {
-  "kind": "新增",
-  "id": "biji-13049",
-  "name": "2026 第十二屆電器盃節能公益路跑",
-  "date": "20261115",
-  "src": "運動筆記",
-  "detail": "臺北 · run",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13049"
- },
- {
-  "kind": "消失",
   "id": "isp-A000026485",
   "name": "115年全國翁祿壽盃木球錦標賽",
   "date": "20261123",
   "src": "i運動（體育署）",
-  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "detail": "臺南市 · ballother",
   "url": "https://www.woodball.app/indextw.php"
- },
- {
-  "kind": "報名截止",
-  "id": "biji-12864",
-  "name": "2026第八屆故宮南院馬拉松",
-  "date": "20261206",
-  "src": "運動筆記",
-  "detail": "報名截止：2026-10-07 → 2026-08-31",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12864"
- },
- {
-  "kind": "新增",
-  "id": "biji-13169",
-  "name": "2027 SUPERACE 超級馬拉松多日賽 新北淡蘭站",
-  "date": "20270326",
-  "src": "運動筆記",
-  "detail": "新北 · surf",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13169"
- },
- {
-  "kind": "新增",
-  "id": "biji-13168",
-  "name": "2027 SUPERACE 野馬越野系列賽 春林野馬",
-  "date": "20270328",
-  "src": "運動筆記",
-  "detail": "新北 · surf",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13168"
- },
- {
-  "kind": "組別",
-  "id": "biji-13005",
-  "name": "2026 台北國際半程馬拉松",
-  "date": "20260920",
-  "src": "運動筆記",
-  "detail": "組別：21K/10K/4K/21K/10K/3K → 21K/10K/4K",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13005"
  }
 ]
