@@ -560,6 +560,10 @@ body[data-site="camp"] #camp{display:block}
 .rf-card .rf-fig{font-family:"Fraunces",serif;font-size:14px;font-weight:600;color:var(--brand-ink);
   font-variant-numeric:tabular-nums}
 .rf-card p{margin:0;font-size:13.5px;line-height:1.66;color:var(--ink-2)}
+.rf-card .rf-br{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:3px}
+.rf-card .rf-br li{font-size:12.5px;color:var(--ink-2);padding-left:13px;position:relative;line-height:1.55}
+.rf-card .rf-br li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;
+  border-radius:50%;background:var(--brand-ink);opacity:.55}
 .rf-card .rf-go{margin:2px 0 0}
 .rf-card .rf-go a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
   font-size:13px;font-weight:600;color:var(--brand-ink);padding:6px 13px;
@@ -1851,8 +1855,9 @@ const CO = [
  {c:'move',r:'tw',n:'TBC 舞蹈休閒館',cty:'台灣',y:'1997',a:[0,0,0],f:'1997 創館・台北最老牌之一',
   d:'1997 年創館於忠孝延吉街口，2004 年擴店捷運劍潭站 150 坪，2011 年再擴至中山站 300 坪。老牌專業街舞教室，提供含 Breaking 在內的常態與兒童課程，著重肌耐力與身體協調性訓練。',
   u:'https://www.thebestcrew.net/',ul:'TBC・課程資訊'},
- {c:'move',r:'tw',n:'Flying Space 飛翔運動空間',cty:'台灣',y:'常態',a:[1,0,1],f:'Tricking＋Breaking＋幼兒體操一站到齊',
-  d:'台北中山區建國北路三段。自述為全台唯一結合 TRICKING、DANCING 與 FITNESS 的複合式運動空間，設有專業空翻區、舞蹈教室與重訓室。課程涵蓋 Tricking 空翻、Breaking、街舞與幼兒體操 —— 本清單裡先前分散在三個項目的東西，這裡在同一個場地都有。',
+ {c:'move',r:'tw',n:'Flying Space 飛翔運動空間',cty:'台灣・三館',y:'常態',a:[1,0,1],f:'Tricking＋Breaking＋幼兒體操同一場地',
+  d:'複合式運動空間 —— 設專業空翻區、舞蹈教室與重量訓練室，課程涵蓋 Tricking 空翻、Breaking、街舞與幼兒體操。這是本清單裡少見的型態：其他項目多半一館只做一件事，這裡把先前分散在三個類別的東西收在同一個場地，孩子可以在同一個地方換方向而不必換場館。並設有代表隊、有賽事成績。',
+  x:['台北本館｜台北市中山區建國北路三段 54 號','林口館｜新北市林口區文化北路一段 282 號','清水館｜台中市清水區鎮政路 358 號 1F'],
   u:'https://www.flying-space.com/',ul:'Flying Space・課程與預約'},
  {c:'sci',r:'am',n:'Maker Faire',cty:'美國',y:'2006',a:[1,1,0],f:'兩大旗艦展年逾 20 萬人',
   d:'2006 年由 Dale Dougherty 與 Sherry Huss 創辦。灣區與紐約兩場旗艦展年逾二十萬人次；2017 年全球另有逾 190 場 Mini Maker Faire 與 30 場大型場次。它不是課程而是展演場合 —— 孩子帶自己做的東西去擺攤，這種「先做再展」的順序和多數 STEM 營相反。',
@@ -2010,6 +2015,7 @@ window.CourseView = (function(){
       +'<span class="rf-rg">'+esc(it.cty)+' · '+esc(it.y)+'</span></div>'
       +'<div class="rf-fig">'+esc(it.f)+'</div>'
       +'<p>'+esc(it.d)+'</p>'
+      +(it.x?'<ul class="rf-br">'+it.x.map(function(v){return '<li>'+esc(v)+'</li>';}).join('')+'</ul>':'')
       +(it.u?'<p class="rf-go"><a href="'+esc(it.u)+'" target="_blank" rel="noopener">'
              +esc(it.ul)+'<span aria-hidden="true">↗</span></a></p>'
             :(it.un?'<p class="rf-no">'+esc(it.un)+'</p>':''))
