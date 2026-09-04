@@ -720,10 +720,10 @@ body[data-site="camp"] #camp{display:block}
     <p class="lede">劇場、偶戲、馬戲與音樂劇 —— 這一站收的是「看」而不是「學」。
       重點放在把孩子當正式觀眾對待的節目與組織。</p>
     <div class="camp-stat">
-      <div><b>7</b><span>個項目</span></div>
+      <div><b>11</b><span>個項目</span></div>
       <div><b>3</b><span>種型態</span></div>
       <div><b>50 萬</b><span>單一計畫年招待人數</span></div>
-      <div><b>2</b><span>台灣本土</span></div>
+      <div><b>6</b><span>台灣本土</span></div>
     </div>
   </div>
 </section>
@@ -754,10 +754,10 @@ body[data-site="camp"] #camp{display:block}
   <div class="wrap">
     <p class="eyebrow">Specialised Courses &amp; Camps</p>
     <h1>把一件事教到底的課</h1>
-    <p class="lede">三十八個兒童與青少年的專項課程與訓練，來自十四個國家與地區。
+    <p class="lede">四十一個兒童與青少年的專項課程與訓練，來自十五個國家與地區。
       共同結構是一套方法先成形、再往外授權或複製 —— 和戶外類把特殊性綁在地形上正好相反。</p>
     <div class="camp-stat">
-      <div><b>38</b><span>個項目</span></div>
+      <div><b>41</b><span>個項目</span></div>
       <div><b>7</b><span>個類別</span></div>
       <div><b>14</b><span>國家與地區</span></div>
       <div><b>6</b><span>台灣本土</span></div>
@@ -802,8 +802,8 @@ body[data-site="camp"] #camp{display:block}
     <p class="lede">十二個國家與地區的特色戶外項目。
       這是一份選項清單，不是排名 —— 供安排營隊時取用。</p>
     <div class="camp-stat">
-      <div><b>50</b><span>個項目</span></div>
-      <div><b>12</b><span>個地區</span></div>
+      <div><b>52</b><span>個項目</span></div>
+      <div><b>14</b><span>個地區</span></div>
       <div><b>9</b><span>三軸全中</span></div>
       <div><b>3</b><span>個取用維度</span></div>
     </div>
@@ -1635,7 +1635,7 @@ fillSelects(); render();
 const RF_REGIONS = [
   ['tw','台灣'],['jp','日本'],['kr','韓國'],['cn','中國'],
   ['th','泰國'],['my','馬來西亞'],['vn','越南'],['ph','菲律賓'],
-  ['sg','新加坡'],['bn','汶萊'],['au','澳洲'],['nz','紐西蘭']
+  ['sg','新加坡'],['bn','汶萊'],['no','挪威'],['mn','蒙古'],['au','澳洲'],['nz','紐西蘭']
 ];
 const RF = [
  {r:'tw',n:'龍洞攀岩場',e:'Longdong Sea Cliffs',a:[1,1,0],f:'3,500 萬年四稜砂岩',
@@ -1736,6 +1736,12 @@ const RF = [
  {r:'bn',n:'烏魯淡布隆樹冠步道',e:'Ulu Temburong Canopy',a:[1,0,1],f:'離地 50 公尺・全長 600m+',
   d:'婆羅洲之心保育區，550 km²。鋼塔與吊橋構成，龍腦香科巨木高逾 70 公尺。上去要爬 826 階木梯。',u:'https://www.bruneitourism.com/places/ulu-temburong-national-park/',ul:'汶萊觀光局・園區資訊'},
 
+ {r:'no',n:'漫遊權與戶外幼兒園',e:'Friluftsliv · Allemannsretten',a:[1,1,0],f:'1957 年立法・戶外幼兒園 80% 時間在戶外',
+  d:'挪威 1957 年通過《戶外遊憩法》，把 allemannsretten「漫遊權」入法 —— 任何人都能進入未耕地，不論土地屬誰，只要不打擾自然、野生動物與地主。friluftsliv 不是活動而是生活哲學：自然是老師不是征服對象。戶外幼兒園 friluftsbarnehager 讓孩子多達八成時間待在戶外。',
+  u:'https://english.dnt.no/',ul:'挪威山岳協會 DNT・行程與小屋'},
+ {r:'mn',n:'鷹獵與金鷹節',e:'Eagle Hunting · Golden Eagle Festival',a:[1,1,0],f:'孩子 12–13 歲擁有自己的鷹',
+  d:'哈薩克族的馴鷹狩獵，UNESCO 已將蒙古、哈薩克、吉爾吉斯的鷹獵列入人類非物質文化遺產。金鷹節 2000 年正式化，每年秋天在蒙古西部巴彥烏列蓋省舉辦，功能之一就是讓長輩把技藝傳給下一代。',
+  un:'涉及猛禽飼養，動物福利上有討論；行程多由當地旅行社承辦，出發前請確認營運方式。参考：Discover Altai 等在地業者'},
  {r:'au',n:'Bells Beach',e:'Rip Curl Pro Bells Beach',a:[1,1,0],f:'1962 年起連續舉辦',
   d:'世界最長壽的衝浪賽事，每年復活節，1973 年起轉為職業賽。連續性本身就是別人無法複製的資產。',u:'https://www.ripcurl.com/pages/rip-curl-pro-bells-beach',ul:'Rip Curl Pro Bells Beach・官方'},
  {r:'au',n:'Nippers 少年衝浪救生',e:'Surf Life Saving Nippers',a:[1,0,0],f:'5–14 歲・全國俱樂部制',
@@ -1833,6 +1839,15 @@ const CO = [
  {c:'food',r:'jp',n:'中野烏龍麵學校',cty:'日本',y:'常態',a:[1,0,0],f:'60 分鐘・從入學到畢業',
   d:'香川琴平，讚岐烏龍麵原鄉。把單一品項做成完整儀式 —— 不是「教你做麵」，是「你來這間學校讀一小時的書」，還發畢業證書。',
   u:'https://www.nakanoya.net/',ul:'中野うどん学校'},
+ {c:'move',r:'am',n:'霹靂舞 Breaking',cty:'美國／國際',y:'1977',a:[1,1,0],f:'2024 巴黎奧運正式奪牌項目',
+  d:'起於 1977 年紐約布朗克斯 —— Rock Steady Crew 由 b-boys Jimmy Dee 與 Jimmy Lee 創立，目的是保存當時被 disco 蓋過的技巧性舞蹈。2024 年正式成為巴黎奧運奪牌項目，由世界舞蹈運動總會（WDSF）管理。從街頭到奧運只花了四十七年，是本清單裡制度化最快的項目。',
+  u:'https://www.worlddancesport.org/Breaking',ul:'WDSF・Breaking 賽制與青少年組'},
+ {c:'sci',r:'am',n:'Maker Faire',cty:'美國',y:'2006',a:[1,1,0],f:'兩大旗艦展年逾 20 萬人',
+  d:'2006 年由 Dale Dougherty 與 Sherry Huss 創辦。灣區與紐約兩場旗艦展年逾二十萬人次；2017 年全球另有逾 190 場 Mini Maker Faire 與 30 場大型場次。它不是課程而是展演場合 —— 孩子帶自己做的東西去擺攤，這種「先做再展」的順序和多數 STEM 營相反。',
+  u:'https://makerfaire.com/',ul:'Maker Faire・全球場次'},
+ {c:'soc',r:'am',n:"World Scholar's Cup",cty:'美國／國際',y:'2006',a:[0,1,0],f:'年逾 5 萬名學生・67 國以上',
+  d:'2006 年由 DemiDec 創辦的國際學術活動，含論說寫作、辯論與團體測驗，題目圍繞真實世界議題。分區賽、全球回合到耶魯的年度總決賽三層，路徑清楚。網站以 scholar 稱呼參加者而非 child，但對象是中小學生。',
+  u:'https://www.scholarscup.org/',ul:"World Scholar's Cup・分區賽"},
  {c:'move',r:'eu',n:'國際體操總會與世界體操節',cty:'比利時／瑞士',y:'1881',a:[1,1,0],f:'世界現存最古老的國際運動組織',
   d:'FIG 於 1881/7/23 在比利時列日成立，由比、法、荷三國體操協會發起，是世界第一個國際單項運動總會。旗下 World Gymnaestrada 自 1953 年首辦於阿姆斯特丹，每四年一次、逾 2 萬人來自 50 多國，而且完全非競賽 —— 不比名次，只做團體展演。',
   u:'https://www.gymnastics.sport/',ul:'FIG 國際體操總會'},
@@ -1900,6 +1915,22 @@ const PF = [
   f:'年招待約 50 萬名小學生・免費',
   d:'2008 年起由舞台藝術中心與劇團四季合辦，文化廳與眾多企業協辦，免費招待全日本小學生進劇場看音樂劇。2023 年度演了 398 場、走過 137 個城市，從北海道利尻島到沖繩宮古島與石垣島，招待約 50 萬名兒童。',
   u:'https://www.shiki.jp/group/csr/kokoro.html',ul:'劇團四季・こころの劇場'},
+ {t:'stage',r:'tw',n:'九歌兒童劇團',cty:'台灣',y:'1987',
+  f:'台灣最早的兒童劇團之一',
+  d:'1987/9/28 由一群喜愛兒童劇場的人創立，宗旨是把古典民間戲曲的養分轉譯給現代兒童。除了演出，也長期做兒童戲劇教育，常在國家兩廳院等場館推出製作。',
+  u:'https://9s.org.tw/',ul:'九歌兒童劇團・演出與課程'},
+ {t:'circus',r:'tw',n:'無獨有偶工作室劇團',cty:'台灣',y:'常年',
+  f:'台灣偶戲代表團隊',
+  d:'台灣偶戲的代表性團隊，作品跨足大型偶戲與跨界劇場，並參與衛武營「花露露的童樂節」等兒童劇場節。偶戲對幼齡觀眾門檻低，是很多孩子第一次進劇場的入口。',
+  u:'https://www.puppetx2.com.tw/introduction/',ul:'無獨有偶・演出資訊'},
+ {t:'fest',r:'tw',n:'衛武營 花露露的童樂節',cty:'台灣',y:'常年',
+  f:'場館自辦的兒童劇場節',
+  d:'衛武營國家藝術文化中心自辦的兒童藝術節，集結偶戲、劇場與跨界演出。由國家級場館策劃整個節慶都以孩子為對象，這在台灣不多見 —— 性質最接近愛丁堡的 Imaginate。',
+  u:'https://www.npac-weiwuying.org/',ul:'衛武營・節目查詢'},
+ {t:'fest',r:'tw',n:'國家兩廳院 親子節目',cty:'台灣',y:'常年',
+  f:'常態親子節目線',
+  d:'國家兩廳院常態推出兒童與親子節目，是台灣多數兒童劇團的重要演出場域（九歌、如果等團隊的製作都在此上演）。可直接依節目類型篩選查詢當期場次與購票。',
+  u:'https://npac-ntch.org/',ul:'國家兩廳院・節目查詢'},
  {t:'stage',r:'tw',n:'紙風車 368 鄉鎮兒童藝術工程',cty:'台灣',y:'2006',
   f:'319 鄉鎮・近 80 萬觀眾',
   d:'完全靠民間捐款，把國家劇院級的演出送到全國每一個鄉鎮。第一階段歷時五年，2011/12/3 在第 319 鄉（台北萬里）畫下句點 —— 累計超過 2 億 1 千萬捐款、29 萬公里奔走、近 80 萬名觀眾。2012 年接著啟動 368 鄉鎮市區工程，至今仍在巡演。',
