@@ -45,30 +45,39 @@
   "url": "https://www.facebook.com/supsunrise"
  },
  {
-  "kind": "連結失效",
+  "kind": "消失",
   "id": "isp-A000026504",
   "name": "2026年滾水超級盃全國羽球錦標賽",
   "date": "20260919",
   "src": "i運動（體育署）",
-  "detail": "HTTP 400",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
   "url": "https://www.facebook.com/guenshuei.A"
  },
  {
-  "kind": "新增",
-  "id": "ctta-7889",
-  "name": "[1107-1108]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-24)-台南安定",
-  "date": "20261107",
-  "src": "中華民國網球協會",
-  "detail": "臺南 · tennis",
-  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7889"
+  "kind": "消失",
+  "id": "isp-A000026445",
+  "name": "115年全國槌球錦標賽",
+  "date": "20261003",
+  "src": "i運動（體育署）",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": ""
  },
  {
-  "kind": "新增",
-  "id": "ctta-7888",
-  "name": "[1107-1108]115年美傑仕OPI盃全國青少年10歲級網球錦標賽 (D-3)-台北-草案",
-  "date": "20261107",
-  "src": "中華民國網球協會",
-  "detail": "臺北 · tennis",
-  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7888"
+  "kind": "消失",
+  "id": "isp-A000026492",
+  "name": "115年第三屆重光盃全國槌球錦標賽",
+  "date": "20261003",
+  "src": "i運動（體育署）",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": ""
+ },
+ {
+  "kind": "消失",
+  "id": "isp-A000026485",
+  "name": "115年全國翁祿壽盃木球錦標賽",
+  "date": "20261123",
+  "src": "i運動（體育署）",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://www.woodball.app/indextw.php"
  }
 ]
