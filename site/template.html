@@ -758,11 +758,11 @@ body[data-site="camp"] #camp{display:block}
   <div class="wrap">
     <p class="eyebrow">Specialised Courses &amp; Camps</p>
     <h1>把一件事教到底的課</h1>
-    <p class="lede">四十六個兒童與青少年的專項課程與訓練，來自十五個國家與地區。
+    <p class="lede">四十七個兒童與青少年的專項課程與訓練，來自十六個國家與地區。
       共同結構是一套方法先成形、再往外授權或複製 —— 和戶外類把特殊性綁在地形上正好相反。</p>
     <div class="camp-stat">
-      <div><b>46</b><span>個項目</span></div>
-      <div><b>7</b><span>個類別</span></div>
+      <div><b>47</b><span>個項目</span></div>
+      <div><b>8</b><span>個類別</span></div>
       <div><b>14</b><span>國家與地區</span></div>
       <div><b>6</b><span>台灣本土</span></div>
     </div>
@@ -1770,8 +1770,8 @@ const RF = [
 
 /* ══ COURSEVIEW-JS 專項課程營隊 ══
    c = 類別；r = 區域；a = [在地獨有, 國際知名, 獨家經營]。 */
-const CO_CATS = [['food','飲食與廚藝'],['art','藝術與身體'],['sci','科學與工程'],
-                 ['soc','社會與文化'],['env','環境與空間'],['game','棋類與桌遊'],['move','動作與馬戲']];
+const CO_CATS = [['food','飲食與廚藝'],['art','藝術與音樂'],['sci','科學與工程'],
+                 ['soc','社會與文化'],['env','環境與空間'],['game','棋類與桌遊'],['move','動作與馬戲'],['sport','運動專項']];
 const CO_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲'};
 const CO = [
  {c:'art',r:'am',n:'Interlochen 藝術營',cty:'美國',y:'1928',a:[1,1,0],f:'美國最老也最大的暑期藝術營',
@@ -1844,7 +1844,11 @@ const CO = [
  {c:'sci',r:'tw',n:'數感實驗室',cty:'台灣',y:'2016',a:[1,0,1],f:'冬夏令營年服務 3,000+ 學生',
   d:'2016 年賴以威教授與廖珮妤創辦，台師大衍生新創。實體＋線上並行，與科教館合作辦師培與資優班。',
   u:'https://numeracylab.com/',ul:'數感實驗室・營隊與課程'},
- {c:'art',r:'tw',n:'LALASO 拉拉手游泳學院',cty:'台灣',y:'2016',a:[1,0,1],f:'三段目的完全不同',
+ {c:'sport',r:'eu',n:'拉法・納達爾網球學院暑期營',cty:'西班牙',y:'常態',a:[1,1,0],f:'6–10 歲與 8–18 歲兩線・每日兩訓',
+  d:'位於馬約卡島馬納科爾。每日兩次訓練，依程度與年齡分組；6 月至 8 月間可訂一週或多週。園區含室內、半覆蓋、紅土與硬地球場、健身房、SPA、室內外泳池、padel 球場與納達爾博物館 —— 孩子是在職業選手的訓練環境裡上課，不是另闢的兒童場地。',
+  x:['Summer Tennis Camp Kids｜6–10 歲，依程度調整','Summer Tennis Camp Junior｜8–18 歲','Tennis & Language Camp｜網球加語言課','High Performance Camp｜競技取向'],
+  u:'https://www.rafanadalacademy.com/en/junior-programs/summer-camps/summer-tennis-camp-kids/',ul:'Rafa Nadal Academy・暑期營'},
+ {c:'sport',r:'tw',n:'LALASO 拉拉手游泳學院',cty:'台灣',y:'2016',a:[1,0,1],f:'三段目的完全不同',
   d:'台中。親子（3 個月–3 歲）教親子關係與適應水性、不教泳技；幼兒（2–6 歲）玩樂學習與水中閉氣移動；兒童（5–12 歲）走荷蘭自救訓練與水球。全檔唯一的方法輸入案例。',
   u:'https://lalasobaby.com/',ul:'拉拉手游泳學院'},
  {c:'food',r:'eu',n:'Mamma Ciccia Cooking Academy',cty:'義大利',y:'2017',a:[1,0,0],f:'餐廳開課十餘年後成立學院',
