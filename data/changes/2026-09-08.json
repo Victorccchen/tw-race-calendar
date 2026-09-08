@@ -54,12 +54,21 @@
   "url": "https://www.facebook.com/guenshuei.A"
  },
  {
-  "kind": "組別",
-  "id": "biji-12929",
-  "name": "2026台灣米倉田中馬拉松",
-  "date": "20261108",
-  "src": "運動筆記",
-  "detail": "組別：42.195K/22.6K/9.7K/4K → 42.195K/21.2K/9.7K/4.6K",
-  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12929"
+  "kind": "新增",
+  "id": "ctta-7889",
+  "name": "[1107-1108]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-24)-台南安定",
+  "date": "20261107",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7889"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7888",
+  "name": "[1107-1108]115年美傑仕OPI盃全國青少年10歲級網球錦標賽 (D-3)-台北-草案",
+  "date": "20261107",
+  "src": "中華民國網球協會",
+  "detail": "臺北 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7888"
  }
 ]
