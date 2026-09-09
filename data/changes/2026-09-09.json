@@ -1,0 +1,65 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "連結失效",
+  "id": "isp-A000026504",
+  "name": "2026年滾水超級盃全國羽球錦標賽",
+  "date": "20260919",
+  "src": "i運動（體育署）",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/guenshuei.A"
+ },
+ {
+  "kind": "組別",
+  "id": "biji-13017",
+  "name": "長庚紀念醫院2026永慶盃路跑",
+  "date": "20260920",
+  "src": "運動筆記",
+  "detail": "組別：10.5K/3K → 10.5K/3K/21K/10K/4K",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13017"
+ }
+]
