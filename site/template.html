@@ -758,12 +758,12 @@ body[data-site="camp"] #camp{display:block}
   <div class="wrap">
     <p class="eyebrow">Specialised Courses &amp; Camps</p>
     <h1>把一件事教到底的課</h1>
-    <p class="lede">五十九個兒童與青少年的專項課程與訓練，來自十八個國家與地區。
+    <p class="lede">六十一個兒童與青少年的專項課程與訓練，來自十九個國家與地區。
       共同結構是一套方法先成形、再往外授權或複製 —— 和戶外類把特殊性綁在地形上正好相反。</p>
     <div class="camp-stat">
-      <div><b>59</b><span>個項目</span></div>
+      <div><b>61</b><span>個項目</span></div>
       <div><b>8</b><span>個類別</span></div>
-      <div><b>18</b><span>國家與地區</span></div>
+      <div><b>19</b><span>國家與地區</span></div>
       <div><b>10</b><span>台灣本土</span></div>
     </div>
   </div>
@@ -1772,7 +1772,7 @@ const RF = [
    c = 類別；r = 區域；a = [在地獨有, 國際知名, 獨家經營]。 */
 const CO_CATS = [['food','飲食與廚藝'],['art','藝術與音樂'],['sci','科學與工程'],
                  ['soc','社會與文化'],['env','環境與空間'],['game','棋類與桌遊'],['move','動作與馬戲'],['sport','運動專項']];
-const CO_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲'};
+const CO_RG = {tw:'台灣',jp:'日本',eu:'歐洲',am:'美洲',oc:'大洋洲'};
 const CO = [
  {c:'art',r:'am',n:'Interlochen 藝術營',cty:'美國',y:'1928',a:[1,1,0],f:'美國最老也最大的暑期藝術營',
   d:'1928/6/24 首季、115 名學生，原名全國高中管弦樂團營。現涵蓋音樂、戲劇、舞蹈、寫作、電影與視覺藝術。',
@@ -1908,6 +1908,16 @@ const CO = [
   d:'1981 年開辦，四十多年的老營。住宿直接安排在牛津大學的學生宿舍雙人房（可加價升單人房），六天 30 小時核心網球課、平均每日五小時。英語課是選配加購而非內含，一天一小時或兩個半小時兩種。網球加英國大學校園生活的組合，跟俱樂部型網球營是兩種東西 —— 這裡賣的是牛津本身。',
   x:['對象｜10–17 歲（最後一週另收成人）','核心課｜6 天 30 小時','住宿｜牛津大學學生宿舍雙人房','英語課｜選配加購，1 小時或 2.5 小時／日'],
   u:'https://www.marksontennis.com/oxford-tennis-camp',ul:'Markson Tennis・牛津營'},
+ {c:'sport',r:'am',n:'美網主場兒童網球營',cty:'美國・紐約法拉盛',y:'常態',a:[1,1,0],
+  f:'5–18 歲・就在美網那座球場・外國人可報',
+  d:'辦在 USTA Billie Jean King National Tennis Center —— 就是美網的主場，頁面上還掛著「美網期間閉館」的公告。這是少數大滿貫賽場直接對外開兒童營、而且沒有國籍或居留限制的案例：官網明寫 All Juniors are welcome，新學員先評估分級，報名只需簽免責書並出示政府核發的照片證件。2026 夏令梯 6/22–8/7。',
+  x:['10 & Under｜5–10 歲，半日 8:30–12:00 或全日 8:30–16:00','Junior｜11–18 歲，全日或傍晚場 16:30–19:00','High Performance｜10:30–17:30','另有全年常態的假期梯次'],
+  u:'https://www.ntc.usta.com/tennis-programs-and-camps/junior-camps',ul:'USTA NTC・青少年營隊'},
+ {c:'sport',r:'oc',n:'墨爾本公園假期網球營',cty:'澳洲・墨爾本',y:'常態',a:[1,1,0],
+  f:'5–17 歲・澳網主場・A$104 起',
+  d:'場地在 Melbourne Park（奧林匹克大道 100 號），澳網打的就是這裡，公眾球場由 Tennis World 營運。用的是 Tennis Australia 官方的 Hot Shots 分級 —— ITF 認可的兒童教學標準，依年齡調整球場大小、球拍長度與球的彈性（紅／橙／綠球）。走學校假期梯次，全日制。是否收非會員官網沒寫明，訂位前要先電話確認。',
+  x:['Hot Shots｜5–12 歲，A$104／日，9:00–15:00','Junior Development｜12 歲以上，A$132／日，9:30–15:00','Performance｜8–17 歲，A$132／日，9:30–15:00','銜接｜Hot Shots 之後可接 De Minaur Junior Tour（12U／14U，全國年逾 250 場排名賽）'],
+  u:'https://www.tennisworld.net.au/locations/melbourne/programs/holiday-camps/',ul:'Tennis World・墨爾本公園假期營'},
  {c:'sport',r:'tw',n:'LALASO 拉拉手游泳學院',cty:'台灣',y:'2016',a:[1,0,1],f:'三段目的完全不同',
   d:'台中。親子（3 個月–3 歲）教親子關係與適應水性、不教泳技；幼兒（2–6 歲）玩樂學習與水中閉氣移動；兒童（5–12 歲）走荷蘭自救訓練與水球。全檔唯一的方法輸入案例。',
   u:'https://lalasobaby.com/',ul:'拉拉手游泳學院'},
@@ -2112,10 +2122,10 @@ window.CourseView = (function(){
   }
   function paint(){
     var rows = pick==='all' ? CO : CO.filter(function(x){return x.c===pick;});
-    var byRg = {tw:[],jp:[],eu:[],am:[]};
+    var byRg = {tw:[],jp:[],eu:[],am:[],oc:[]};
     rows.forEach(function(x){ byRg[x.r].push(x); });
     var html='';
-    ['tw','jp','eu','am'].forEach(function(k){
+    ['tw','jp','eu','am','oc'].forEach(function(k){
       if(!byRg[k].length) return;
       html += '<h3 class="co-rg">'+CO_RG[k]+'<em>'+byRg[k].length+'</em></h3>'
             + '<div class="rf-grid">'+byRg[k].map(card).join('')+'</div>';
