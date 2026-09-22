@@ -1,0 +1,164 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7858",
+  "name": "[0922-0927]115年太平洋網基盃U18全國青少年網球錦標賽(B-11)-高雄橋頭",
+  "date": "20260922",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7858"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7864",
+  "name": "[1003-1009]115年第十五屆美傑仕OPI盃全國青少年網球錦標賽 (A-4)-台北",
+  "date": "20261003",
+  "src": "中華民國網球協會",
+  "detail": "臺北 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7864"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7871",
+  "name": "[1017-1021]115年YONEX盃第二站全國大專網球排名錦標賽-台南",
+  "date": "20261017",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=9&msg_id=7871"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7870",
+  "name": "[1017-1018]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-22)-台南安定",
+  "date": "20261017",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7870"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7877",
+  "name": "[1024-1025]115年榮錦盃全國青少年12、16歲級網球錦標賽 (C-23)-高雄",
+  "date": "20261024",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7877"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7889",
+  "name": "[1107-1108]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-24)-台南安定",
+  "date": "20261107",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7889"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7888",
+  "name": "[1107-1108]115年美傑仕OPI盃全國青少年10歲級網球錦標賽 (D-3)-台北",
+  "date": "20261107",
+  "src": "中華民國網球協會",
+  "detail": "臺北 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7888"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7900",
+  "name": "2026第十四屆『誌鈞盃』全國青少年網球錦標賽",
+  "date": "20261108",
+  "src": "中華民國網球協會",
+  "detail": "嘉義 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=9&msg_id=7900"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7896",
+  "name": "[1114-1115]115年啟意科技盃全國青少年12、16歲級網球錦標賽 (C-27)-高雄",
+  "date": "20261114",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7896"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7897",
+  "name": "[1114-1115]115年太平洋網基盃全國青少年12、16歲級網球錦標賽 (C-26)-竹南",
+  "date": "20261114",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7897"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7893",
+  "name": "[1119-1129]中華民國115年四維膠帶盃第62屆學童網球錦標賽",
+  "date": "20261119",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=5&msg_id=7893"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7691",
+  "name": "2026年「大度山维崧盃」全國青少年18、16歲級 網球菁英邀請賽",
+  "date": "20261205",
+  "src": "中華民國網球協會",
+  "detail": "臺中 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=9&msg_id=7691"
+ },
+ {
+  "kind": "組別",
+  "id": "biji-12980",
+  "name": "2026 吧哩嘓越野",
+  "date": "20261003",
+  "src": "運動筆記",
+  "detail": "組別：26K/17K/10K/21K/10K/3K → 26K/17K/10K/42.195K/21.0975K/12K",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12980"
+ }
+]
