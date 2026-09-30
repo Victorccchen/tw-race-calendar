@@ -1,0 +1,83 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12923",
+  "name": "2026台南秋季馬拉松",
+  "date": "20261129",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-18截止 → 10-15截止",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12923"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7909",
+  "name": "2026第十八屆諸羅『世澤盃』全國壯年網球錦標賽",
+  "date": "20261121",
+  "src": "中華民國網球協會",
+  "detail": "嘉義 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=3&msg_id=7909"
+ },
+ {
+  "kind": "報名截止",
+  "id": "biji-12923",
+  "name": "2026台南秋季馬拉松",
+  "date": "20261129",
+  "src": "運動筆記",
+  "detail": "報名截止：2026-10-18 → 2026-10-15",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12923"
+ },
+ {
+  "kind": "名稱",
+  "id": "biji-13036",
+  "name": "2027 富邦人壽高雄馬拉松 DAY 2",
+  "date": "20270110",
+  "src": "運動筆記",
+  "detail": "名稱：2027 高雄富邦馬拉松 DAY 2 → 2027 富邦人壽高雄馬拉松 DAY 2",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13036"
+ }
+]
