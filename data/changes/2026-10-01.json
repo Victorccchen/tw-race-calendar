@@ -1,0 +1,146 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13185",
+  "name": "115年第一屆 荷苞嶼鐵人趣味賽",
+  "date": "20261018",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13185"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13163",
+  "name": "泳渡虎頭埤x 168路跑",
+  "date": "20261108",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-01截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13163"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13166",
+  "name": "2026 SUPERACE 黑馬半程馬拉松",
+  "date": "20261114",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13166"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12885",
+  "name": "2026 蘆洲觀音山馬拉松",
+  "date": "20261115",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12885"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13049",
+  "name": "2026 第十二屆電器盃節能公益路跑",
+  "date": "20261115",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13049"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12934",
+  "name": "2026鹿港馬拉松",
+  "date": "20261115",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12934"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12838",
+  "name": "2026屏東墾丁日本航空國際馬拉松",
+  "date": "20261115",
+  "src": "運動筆記",
+  "detail": "報名狀態：09-30截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12838"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7911",
+  "name": "[1123-1127]115年凱靖盃U18全國青少年網球錦標賽(B-12)-竹南-草案",
+  "date": "20261123",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7911"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7910",
+  "name": "[1123-1127]115年凱靖盃全國網球排名精英錦標賽(N-4)-竹南-草案",
+  "date": "20261123",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=1&msg_id=7910"
+ },
+ {
+  "kind": "新增",
+  "id": "biji-13188",
+  "name": "2027 The North Face 100 谷關越野挑戰賽",
+  "date": "20270424",
+  "src": "運動筆記",
+  "detail": "臺中 · trail",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13188"
+ },
+ {
+  "kind": "組別",
+  "id": "biji-13080",
+  "name": "2026 LAVAKIDS 花蓮太平洋小鐵人賽",
+  "date": "20261003",
+  "src": "運動筆記",
+  "detail": "組別：8.2K/5.3K/42.195K/21.0975K/12K/3K → 8.2K/5.3K/5K/0.15K",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13080"
+ }
+]
