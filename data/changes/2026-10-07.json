@@ -1,0 +1,92 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13031",
+  "name": "2026歲次丙午年順澤宮第四屆冠軍路跑－順風啟程 • 澤福同行 • 謝平安",
+  "date": "20261219",
+  "src": "運動筆記",
+  "detail": "報名狀態：已截止報名 → 10-11截止",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13031"
+ },
+ {
+  "kind": "消失",
+  "id": "ctta-7877",
+  "name": "[1024-1025]115年榮錦盃全國青少年12、16歲級網球錦標賽 (C-23)-高雄",
+  "date": "20261024",
+  "src": "中華民國網球協會",
+  "detail": "來源已不再列出，可能已改期、額滿或下架",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7877"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7919",
+  "name": "2026臺灣華國三太子國際男子網球挑戰賽 臺北站",
+  "date": "20261101",
+  "src": "中華民國網球協會",
+  "detail": "臺北 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=8&msg_id=7919"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7917",
+  "name": "[1205-1206]115年啟意科技盃全國青少年12、16歲級網球錦標賽 (C-28)-高雄-草案",
+  "date": "20261205",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7917"
+ },
+ {
+  "kind": "報名截止",
+  "id": "biji-13031",
+  "name": "2026歲次丙午年順澤宮第四屆冠軍路跑－順風啟程 • 澤福同行 • 謝平安",
+  "date": "20261219",
+  "src": "運動筆記",
+  "detail": "報名截止：2026-10-04 → 2026-10-11",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13031"
+ }
+]
