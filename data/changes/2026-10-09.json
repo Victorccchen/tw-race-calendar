@@ -1,0 +1,83 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "地點",
+  "id": "ctta-7906",
+  "name": "2026 歐克盃國際青少年網球錦標賽 (四級)-J60 Nantou ⚠️場地異動",
+  "date": "20261018",
+  "src": "中華民國網球協會",
+  "detail": "地點：彰化員林運動公園 → 南投縣立體育館網球場",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=7&msg_id=7906"
+ },
+ {
+  "kind": "名稱",
+  "id": "ctta-7906",
+  "name": "2026 歐克盃國際青少年網球錦標賽 (四級)-J60 Nantou ⚠️場地異動",
+  "date": "20261018",
+  "src": "中華民國網球協會",
+  "detail": "名稱：2026 種子盃國際青少年網球錦標賽 (四級)-J60 Changhua → 2026 歐克盃國際青少年網球錦標賽 (四級)-J60 Nantou ⚠️場地異動",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=7&msg_id=7906"
+ },
+ {
+  "kind": "地點",
+  "id": "ctta-7907",
+  "name": "2026 種子盃國際青少年網球錦標賽 (三級)-J100 Nantou ⚠️場地異動",
+  "date": "20261025",
+  "src": "中華民國網球協會",
+  "detail": "地點：彰化員林運動公園 → 南投縣立體育館網球場",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=7&msg_id=7907"
+ },
+ {
+  "kind": "名稱",
+  "id": "ctta-7907",
+  "name": "2026 種子盃國際青少年網球錦標賽 (三級)-J100 Nantou ⚠️場地異動",
+  "date": "20261025",
+  "src": "中華民國網球協會",
+  "detail": "名稱：2026 議長盃國際青少年網球錦標賽 (三級)-J100 Changhua → 2026 種子盃國際青少年網球錦標賽 (三級)-J100 Nantou ⚠️場地異動",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=7&msg_id=7907"
+ }
+]
