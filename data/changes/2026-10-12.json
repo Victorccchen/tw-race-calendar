@@ -1,0 +1,92 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12987",
+  "name": "2026三星安農溪馬拉松嘉年華",
+  "date": "20261206",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-11截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12987"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12997",
+  "name": "2026母子鱷魚40週年-突破前行馬拉松",
+  "date": "20261213",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-11截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12997"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13031",
+  "name": "2026歲次丙午年順澤宮第四屆冠軍路跑－順風啟程 • 澤福同行 • 謝平安",
+  "date": "20261219",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-11截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13031"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7920",
+  "name": "2026年第十五屆凱靖盃團體網球賽",
+  "date": "20261226",
+  "src": "中華民國網球協會",
+  "detail": " · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=5&msg_id=7920"
+ },
+ {
+  "kind": "組別",
+  "id": "biji-12811",
+  "name": "2026 巴歌浪鐵人三項賽",
+  "date": "20261017",
+  "src": "運動筆記",
+  "detail": "組別：226K/113K/51.5K/21K/10K/5K → 226K/113K/51.5K/5K/0.15K",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12811"
+ }
+]
