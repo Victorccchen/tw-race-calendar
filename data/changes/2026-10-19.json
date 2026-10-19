@@ -1,0 +1,218 @@
+[
+ {
+  "kind": "連結失效",
+  "id": "shop-legosurf",
+  "name": "樂高衝浪俱樂部 Lego Surfing Club",
+  "date": "",
+  "src": "樂高衝浪俱樂部 Lego Surfing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/legosurfingclub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-fulongsail",
+  "name": "福隆帆船俱樂部 Fulong Sailing Club",
+  "date": "",
+  "src": "福隆帆船俱樂部 Fulong Sailing Club",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/FulongSailingClub/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-ironhill",
+  "name": "鐵山腳單車運動村 Iron Hill",
+  "date": "",
+  "src": "鐵山腳單車運動村 Iron Hill",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/ironhillbike/"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-loveocean",
+  "name": "樂福海洋工坊",
+  "date": "",
+  "src": "樂福海洋工坊",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/loveocean"
+ },
+ {
+  "kind": "連結失效",
+  "id": "shop-supsunrise",
+  "name": "日月潭日出立槳 SUP",
+  "date": "",
+  "src": "日月潭日出立槳 SUP",
+  "detail": "HTTP 400",
+  "url": "https://www.facebook.com/supsunrise"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-12997",
+  "name": "2026母子鱷魚40週年-突破前行馬拉松",
+  "date": "20261213",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-18截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=12997"
+ },
+ {
+  "kind": "報名狀態",
+  "id": "biji-13031",
+  "name": "2026歲次丙午年順澤宮第四屆冠軍路跑－順風啟程 • 澤福同行 • 謝平安",
+  "date": "20261219",
+  "src": "運動筆記",
+  "detail": "報名狀態：10-18截止 → 已截止報名",
+  "url": "https://running.biji.co/index.php?q=competition&act=info&cid=13031"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7907",
+  "name": "2026 種子盃國際青少年網球錦標賽 (三級)-J100 Nantou ⚠️場地異動",
+  "date": "20261025",
+  "src": "中華民國網球協會",
+  "detail": "南投 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=7&msg_id=7907"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7919",
+  "name": "2026臺灣華國三太子國際男子網球挑戰賽 臺北站",
+  "date": "20261101",
+  "src": "中華民國網球協會",
+  "detail": "臺北 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=8&msg_id=7919"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7889",
+  "name": "[1107-1108]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-24)-台南安定",
+  "date": "20261107",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7889"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7900",
+  "name": "2026第十四屆『誌鈞盃』全國青少年網球錦標賽",
+  "date": "20261108",
+  "src": "中華民國網球協會",
+  "detail": "嘉義 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=9&msg_id=7900"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7897",
+  "name": "[1114-1115]115年太平洋網基盃全國青少年12、16歲級網球錦標賽 (C-26)-竹南",
+  "date": "20261114",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7897"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7896",
+  "name": "[1114-1115]115年啟意科技盃全國青少年12、16歲級網球錦標賽 (C-27)-高雄",
+  "date": "20261114",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7896"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7893",
+  "name": "[1119-1129]中華民國115年四維膠帶盃第62屆學童網球錦標賽",
+  "date": "20261119",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=5&msg_id=7893"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7909",
+  "name": "2026第十八屆諸羅『世澤盃』全國壯年網球錦標賽",
+  "date": "20261121",
+  "src": "中華民國網球協會",
+  "detail": "嘉義 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=3&msg_id=7909"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7901",
+  "name": "[1121-1122]115年啟意科技盃全國青少年14、18歲級網球錦標賽 (C-25)-高雄",
+  "date": "20261121",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7901"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7911",
+  "name": "[1123-1127]115年凱靖盃U18全國青少年網球錦標賽(B-12)-竹南",
+  "date": "20261123",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7911"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7910",
+  "name": "[1123-1127]115年凱靖盃全國網球排名精英錦標賽(N-4)-竹南",
+  "date": "20261123",
+  "src": "中華民國網球協會",
+  "detail": "苗栗 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=1&msg_id=7910"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7917",
+  "name": "[1205-1206]115年啟意科技盃全國青少年12、16歲級網球錦標賽 (C-28)-高雄",
+  "date": "20261205",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7917"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7691",
+  "name": "2026年「大度山维崧盃」全國青少年18、16歲級 網球菁英邀請賽",
+  "date": "20261205",
+  "src": "中華民國網球協會",
+  "detail": "臺中 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=9&msg_id=7691"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7905",
+  "name": "2026年「大度山维崧盃」全國青少年18、16歲級 網球菁英邀請賽",
+  "date": "20261205",
+  "src": "中華民國網球協會",
+  "detail": "臺中 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=5&msg_id=7905"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7921",
+  "name": "[1212-1213]115年啟意科技盃全國青少年14、18歲級網球錦標賽 (C-29)-高雄",
+  "date": "20261212",
+  "src": "中華民國網球協會",
+  "detail": "高雄 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7921"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7922",
+  "name": "[1212-1213]115年南瀛盃全國青少年12、16歲級網球錦標賽 (C-30)-台南",
+  "date": "20261212",
+  "src": "中華民國網球協會",
+  "detail": "臺南 · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=2&msg_id=7922"
+ },
+ {
+  "kind": "新增",
+  "id": "ctta-7920",
+  "name": "2026年第十五屆凱靖盃團體網球賽",
+  "date": "20261226",
+  "src": "中華民國網球協會",
+  "detail": " · tennis",
+  "url": "https://www.tennis.org.tw/web/event_information.asp?s=5&msg_id=7920"
+ }
+]
